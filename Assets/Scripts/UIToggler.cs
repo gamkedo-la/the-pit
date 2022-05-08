@@ -1,14 +1,25 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class UIToggler : MonoBehaviour
 {
-    public GameObject toggleTarget;
+    public KeyAndTarget[] toggles;
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F2))
+        foreach (var keyAndTarget in toggles)
         {
-            toggleTarget.SetActive(!toggleTarget.activeSelf);
+            if (Input.GetKeyDown(keyAndTarget.key))
+            {
+                keyAndTarget.target.SetActive(!keyAndTarget.target.activeSelf);
+            }
         }
+    }
+
+    [Serializable]
+    public struct KeyAndTarget
+    {
+        public KeyCode key;
+        public GameObject target;
     }
 }
