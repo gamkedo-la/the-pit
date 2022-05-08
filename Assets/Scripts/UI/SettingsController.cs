@@ -10,16 +10,19 @@ namespace UI
         private Slider backgroundBrightnessSlider;
         private Label amountLabel;
 
+        private Label diagnosticInfoLabel;
+
         public SettingsController(VisualElement root)
         {
             backgroundBrightnessSlider = root.Q<Slider>("BackgroundBrightness");
             amountLabel = backgroundBrightnessSlider.Q<Label>();
-            backgroundBrightnessSlider.value =
-                PlayerPrefs.GetFloat(BackgroundBrightness.PrefsKey,
-                    backgroundBrightnessSlider.value / backgroundBrightnessSlider.highValue) *
-                backgroundBrightnessSlider.highValue;
+            backgroundBrightnessSlider.value = BackgroundBrightness.Value * backgroundBrightnessSlider.highValue;
             
             SetAmountLabel(backgroundBrightnessSlider.value);
+
+            diagnosticInfoLabel = root.Q<Label>("DiagnosticInfo");
+            diagnosticInfoLabel.text =
+                $"{Application.productName} {Application.version} | {Application.unityVersion} | {SystemInfo.operatingSystemFamily} | {SystemInfo.operatingSystem}";
         }
 
         public void RegisterCallbacks(UnityEvent<float> onBackgroundBrightnessChanged)

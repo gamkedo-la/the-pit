@@ -5,6 +5,9 @@
                 <ui:Label text="Background Brightness" display-tooltip-when-elided="true" />
                 <ui:Slider picking-mode="Ignore" label="60" value="60" high-value="100" inverted="false" name="BackgroundBrightness" show-input-field="false" style="flex-grow: 1;" />
             </ui:VisualElement>
+            <ui:VisualElement>
+                <ui:Label text="Label" display-tooltip-when-elided="true" name="DiagnosticInfo" />
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

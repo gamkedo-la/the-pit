@@ -4,17 +4,20 @@ namespace Graphics
 {
     public class BackgroundBrightness : MonoBehaviour
     {
-        public static readonly string PrefsKey = "Settings.BackgroundBrightness";
-        
         public Color baseTint = Color.white;
-        [Range(0f, 1f)]
-        public float defaultBrightness = 0.6f;
         private Material backgroundMaterial;
+
+        private static readonly int Tint = Shader.PropertyToID("_Tint");
+        private const string PrefsKey = "Settings.BackgroundBrightness";
+        
+        public static float Value =>
+            PlayerPrefs.GetFloat(PrefsKey,
+                SystemInfo.operatingSystemFamily == OperatingSystemFamily.MacOSX ? 0.8f : 0.6f);
 
         private void OnEnable()
         {
             backgroundMaterial = GetComponentInChildren<MeshRenderer>().material;
-            SetMaterialProperties(PlayerPrefs.GetFloat(PrefsKey, defaultBrightness));
+            SetMaterialProperties(Value);
         }
 
         public void SetBackgroundBrightness(float value)
@@ -27,7 +30,7 @@ namespace Graphics
         {
             var color = baseTint;
             color *= value;
-            backgroundMaterial.SetColor("_Tint", color);
+            backgroundMaterial.SetColor(Tint, color);
         }
     }
 }
