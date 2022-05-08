@@ -1,4 +1,6 @@
-﻿using UnityEngine.Events;
+﻿using Graphics;
+using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UIElements;
 
 namespace UI
@@ -12,15 +14,26 @@ namespace UI
         {
             backgroundBrightnessSlider = root.Q<Slider>("BackgroundBrightness");
             amountLabel = backgroundBrightnessSlider.Q<Label>();
+            backgroundBrightnessSlider.value =
+                PlayerPrefs.GetFloat(BackgroundBrightness.PrefsKey,
+                    backgroundBrightnessSlider.value / backgroundBrightnessSlider.highValue) *
+                backgroundBrightnessSlider.highValue;
+            
+            SetAmountLabel(backgroundBrightnessSlider.value);
         }
 
         public void RegisterCallbacks(UnityEvent<float> onBackgroundBrightnessChanged)
         {
             backgroundBrightnessSlider.RegisterValueChangedCallback(evt =>
             {
-                amountLabel.text = $"{evt.newValue:0}";
+                SetAmountLabel(evt.newValue);
                 onBackgroundBrightnessChanged.Invoke(evt.newValue / backgroundBrightnessSlider.highValue);
             });
+        }
+
+        private void SetAmountLabel(float amount)
+        {
+            amountLabel.text = $"{amount:0}";
         }
     }
 }
