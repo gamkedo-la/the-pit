@@ -12,7 +12,7 @@ namespace UI
 
         private Label diagnosticInfoLabel;
 
-        public SettingsController(VisualElement root)
+        public SettingsController(VisualElement root, GameBuildInfo gameBuildInfo)
         {
             backgroundBrightnessSlider = root.Q<Slider>("BackgroundBrightness");
             amountLabel = backgroundBrightnessSlider.Q<Label>();
@@ -22,7 +22,7 @@ namespace UI
 
             diagnosticInfoLabel = root.Q<Label>("DiagnosticInfo");
             diagnosticInfoLabel.text =
-                $"{Application.productName} {Application.version} | {Application.unityVersion} | {SystemInfo.operatingSystemFamily} | {SystemInfo.operatingSystem}";
+                $"{Application.productName} v{Application.version} build {gameBuildInfo.buildNumber} @ {gameBuildInfo.lastBuildTime}";
         }
 
         public void RegisterCallbacks(UnityEvent<float> onBackgroundBrightnessChanged)

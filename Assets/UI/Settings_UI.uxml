@@ -1,12 +1,13 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/UI.uss?fileID=7433441132597879392&amp;guid=0f464af6d72540a46a6e28dc0d84bb7d&amp;type=3#UI" />
     <ui:VisualElement style="flex-grow: 1; justify-content: flex-start; align-items: center; margin-left: 5%; margin-right: 5%; margin-top: 5%; margin-bottom: 5%;">
         <ui:VisualElement style="width: 100%; height: auto; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; background-color: rgba(16, 60, 24, 0.6);">
             <ui:VisualElement style="align-items: flex-start;">
-                <ui:Label text="Background Brightness" display-tooltip-when-elided="true" />
-                <ui:Slider picking-mode="Ignore" label="60" value="60" high-value="100" inverted="false" name="BackgroundBrightness" show-input-field="false" style="flex-grow: 1;" />
+                <ui:Label text="Background Brightness" display-tooltip-when-elided="true" class="settings-label" />
+                <ui:Slider picking-mode="Ignore" label="60" value="60" high-value="100" inverted="false" name="BackgroundBrightness" show-input-field="false" class="settings-label" style="flex-grow: 1;" />
             </ui:VisualElement>
             <ui:VisualElement>
-                <ui:Label text="Label" display-tooltip-when-elided="true" name="DiagnosticInfo" />
+                <ui:Label text="Version info" display-tooltip-when-elided="true" name="DiagnosticInfo" class="settings-label" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

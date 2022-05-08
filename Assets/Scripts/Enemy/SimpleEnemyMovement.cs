@@ -16,7 +16,6 @@ namespace Enemy
 
         private void OnTriggerEnter2D(Collider2D col)
         {
-            Debug.Log("Trigger entered " + col.gameObject.name);
             if (col.gameObject.CompareTag("Player"))
             {
                 Debug.Log("Intersected with player");
