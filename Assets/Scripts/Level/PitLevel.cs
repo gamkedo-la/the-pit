@@ -13,13 +13,9 @@ namespace Level
         [Tooltip("Height of the level, in units")]
         public int height = 40;
 
-        public CameraRig cameraRig;
-
         private Room[] rooms;
         private int leftMost, rightMost;
         private float lastCameraX;
-
-        private float Circumference => circumference;
 
         private void OnDrawGizmos()
         {
@@ -40,7 +36,7 @@ namespace Level
             rightMost = rooms.Length - 1;
         }
 
-        private void Update()
+        public void UpdateRooms(CameraRig cameraRig)
         {
             var cameraPos = cameraRig.transform.position;
             var cameraBounds = cameraRig.Bounds;
