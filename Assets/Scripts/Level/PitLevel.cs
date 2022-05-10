@@ -15,7 +15,6 @@ namespace Level
 
         private Room[] rooms;
         private int leftMost, rightMost;
-        private float lastCameraX;
 
         private void OnDrawGizmos()
         {
@@ -38,36 +37,25 @@ namespace Level
 
         public void UpdateRooms(CameraRig cameraRig)
         {
-            var cameraPos = cameraRig.transform.position;
             var cameraBounds = cameraRig.Bounds;
-            var delta = cameraPos.x - lastCameraX;
-            lastCameraX = cameraPos.x;
-            if (delta < 0)
+
+            if (cameraBounds.min.x < rooms[leftMost].worldMin.x)
             {
-                var room = rooms[rightMost];
-                if (room.worldMin.x > cameraBounds.max.x)
-                {
-                    var p = room.transform.position;
-                    p.x -= circumference;
-                    room.transform.position = p;
-                    room.CalculateExtents();
-                    leftMost = rightMost;
-                    rightMost = (rightMost + rooms.Length - 1) % rooms.Length;
-                }
-            } else if (delta > 0)
-            {
-                var room = rooms[leftMost];
-                if (room.worldMax.x < cameraBounds.min.x)
-                {
-                    var p = room.transform.position;
-                    p.x += circumference;
-                    room.transform.position = p;
-                    room.CalculateExtents();
-                    rightMost = leftMost;
-                    leftMost = (leftMost + 1) % rooms.Length;
-                }
+                // Empty space to the left of the camera. Move rightmost room to the left edge
+                rooms[rightMost].transform.Translate(new(-circumference, 0, 0));
+                rooms[rightMost].CalculateExtents();
+                leftMost = rightMost;
+                rightMost = (leftMost + rooms.Length - 1) % rooms.Length;
             }
-            
+
+            if (cameraBounds.max.x > rooms[rightMost].worldMax.x)
+            {
+                // Empty space to the right of the camera. Move leftmost room to the right edge
+                rooms[leftMost].transform.Translate(new(circumference, 0,0));
+                rooms[leftMost].CalculateExtents();
+                rightMost = leftMost;
+                leftMost = (rightMost + 1) % rooms.Length;
+            }
         }
     }
 }
