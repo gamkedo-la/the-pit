@@ -5,10 +5,22 @@ namespace Level
 {
     public class Room : MonoBehaviour
     {
+        [HideInInspector]
         public Vector3 worldMin;
+        [HideInInspector]
         public Vector3 worldMax;
 
-        [ContextMenu("Calculate Extents")]
+        [Tooltip("Room name. Leave blank to use name of GameObject as room name")]
+        [SerializeField]
+        private string nameOverride;
+
+        public string Name => string.IsNullOrEmpty(nameOverride) ? name : nameOverride;
+
+        public void TranslateX(int step)
+        {
+            transform.Translate(new(step, 0, 0));
+        }
+        
         public void CalculateExtents()
         {
             worldMax = Vector3.negativeInfinity;

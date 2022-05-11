@@ -35,6 +35,22 @@ namespace Level
             rightMost = rooms.Length - 1;
         }
 
+        public bool FindRoom(Vector2 worldPosition, out Room room)
+        {
+            foreach (var r in rooms)
+            {
+                Vector2 min = r.worldMin;
+                if (min.x > worldPosition.x || min.y > worldPosition.y) continue;
+                Vector2 max = r.worldMax;
+                if (max.x < worldPosition.x || max.y < worldPosition.y) continue;
+                room = r;
+                return true;
+            }
+
+            room = default;
+            return false;
+        }
+
         public void UpdateRooms(CameraRig cameraRig)
         {
             var cameraBounds = cameraRig.Bounds;
@@ -42,7 +58,7 @@ namespace Level
             if (cameraBounds.min.x < rooms[leftMost].worldMin.x)
             {
                 // Empty space to the left of the camera. Move rightmost room to the left edge
-                rooms[rightMost].transform.Translate(new(-circumference, 0, 0));
+                rooms[rightMost].TranslateX(-circumference);
                 rooms[rightMost].CalculateExtents();
                 leftMost = rightMost;
                 rightMost = (leftMost + rooms.Length - 1) % rooms.Length;
@@ -51,7 +67,7 @@ namespace Level
             if (cameraBounds.max.x > rooms[rightMost].worldMax.x)
             {
                 // Empty space to the right of the camera. Move leftmost room to the right edge
-                rooms[leftMost].transform.Translate(new(circumference, 0,0));
+                rooms[leftMost].TranslateX(circumference);
                 rooms[leftMost].CalculateExtents();
                 rightMost = leftMost;
                 leftMost = (rightMost + 1) % rooms.Length;
