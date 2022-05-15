@@ -809,7 +809,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ConcreteBlocks_33
+      name: Vertical_Rod
       rect:
         serializedVersion: 2
         x: 32
@@ -830,7 +830,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ConcreteBlocks_34
+      name: Gantry_Left
       rect:
         serializedVersion: 2
         x: 64
@@ -851,7 +851,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ConcreteBlocks_35
+      name: Gantry_Rod
       rect:
         serializedVersion: 2
         x: 96
@@ -872,7 +872,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ConcreteBlocks_36
+      name: Gantry
       rect:
         serializedVersion: 2
         x: 128
@@ -893,7 +893,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ConcreteBlocks_37
+      name: Gantry_Light
       rect:
         serializedVersion: 2
         x: 160
@@ -914,7 +914,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ConcreteBlocks_38
+      name: Gantry_Right
       rect:
         serializedVersion: 2
         x: 192
@@ -1474,17 +1474,16 @@ TextureImporter:
       ConcreteBlocks_5: -1188928223
       ConcreteBlocks_13: 1425418438
       ConcreteBlocks_25: 1701142455
+      Vertical_Rod: 2025890039
       ConcreteBlocks_21: -1048909379
       ConcreteBlocks_57: -464730077
       ConcreteBlocks_45: 1732972118
       ConcreteBlocks_7: 1830539502
-      ConcreteBlocks_33: 2025890039
-      ConcreteBlocks_34: 1554010708
+      Gantry_Right: -1052177751
       ConcreteBlocks_39: -1269977494
       ConcreteBlocks_4: -189245291
-      ConcreteBlocks_35: -77248694
       ConcreteBlocks_58: -1242251835
-      ConcreteBlocks_38: -1052177751
+      Gantry_Left: 1554010708
       ConcreteBlocks_28: 680457532
       ConcreteBlocks_49: 182098816
       ConcreteBlocks_29: 794326500
@@ -1500,17 +1499,16 @@ TextureImporter:
       ConcreteBlocks_47: 121158891
       ConcreteBlocks_24: 101874451
       ConcreteBlocks_30: -1293729125
-      ConcreteBlocks_37: 1583668398
       ConcreteBlocks_16: 830358400
       ConcreteBlocks_53: -162376096
       ConcreteBlocks_32: 807945146
+      Gantry: 713383009
       ConcreteBlocks_27: 718475852
       ConcreteBlocks_15: 1926327337
       ConcreteBlocks_18: -591084428
       ConcreteBlocks_3: 1106045752
-      ConcreteBlocks_36: 713383009
-      ConcreteBlocks_20: 20529873
       ConcreteBlocks_44: 1087265910
+      ConcreteBlocks_20: 20529873
       ConcreteBlocks_10: 584480505
       ConcreteBlocks_60: 1029645929
       ConcreteBlocks_8: -1223133122
@@ -1519,6 +1517,7 @@ TextureImporter:
       ConcreteBlocks_22: 2097595065
       ConcreteBlocks_63: -2088925921
       ConcreteBlocks_62: -998921472
+      Gantry_Light: 1583668398
       ConcreteBlocks_56: 909699825
       ConcreteBlocks_12: -1008981176
       ConcreteBlocks_42: -1590278781
@@ -1534,6 +1533,7 @@ TextureImporter:
       ConcreteBlocks_2: -2084539352
       ConcreteBlocks_61: -611363645
       ConcreteBlocks_6: 239195907
+      Gantry_Rod: -77248694
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
