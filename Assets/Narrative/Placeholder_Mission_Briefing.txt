@@ -1,13 +1,16 @@
-﻿Lorem,
+﻿First Draft
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+1996-08-27
 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum! Lorem ipsum dolor sit 
-amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+The last communication from the Vittsjö Anomaly (1) was received at 17:28 on 26th August. Garnet team leader reported that initial testing of the Iris Door had begun, and boundary activity had increased by 0.2 Bångström.
 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Early this morning communication links with the IAT mobile team at Vittsjö were lost. Video from a drone sent by local police shows, negatively, no outdoor beacon as required by communications failure protocol (suggesting the team were unable to send anyone outside the facility) but, positively, no visible change. 
 
-Ipsum.
+As a precautionary measure, IAT European Regional Command have authorized special agent deployment. 
+
+You will be reading this en route to Uppsala airbase, and from there you will be dropped by helicopter at Vittsjö. Your mission priorities are to investigate if there is a breach, report status of Iris Door, and communicate to IAT Command.
+
+While in-flight before Uppsala the Quartermaster will supply you with a "multi-function device" and other supplies. You are licensed to use destructive force, at your discretion. 
+
+(1) Earlier report IAT-963-SE is enclosed for background.
+(2) IAT Charter clause D-475.
