@@ -7348,7 +7348,6 @@ MonoBehaviour:
   harmonic1: 27
   harmonic2: 93
   harmonic3: 219
-  rangeUtilization: 0.5
 --- !u!1 &2145917415
 GameObject:
   m_ObjectHideFlags: 0
