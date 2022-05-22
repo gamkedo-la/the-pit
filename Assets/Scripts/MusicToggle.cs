@@ -13,14 +13,27 @@ public class MusicToggle : MonoBehaviour
 
     void Update()
     {
-        if (musicToggle.isOn == true)
+        if (musicToggle.isOn == true && Input.GetKeyDown(KeyCode.M))
         {
             MuteMusicAudio();
         }
+
+        else if (musicToggle.isOn == false && Input.GetKeyDown(KeyCode.M))
+        {
+
+            UnMuteMusicAudio();
+
+        }
+
     }
 
     private void MuteMusicAudio()
     {
-        //Music player to be added
+        musicToggle.isOn = false;
+    }
+
+    private void UnMuteMusicAudio()
+    {
+        musicToggle.isOn = true;
     }
 }
