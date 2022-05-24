@@ -22,6 +22,7 @@ public class PlayerStats : MonoBehaviour
     private float damageCooldown = 0.5f;
 
     private float damageTimer = 0;
+    private DamageInflicted damage;
 
     void Start()
     {
@@ -43,8 +44,11 @@ public class PlayerStats : MonoBehaviour
     {
         if (other.CompareTag("Enemy") && damageTimer <= 0)
         {
-            ApplyDamage(enemyDamage);
-            damageTimer = damageCooldown;
+            if (other.TryGetComponent<DamageInflicted>(out damage))
+            {
+                ApplyDamage(damage.Damage);
+                damageTimer = damageCooldown;
+            }
         }
     }
 
@@ -52,8 +56,11 @@ public class PlayerStats : MonoBehaviour
     {
         if (other.CompareTag("Enemy") && damageTimer <= 0)
         {
-            ApplyDamage(enemyDamage);
-            damageTimer = damageCooldown;
+            if (other.TryGetComponent<DamageInflicted>(out damage))
+            {
+                ApplyDamage(damage.Damage);
+                damageTimer = damageCooldown;
+            }
         }
     }
 
