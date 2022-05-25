@@ -14,10 +14,6 @@ public class PlayerStats : MonoBehaviour
     [SerializeField, Tooltip("Player maximum health.")]
     private int playerMaxHealth = 100;
 
-    // do different enemies do differing damage?
-    [SerializeField, Tooltip("How much damage done by enemies. WIP")]
-    private int enemyDamage = 1;
-
     [SerializeField, Tooltip("How long is player invulnerable after taking damage?")]
     private float damageCooldown = 0.5f;
 
