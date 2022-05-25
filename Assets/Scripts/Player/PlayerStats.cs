@@ -60,6 +60,30 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy") && damageTimer <= 0)
+        {
+            if (other.gameObject.TryGetComponent<DamageInflicted>(out damage))
+            {
+                ApplyDamage(damage.Damage);
+                damageTimer = damageCooldown;
+            }
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy") && damageTimer <= 0)
+        {
+            if (other.gameObject.TryGetComponent<DamageInflicted>(out damage))
+            {
+                ApplyDamage(damage.Damage);
+                damageTimer = damageCooldown;
+            }
+        }
+    }
+
     private void ApplyDamage(int damage)
     {
         playerHealth.Subtract(damage);
