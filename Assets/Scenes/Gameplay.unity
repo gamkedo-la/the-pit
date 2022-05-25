@@ -684,6 +684,7 @@ GameObject:
   - component: {fileID: 429052428}
   - component: {fileID: 429052429}
   - component: {fileID: 429052430}
+  - component: {fileID: 429052431}
   m_Layer: 0
   m_Name: HUD
   m_TagString: Untagged
@@ -766,6 +767,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: {fileID: 290415615}
   player: {fileID: 8969106247187604835}
+--- !u!114 &429052431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429052425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94f30c45a93496d8d41570272409e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: {fileID: 11400000, guid: bac6a7e23ca660e4a8be0033c8031cc5, type: 2}
+  heartTemplate: {fileID: 9197481963319205126, guid: 2d1e72fec18707f439fb0d181c238008, type: 3}
 --- !u!4 &519420032 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3796081290176537183, guid: 217897c6310856749b5627c0ce97eb61, type: 3}

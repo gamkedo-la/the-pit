@@ -229,7 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 11400000, guid: bac6a7e23ca660e4a8be0033c8031cc5, type: 2}
   playerMinHealth: 0
-  playerMaxHealth: 100
+  playerMaxHealth: 80
   damageCooldown: 0.5
 --- !u!1 &3958738012903652388
 GameObject:

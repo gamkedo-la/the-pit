@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/UI.uss?fileID=7433441132597879392&amp;guid=0f464af6d72540a46a6e28dc0d84bb7d&amp;type=3#UI" />
+    <ui:VisualElement style="width: 32px; height: 32px;" />
+</ui:UXML>

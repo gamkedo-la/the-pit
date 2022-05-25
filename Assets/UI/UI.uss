@@ -10,3 +10,38 @@ Label {
 .hud-label {
     color: rgb(233, 233, 233);
 }
+
+.unity-progress-bar {
+}
+
+.heart-0 {
+    background-image: url('project://database/Assets/Sprites/Hearts.png?fileID=-998597739&guid=6c41186efeb786a4f92ac76dbacd7f5a&type=3#Hearts_0');
+}
+
+.heart-7 {
+    background-image: url('project://database/Assets/Sprites/Hearts.png?fileID=49949243&guid=6c41186efeb786a4f92ac76dbacd7f5a&type=3#Hearts_1');
+}
+
+.heart-6 {
+    background-image: url('project://database/Assets/Sprites/Hearts.png?fileID=874679318&guid=6c41186efeb786a4f92ac76dbacd7f5a&type=3#Hearts_2');
+}
+
+.heart-5 {
+    background-image: url('project://database/Assets/Sprites/Hearts.png?fileID=1728871054&guid=6c41186efeb786a4f92ac76dbacd7f5a&type=3#Hearts_3');
+}
+
+.heart-4 {
+    background-image: url('project://database/Assets/Sprites/Hearts.png?fileID=-123910573&guid=6c41186efeb786a4f92ac76dbacd7f5a&type=3#Hearts_4');
+}
+
+.heart-3 {
+    background-image: url('project://database/Assets/Sprites/Hearts.png?fileID=-356585094&guid=6c41186efeb786a4f92ac76dbacd7f5a&type=3#Hearts_5');
+}
+
+.heart-2 {
+    background-image: url('project://database/Assets/Sprites/Hearts.png?fileID=-572994991&guid=6c41186efeb786a4f92ac76dbacd7f5a&type=3#Hearts_6');
+}
+
+.heart-1 {
+    background-image: url('project://database/Assets/Sprites/Hearts.png?fileID=-919684307&guid=6c41186efeb786a4f92ac76dbacd7f5a&type=3#Hearts_7');
+}
