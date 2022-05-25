@@ -36,58 +36,10 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Enemy") && damageTimer <= 0)
-        {
-            if (other.TryGetComponent<DamageInflicted>(out damage))
-            {
-                ApplyDamage(damage.Damage);
-                damageTimer = damageCooldown;
-            }
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.CompareTag("Enemy") && damageTimer <= 0)
-        {
-            if (other.TryGetComponent<DamageInflicted>(out damage))
-            {
-                ApplyDamage(damage.Damage);
-                damageTimer = damageCooldown;
-            }
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Enemy") && damageTimer <= 0)
-        {
-            if (other.gameObject.TryGetComponent<DamageInflicted>(out damage))
-            {
-                ApplyDamage(damage.Damage);
-                damageTimer = damageCooldown;
-            }
-        }
-    }
-
-    private void OnCollisionStay2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Enemy") && damageTimer <= 0)
-        {
-            if (other.gameObject.TryGetComponent<DamageInflicted>(out damage))
-            {
-                ApplyDamage(damage.Damage);
-                damageTimer = damageCooldown;
-            }
-        }
-    }
 
     private void ApplyDamage(int damage)
     {
         playerHealth.Subtract(damage);
-        Debug.Log($"Damage taken, current health = {playerHealth.Value}");
 
         if (playerHealth.Value <= 0)
         {
@@ -98,5 +50,24 @@ public class PlayerStats : MonoBehaviour
     private void Heal(int healing)
     {
         playerHealth.Add(healing);
+    }
+
+
+    // ******************************* Collision Handling ********************************
+    private void OnTriggerEnter2D(Collider2D other) { CheckForDamage(other); }
+    private void OnTriggerStay2D(Collider2D other) { CheckForDamage(other); }
+    private void OnCollisionEnter2D(Collision2D other) { CheckForDamage(other.collider); }
+    private void OnCollisionStay2D(Collision2D other) { CheckForDamage(other.collider); }
+
+    private void CheckForDamage(Collider2D collider)
+    {
+        if (collider.CompareTag("Enemy") && damageTimer <= 0)
+        {
+            if (collider.TryGetComponent<DamageInflicted>(out damage))
+            {
+                ApplyDamage(damage.Damage);
+                damageTimer = damageCooldown;
+            }
+        }
     }
 }
