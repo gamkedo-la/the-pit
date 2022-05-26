@@ -1,39 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
 
 public class MusicToggle : MonoBehaviour
 {
-    Toggle musicToggle;
-    void Start()
+    [SerializeField] private AudioSource musicSource;
+
+    private bool PlayingMusic
     {
-        musicToggle = GetComponent<Toggle>();
+        get => !musicSource.mute;
+        set => musicSource.mute = !value;
     }
 
     void Update()
     {
-        if (musicToggle.isOn == true && Input.GetKeyDown(KeyCode.M))
+        if (PlayingMusic && Input.GetKeyDown(KeyCode.M))
         {
             MuteMusicAudio();
         }
 
-        else if (musicToggle.isOn == false && Input.GetKeyDown(KeyCode.M))
+        else if (!PlayingMusic && Input.GetKeyDown(KeyCode.M))
         {
-
             UnMuteMusicAudio();
-
         }
-
     }
 
     private void MuteMusicAudio()
     {
-        musicToggle.isOn = false;
+        PlayingMusic = false;
     }
 
     private void UnMuteMusicAudio()
     {
-        musicToggle.isOn = true;
+        PlayingMusic = true;
     }
 }
