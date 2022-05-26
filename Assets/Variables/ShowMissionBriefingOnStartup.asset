@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b26f8d0ff00ed119bc08968ea23ab0, type: 3}
   m_Name: ShowMissionBriefingOnStartup
   m_EditorClassIdentifier: 
-  value: 1
+  value: 0
+  storeInPlayerPrefs: 1
