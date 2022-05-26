@@ -4,16 +4,23 @@ namespace UI
 {
     public class MissionBriefingController
     {
-        private readonly Label textLabel;
+        private readonly Label instructionsLabel;
+        private readonly Label briefingLabel;
 
         public MissionBriefingController(VisualElement root)
         {
-            textLabel = root.Q<Label>("Briefing");
+            instructionsLabel = root.Q<Label>("Instructions");
+            briefingLabel = root.Q<Label>("Briefing");
         }
 
         public void SetBriefingText(string text)
         {
-            textLabel.text = text;
+            briefingLabel.text = text;
+        }
+
+        public void SetInstructionsText(string text)
+        {
+            instructionsLabel.text = text;
         }
     }
 }

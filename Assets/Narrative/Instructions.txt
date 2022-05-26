@@ -1,0 +1,18 @@
+﻿     -=< Controls >=-
+
+WASD     \
+Arrows    > Move
+Space     > Jump
+Mouse     > Aim
+Mouse Btn > Fire
+
+      -=< Keys >=-
+
+TAB       > Briefing 
+            toggle
+F2        > Settings
+M         > Music toggle
+
+      _____________
+     /  Press TAB  \
+  -=< to close this >=-
