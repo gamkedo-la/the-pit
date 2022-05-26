@@ -738,8 +738,10 @@ MonoBehaviour:
   toggles:
   - key: 283
     target: {fileID: 830631569}
+    defaultState: {fileID: 0}
   - key: 9
     target: {fileID: 1870017256}
+    defaultState: {fileID: 11400000, guid: 727f8c56c0a3247879903004f72fc6cb, type: 2}
 --- !u!114 &429052429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6919,7 +6921,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1870017257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6965,6 +6967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructions: {fileID: 4900000, guid: f1eb09534ab548e597b8efca65d58071, type: 3}
   briefing: {fileID: 4900000, guid: 36789ccded1d4c4eb2a31ec7201b76e7, type: 3}
+  showOnStartup: {fileID: 11400000, guid: 727f8c56c0a3247879903004f72fc6cb, type: 2}
 --- !u!1001 &1884646448
 PrefabInstance:
   m_ObjectHideFlags: 0
