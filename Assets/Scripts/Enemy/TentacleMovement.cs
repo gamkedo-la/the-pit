@@ -13,8 +13,15 @@ namespace Enemy
         public float harmonic2 = 93f;
         public float harmonic3 = 219f;
 
+        public float randomMoveSpeed = 1f;
+
         private float maxRange;
         private Vector2 min, max;
+
+        private Vector3 origin;
+        private Vector2 direction;
+        public float distance;
+        private float speed;
         
         private void Start()
         {
@@ -23,7 +30,24 @@ namespace Enemy
             max = border.position + border.size / 2f;
         }
 
-        private void Update()
+        public void MoveTo(Vector2 position, float desiredSpeed)
+        {
+            origin = ikTarget.transform.position;
+            direction = position - (Vector2)origin;
+            distance = direction.magnitude;
+            if (distance > 1e-3f)
+            {
+                direction /= distance;
+            }
+            else
+            {
+                distance = 0f;
+            }
+
+            speed = desiredSpeed;
+        }
+
+        public void MoveToRandomPoint()
         {
             var range = Mathf.Lerp(maxRange * 0.5f, maxRange * 0.7f,
                 (Mathf.Sin(harmonic3 * Time.time * Mathf.Deg2Rad)+1)/2f);
@@ -36,7 +60,21 @@ namespace Enemy
             var pos = basePoint.transform.position;
             pos.x += x;
             pos.y += y;
-            ikTarget.transform.position = pos;
+            MoveTo(pos, randomMoveSpeed);
+        }
+
+        private void Update()
+        {
+            if (distance > 1e-3f)
+            {
+                var distanceToMove = Mathf.Min(distance, speed * Time.deltaTime);
+                ikTarget.transform.position += (Vector3)(direction * distanceToMove);
+                distance -= distanceToMove;
+            }
+            else
+            {
+                distance = 0f;
+            }
         }
 
         private void OnDrawGizmosSelected()

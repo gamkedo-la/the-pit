@@ -7135,6 +7135,7 @@ GameObject:
   - component: {fileID: 2139894686}
   - component: {fileID: 2139894689}
   - component: {fileID: 2139894690}
+  - component: {fileID: 2139894691}
   m_Layer: 0
   m_Name: Tentacle
   m_TagString: Untagged
@@ -7293,6 +7294,29 @@ MonoBehaviour:
   harmonic1: 27
   harmonic2: 93
   harmonic3: 219
+  randomMoveSpeed: 10
+  distance: 0
+--- !u!114 &2139894691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139894685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3249e797d70e4eadb8f298c48fe1c62b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggressionRadius: 13
+  disengageRadius: 20
+  targetUpdateTime: 1
+  attackPrepareSpeed: 15
+  attackPrepareDistance: 7
+  attackChargeTime: 1.2
+  attackExecutionSpeed: 50
+  attackCooldownTime: 0.5
+  attackPoint: {fileID: 880219645}
 --- !u!1 &2145917415
 GameObject:
   m_ObjectHideFlags: 0
