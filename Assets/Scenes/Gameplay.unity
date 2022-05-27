@@ -6621,6 +6621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dbe9170e83c30a4e921cd40cfff63b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playBackgroundMusic: {fileID: 11400000, guid: f82d525733672440b989cd0f69db163b, type: 2}
   musicSource: {fileID: 1668215278}
 --- !u!224 &1668215277
 RectTransform:

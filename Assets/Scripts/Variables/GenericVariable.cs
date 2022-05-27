@@ -19,8 +19,10 @@ namespace Variables
                 {
                     StoreInPlayerPrefs(name, value);
                 }
-
-                this.value = value;
+                else
+                {
+                    this.value = value;
+                }
             }
         }
 
