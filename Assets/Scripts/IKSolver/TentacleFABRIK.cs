@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D.IK;
 
+[Solver2DMenuAttribute("Tentacle")]
 public class TentacleFABRIK : Solver2D
 {
     public override IKChain2D GetChain(int index)
