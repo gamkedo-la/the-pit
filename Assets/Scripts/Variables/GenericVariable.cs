@@ -5,6 +5,7 @@ namespace Variables
 {
     public class GenericVariable<T> : ScriptableObject
     {
+        [Tooltip("Current value / default value when storing in PlayerPrefs")]
         [SerializeField] private T value;
         [Header("Options")] 
         [SerializeField] private bool storeInPlayerPrefs;
@@ -28,14 +29,14 @@ namespace Variables
             hideFlags = HideFlags.DontUnloadUnusedAsset;
         }
 
-        public virtual bool SupportsPlayerPrefs => false;
+        protected virtual bool SupportsPlayerPrefs => false;
 
-        public virtual T GetFromPlayerPrefs(string key, T defaultValue)
+        protected virtual T GetFromPlayerPrefs(string key, T defaultValue)
         {
             throw new NotSupportedException();
         }
 
-        public virtual void StoreInPlayerPrefs(string key, T actualValue)
+        protected virtual void StoreInPlayerPrefs(string key, T actualValue)
         {
             throw new NotSupportedException();
         }
