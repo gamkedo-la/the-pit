@@ -87,7 +87,7 @@ namespace Player
 
         private void CheckWhatWasHit(GameObject hitObject)
         {
-            var health = hitObject.GetComponent<Health>();
+            var health = hitObject.GetComponentInParent<Health>();
             if (health == null) return;
             health.Damage(damage);
         }
