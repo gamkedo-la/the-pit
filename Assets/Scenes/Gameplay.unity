@@ -7471,6 +7471,7 @@ MonoBehaviour:
   attackPunchThroughDistance: 4
   attackCooldownTime: 0.5
   attackPoint: {fileID: 880219645}
+  attackExecutor: {fileID: 748214199}
 --- !u!50 &2139894692
 Rigidbody2D:
   serializedVersion: 4

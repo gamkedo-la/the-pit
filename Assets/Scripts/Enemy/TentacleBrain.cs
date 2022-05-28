@@ -38,17 +38,26 @@ namespace Enemy
         [SerializeField]
         private Transform attackPoint;
 
+        [SerializeField] 
+        private DamageInflicted attackExecutor;
+
         private Transform target;
         private TentacleMovement movement;
 
         private IEnumerator Start()
         {
             movement = GetComponent<TentacleMovement>();
+            SetAttackActive(false);
             while (true)
             {
                 yield return WaitForTarget();
                 yield return AttackTarget();
             }
+        }
+
+        private void SetAttackActive(bool active)
+        {
+            attackExecutor.gameObject.SetActive(active);
         }
 
         private IEnumerator WaitForTarget()
@@ -78,6 +87,8 @@ namespace Enemy
 
                 yield return new WaitForSeconds(attackChargeTime);
                 
+                SetAttackActive(true);
+                
                 var direction = target.position - attackPoint.position;
                 var attackEndPosition = attackPoint.position + direction + direction.normalized * attackPunchThroughDistance;
                 movement.MoveTo(attackEndPosition, attackExecutionSpeed);
@@ -85,6 +96,8 @@ namespace Enemy
                 {
                     yield return null;
                 }
+                
+                SetAttackActive(false);
 
                 yield return new WaitForSeconds(attackCooldownTime);
             }
