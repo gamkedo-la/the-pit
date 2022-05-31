@@ -90,7 +90,7 @@ public class TentacleFABRIK : Solver2D
 
         Vector3 effectorPosition = effectorPositions[0];
         effectorPosition = GetPointOnSolverPlane(effectorPosition);
-        if (FABRIK2D.Solve(effectorPosition, iterations, tolerance, m_Lengths, ref m_Positions))
+        if (FABRIK2DTentacle.Solve(effectorPosition, iterations, tolerance, m_Lengths, ref m_Positions))
         {
             // Convert all plane positions to world positions
             for (int i = 0; i < m_Positions.Length; ++i)

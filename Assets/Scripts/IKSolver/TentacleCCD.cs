@@ -94,7 +94,7 @@ public class TentacleCCD : Solver2D
         Vector2 effectorLocalPosition2D = m_Chain.transforms[0].InverseTransformPoint(effectorPosition);
         effectorPosition = m_Chain.transforms[0].TransformPoint(effectorLocalPosition2D);
 
-        if (CCD2D.Solve(effectorPosition, GetPlaneRootTransform().forward, iterations, tolerance, Mathf.Lerp(kMinVelocity, kMaxVelocity, m_Velocity), ref m_Positions))
+        if (CCD2DTentacle.Solve(effectorPosition, GetPlaneRootTransform().forward, iterations, tolerance, Mathf.Lerp(kMinVelocity, kMaxVelocity, m_Velocity), ref m_Positions))
         {
             for (int i = 0; i < m_Chain.transformCount - 1; ++i)
             {
