@@ -790,8 +790,8 @@ MonoBehaviour:
   - {fileID: 996959608503282682}
   - {fileID: 996959608917354607}
   m_Bounds:
-    m_Center: {x: -9.91588, y: -0.063916445, z: 0}
-    m_Extent: {x: 9.963728, y: 1.170532, z: 0}
+    m_Center: {x: -9.91588, y: -0.06391728, z: 0}
+    m_Extent: {x: 9.963728, y: 1.170533, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 1
@@ -919,6 +919,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  impactPrefab: {fileID: 276390236632735978, guid: a839734f3cd45f04e9c1e8648e15df4e, type: 3}
+  impactDuration: 1
 --- !u!1 &996959608917354592
 GameObject:
   m_ObjectHideFlags: 0

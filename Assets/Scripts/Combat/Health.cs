@@ -10,6 +10,9 @@ namespace Combat
         public UnityEvent<int, int, int> onHealthDecreased;
         public UnityEvent onHealthDepleted;
 
+        public GameObject impactPrefab;
+        public float impactDuration;
+
         private int actualHealth;
 
         private void Start()
@@ -17,9 +20,18 @@ namespace Combat
             actualHealth = initialHealth;
         }
 
-        public void Damage(int damage)
+        public void Damage(int damage, Vector2 hitPoint)
         {
             if (damage <= 0) return;
+            if (impactPrefab != null)
+            {
+                var impact = Instantiate(impactPrefab);
+                Vector3 impactPoint = hitPoint;
+                impactPoint.z = gameObject.transform.position.z;
+                impact.transform.position = impactPoint;
+                Destroy(impact, impactDuration);
+            }
+
             onHealthDecreased.Invoke(damage, actualHealth, initialHealth);
             actualHealth -= damage;
             if (actualHealth <= 0)

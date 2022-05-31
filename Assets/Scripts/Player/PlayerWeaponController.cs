@@ -75,8 +75,11 @@ namespace Player
             var hit = Physics2D.Raycast(muzzlePos, shotDirection);
             if (hit.collider != null)
             {
-                CheckWhatWasHit(hit.collider.gameObject);
                 impactPos = hit.point;
+                if (CheckWhatWasHit(hit.collider.gameObject, hit.point))
+                {
+                    return;
+                }
             }
             
             // Wasteful, use object pool
@@ -85,11 +88,12 @@ namespace Player
             Destroy(projectileImpact, projectileImpactDuration);
         }
 
-        private void CheckWhatWasHit(GameObject hitObject)
+        private bool CheckWhatWasHit(GameObject hitObject, Vector2 hitPoint)
         {
             var health = hitObject.GetComponentInParent<Health>();
-            if (health == null) return;
-            health.Damage(damage);
+            if (health == null) return false;
+            health.Damage(damage, hitPoint);
+            return true;
         }
 
         private void OnDrawGizmos()
