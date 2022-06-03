@@ -505,6 +505,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: player_walk_aim_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c73606626d933f4dab19ccd6fb4639f
+      internalID: -1662550272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_walk_aim_19
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df40b98d93bf30547a2f4d7448f14c56
+      internalID: 1693169823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_walk_aim_20
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3dab58cf7ef4dd428d2ee3ff255a533
+      internalID: -1210639244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_walk_aim_21
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c841da473b8f2e04aa7e3cc03a8b0c36
+      internalID: -1382098410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_walk_aim_22
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 215a0c84d3742f04291ca2a7d1d11e72
+      internalID: -1649723848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_walk_aim_23
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6edc1a5c7d61104f817df6f345ae933
+      internalID: 865143461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -519,6 +645,7 @@ TextureImporter:
       player_walk_aim_15: -339356478
       player_walk_aim_17: 412408658
       player_walk_aim_3: 802246523
+      player_walk_aim_21: -1382098410
       player_walk_aim_11: 1681737102
       player_walk_aim_0: -103751728
       player_walk_aim_9: 1184458782
@@ -526,6 +653,7 @@ TextureImporter:
       player_walk_aim_7: 1595181541
       player_walk_aim_13: 316212494
       player_walk_aim_16: -450839452
+      player_walk_aim_19: 1693169823
       player_walk_aim_8: -440014987
       player_walk_aim_10: -1590819415
       player_walk_aim_12: -257152642
@@ -534,6 +662,10 @@ TextureImporter:
       player_walk_aim_1: -380731506
       player_walk_aim_4: -311073712
       player_walk_aim_6: 248780952
+      player_walk_aim_23: 865143461
+      player_walk_aim_18: -1662550272
+      player_walk_aim_20: -1210639244
+      player_walk_aim_22: -1649723848
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -40,7 +40,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: Horizontal
+    m_DirectBlendParameter: Aim Angle
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: a802e1c94b6a5f14493413fe07f32f49, type: 2}
@@ -48,7 +48,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: Horizontal
+    m_DirectBlendParameter: Aim Angle
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: afd0f831d7d671c46bd3fc006169ca90, type: 2}
@@ -56,7 +56,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: Horizontal
+    m_DirectBlendParameter: Aim Angle
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 05e1cf50fe1bf7645a52132961ef7621, type: 2}
@@ -64,7 +64,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: Horizontal
+    m_DirectBlendParameter: Aim Angle
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 737ed65b25e13764d8094afd6b48ed9e, type: 2}
@@ -72,7 +72,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: Horizontal
+    m_DirectBlendParameter: Aim Angle
     m_Mirror: 0
   m_BlendParameter: Aim Angle
   m_BlendParameterY: Horizontal
