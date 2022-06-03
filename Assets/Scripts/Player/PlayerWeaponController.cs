@@ -23,6 +23,9 @@ namespace Player
         public AudioSource audioPlayer;
         public AudioClip shootSound;
 
+        [Header("Links")] 
+        public Animator bodyAnimator;
+        public Transform aimRotationPoint;
         public Transform muzzle;
         public Animator muzzleFlash;
         public GameObject projectileImpactPrefab;
@@ -38,6 +41,11 @@ namespace Player
             {
                 activeCooldown -= Time.deltaTime;
             }
+            var aimPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 shotVector = aimPoint - aimRotationPoint.transform.position;
+            var shotAngle = Vector2.SignedAngle(Vector2.right * transform.localScale.x, shotVector)*Mathf.Sign(transform.localScale.x);
+            var shotAngle01 = Mathf.Clamp01(Mathf.InverseLerp(maxAim, minAim, shotAngle));
+            bodyAnimator.SetFloat("Aim Angle", shotAngle01);
             if (Input.GetMouseButtonDown(0) || (automaticFire && Input.GetMouseButton(0)))
             {
                 FireIfPossible();
