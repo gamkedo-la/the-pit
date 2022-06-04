@@ -89,7 +89,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: player_walk
-  m_Speed: 0.02
+  m_Speed: 0.0375
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 5801367536277122984}
@@ -287,7 +287,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: player_walk_backwards
-  m_Speed: 0.02
+  m_Speed: 0.0375
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 3932063014725824227}
