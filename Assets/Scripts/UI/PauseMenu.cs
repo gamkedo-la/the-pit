@@ -17,7 +17,7 @@ public class PauseMenu : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             btn1.SetActive(true);
             btn2.SetActive(true);
