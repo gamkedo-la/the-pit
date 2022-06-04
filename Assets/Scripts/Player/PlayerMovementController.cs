@@ -5,6 +5,9 @@ namespace Player
     public class PlayerMovementController : MonoBehaviour
     {
         public float horizontalSpeed;
+        [Tooltip("Multiply with horizontal speed when backing up")]
+        [Range(0, 1)]
+        public float backingUpSpeedFactor = 0.5f;
         [Range(0, 2)]
         public float stepFrequency = 1;
 
@@ -33,8 +36,15 @@ namespace Player
         private void Update()
         {
             horizontal = Input.GetAxis("Horizontal") * horizontalSpeed;
+            var movement = horizontal * Mathf.Sign(transform.localScale.x);
+            if (movement < 0)
+            {
+                movement *= backingUpSpeedFactor;
+                horizontal *= backingUpSpeedFactor;
+            }
+            
+            animator.SetFloat(Horizontal, movement);
             var absHorizontal = Mathf.Abs(horizontal);
-            animator.SetFloat(Horizontal, absHorizontal);
             
             if (absHorizontal > 0)
             {
@@ -71,11 +81,6 @@ namespace Player
             var v = rb2d.velocity;
             v.x = horizontal;
             rb2d.velocity = v;
-
-            if (horizontal > 0)
-                transform.localScale = Vector3.one;
-            else 
-                transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 }

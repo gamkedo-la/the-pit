@@ -19,6 +19,8 @@ namespace Player
         [Range(-90, 90)]
         public int minAim = -90, maxAim = 90;
 
+        [Range(0, 1)] public float flipDeadZone = 0.1f;
+
         [Header("Sound")] 
         public AudioSource audioPlayer;
         public AudioClip shootSound;
@@ -42,8 +44,20 @@ namespace Player
                 activeCooldown -= Time.deltaTime;
             }
             var aimPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            var direction = transform.localScale.x;
+            if (direction > 0 && aimPoint.x < transform.position.x - flipDeadZone)
+            {
+                direction = -1;
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else if (direction < 0 && aimPoint.x > transform.position.x + flipDeadZone)
+            {
+                direction = 1;
+                transform.localScale = Vector3.one;
+            }
+            
             Vector2 shotVector = aimPoint - aimRotationPoint.transform.position;
-            var shotAngle = Vector2.SignedAngle(Vector2.right * transform.localScale.x, shotVector)*Mathf.Sign(transform.localScale.x);
+            var shotAngle = Vector2.SignedAngle(Vector2.right * direction, shotVector)*Mathf.Sign(direction);
             var shotAngle01 = Mathf.Clamp01(Mathf.InverseLerp(maxAim, minAim, shotAngle));
             bodyAnimator.SetFloat("Aim Angle", shotAngle01);
             if (Input.GetMouseButtonDown(0) || (automaticFire && Input.GetMouseButton(0)))
