@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalSpeed: 5
+  backingUpSpeedFactor: 0.667
   stepFrequency: 0.6
   jumpForce: 300
   audioSource: {fileID: 5489826309246886693}
@@ -228,6 +229,7 @@ MonoBehaviour:
   automaticFire: 1
   minAim: -60
   maxAim: 60
+  flipDeadZone: 0.1
   audioPlayer: {fileID: 5489826309246886693}
   shootSound: {fileID: 8300000, guid: 645872c8ead98c24bbf56c050f4684a4, type: 3}
   bodyAnimator: {fileID: 6190731026613729491}
