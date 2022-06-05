@@ -9,7 +9,6 @@ namespace Player
         
         public void JumpTakeoff()
         {
-            Debug.Log("Jump takeoff!");
             onJumpTakeoff.Invoke();
         }
     }
