@@ -21,8 +21,9 @@ namespace Player
         
         public Animator animator;
 
+        public bool JumpTakeoff { get; set; }
+        
         private float stepTime = 0;
-        private bool wantToJump;
         private float horizontal;
         private Rigidbody2D rb2d;
 
@@ -59,14 +60,18 @@ namespace Player
             {
                 stepTime = 0;
             }
-            wantToJump |= Input.GetButtonDown("Jump");
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                animator.SetTrigger("Jump");
+            }
         }
 
         private void FixedUpdate()
         {
-            if (wantToJump)
+            if (JumpTakeoff)
             {
-                wantToJump = false;
+                JumpTakeoff = false;
                 rb2d.AddForce(Vector2.up * jumpForce);
                 audioSource.PlayOneShot(jump);
             }
