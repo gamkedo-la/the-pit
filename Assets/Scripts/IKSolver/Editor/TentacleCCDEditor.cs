@@ -18,6 +18,8 @@ public class CCDSolver2DEditor : Solver2DEditor
         public static readonly GUIContent iterationsLabel = new GUIContent("Iterations", "Number of iterations the IK solver is run per frame");
         public static readonly GUIContent toleranceLabel = new GUIContent("Tolerance", "How close the target is to the goal to be considered as successful");
         public static readonly GUIContent velocityLabel = new GUIContent("Velocity", "How fast the chain elements rotate to the effector per iteration");
+        public static readonly GUIContent limitRotationLabel = new GUIContent("Limit Rotation", "Apply rotation limit?");
+        public static readonly GUIContent rotationLimitLabel = new GUIContent("Rotation Limit", "Quaternion.z limit... maybe in radians");
     }
 
     private SerializedProperty m_TargetProperty;
@@ -27,6 +29,8 @@ public class CCDSolver2DEditor : Solver2DEditor
     private SerializedProperty m_IterationsProperty;
     private SerializedProperty m_ToleranceProperty;
     private SerializedProperty m_VelocityProperty;
+    private SerializedProperty limitRotationProperty;
+    private SerializedProperty rotationLimitProperty;
     private TentacleCCD m_Solver;
 
     private void OnEnable()
@@ -39,6 +43,8 @@ public class CCDSolver2DEditor : Solver2DEditor
         m_IterationsProperty = serializedObject.FindProperty("m_Iterations");
         m_ToleranceProperty = serializedObject.FindProperty("m_Tolerance");
         m_VelocityProperty = serializedObject.FindProperty("m_Velocity");
+        limitRotationProperty = serializedObject.FindProperty("limitRotation");
+        rotationLimitProperty = serializedObject.FindProperty("rotationLimit");
     }
 
     /// <summary>
@@ -55,6 +61,8 @@ public class CCDSolver2DEditor : Solver2DEditor
         EditorGUILayout.PropertyField(m_IterationsProperty, Contents.iterationsLabel);
         EditorGUILayout.PropertyField(m_ToleranceProperty, Contents.toleranceLabel);
         EditorGUILayout.PropertyField(m_VelocityProperty, Contents.velocityLabel);
+        EditorGUILayout.PropertyField(limitRotationProperty, Contents.limitRotationLabel);
+        EditorGUILayout.PropertyField(rotationLimitProperty, Contents.rotationLimitLabel);
 
         DrawCommonSolverInspector();
         serializedObject.ApplyModifiedProperties();

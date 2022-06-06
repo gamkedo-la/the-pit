@@ -15,7 +15,7 @@ public static class CCD2DTentacle
     /// <param name="velocity">Velocity towards target position.</param>
     /// <param name="positions">Chain positions.</param>
     /// <returns>Returns true if solver successfully completes within iteration limit. False otherwise.</returns>
-    public static bool Solve(Vector3 targetPosition, Vector3 forward, int solverLimit, float tolerance, float velocity, ref Vector3[] positions)
+    public static bool Solve(Vector3 targetPosition, Vector3 forward, int solverLimit, float tolerance, float velocity, ref Vector3[] positions, float rotationLimit)
     {
         int last = positions.Length - 1;
         int iterations = 0;
@@ -23,7 +23,7 @@ public static class CCD2DTentacle
         float sqrDistanceToTarget = (targetPosition - positions[last]).sqrMagnitude;
         while (sqrDistanceToTarget > sqrTolerance)
         {
-            DoIteration(targetPosition, forward, last, velocity, ref positions);
+            DoIteration(targetPosition, forward, last, velocity, ref positions, rotationLimit);
             sqrDistanceToTarget = (targetPosition - positions[last]).sqrMagnitude;
             if (++iterations >= solverLimit)
                 break;
@@ -31,7 +31,7 @@ public static class CCD2DTentacle
         return iterations != 0;
     }
 
-    static void DoIteration(Vector3 targetPosition, Vector3 forward, int last, float velocity, ref Vector3[] positions)
+    static void DoIteration(Vector3 targetPosition, Vector3 forward, int last, float velocity, ref Vector3[] positions, float rotationLimit)
     {
         for (int i = last - 1; i >= 0; --i)
         {
@@ -42,6 +42,18 @@ public static class CCD2DTentacle
             angle = Mathf.Lerp(0f, angle, velocity);
 
             Quaternion deltaRotation = Quaternion.AngleAxis(angle, forward);
+
+        // *** rotation constraint ***
+            // Debug.Log($"deltaRotation.x: {deltaRotation.eulerAngles.x}, deltaRotation.y: {deltaRotation.eulerAngles.y}, deltaRotation.z: {deltaRotation.eulerAngles.z}");
+
+            if (rotationLimit > 0 && deltaRotation.z > rotationLimit)
+            {
+                // compare with previous bone
+                // if angle out of range (+/- rotationLimit)
+                deltaRotation.z = rotationLimit;
+                // Debug.Log($"CHANGED: deltaRotation.x: {deltaRotation.eulerAngles.x}, deltaRotation.y: {deltaRotation.eulerAngles.y}, deltaRotation.z: {deltaRotation.eulerAngles.z}");
+            }
+
             for (int j = last; j > i; --j)
                 positions[j] = RotatePositionFrom(positions[j], positions[i], deltaRotation);
         }

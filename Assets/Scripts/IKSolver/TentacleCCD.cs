@@ -22,6 +22,12 @@ public class TentacleCCD : Solver2D
     [SerializeField][Range(0f, 1f)]
     private float m_Velocity = 0.5f;
 
+    [SerializeField]
+    private bool limitRotation = false;
+
+    [SerializeField, Range(0.0001f, 1f)]
+    private float rotationLimit = 0.002f;
+
     private Vector3[] m_Positions;
 
     /// <summary>
@@ -94,7 +100,7 @@ public class TentacleCCD : Solver2D
         Vector2 effectorLocalPosition2D = m_Chain.transforms[0].InverseTransformPoint(effectorPosition);
         effectorPosition = m_Chain.transforms[0].TransformPoint(effectorLocalPosition2D);
 
-        if (CCD2DTentacle.Solve(effectorPosition, GetPlaneRootTransform().forward, iterations, tolerance, Mathf.Lerp(kMinVelocity, kMaxVelocity, m_Velocity), ref m_Positions))
+        if (CCD2DTentacle.Solve(effectorPosition, GetPlaneRootTransform().forward, iterations, tolerance, Mathf.Lerp(kMinVelocity, kMaxVelocity, m_Velocity), ref m_Positions, limitRotation ? rotationLimit : -1f))
         {
             for (int i = 0; i < m_Chain.transformCount - 1; ++i)
             {
