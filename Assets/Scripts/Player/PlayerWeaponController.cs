@@ -17,7 +17,9 @@ namespace Player
     
         [Header("Aim arc in degrees")]
         [Range(-90, 90)]
-        public int minAim = -90, maxAim = 90;
+        public int minAim = -90;
+        [Range(-90, 90)]
+        public int maxAim = 90;
 
         [Range(0, 1)] public float flipDeadZone = 0.1f;
 
@@ -36,6 +38,12 @@ namespace Player
 
         private float activeCooldown = 0;
         private static readonly int Shoot = Animator.StringToHash("Shoot");
+        private Camera mainCamera;
+
+        private void Start()
+        {
+            mainCamera = Camera.main;
+        }
 
         private void Update()
         {
@@ -43,40 +51,38 @@ namespace Player
             {
                 activeCooldown -= Time.deltaTime;
             }
-            var aimPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            var aimPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             var direction = transform.localScale.x;
-            if (direction > 0 && aimPoint.x < transform.position.x - flipDeadZone)
+            if (direction > 0 && aimPosition.x < transform.position.x - flipDeadZone)
             {
                 direction = -1;
                 transform.localScale = new Vector3(-1, 1, 1);
             }
-            else if (direction < 0 && aimPoint.x > transform.position.x + flipDeadZone)
+            else if (direction < 0 && aimPosition.x > transform.position.x + flipDeadZone)
             {
                 direction = 1;
                 transform.localScale = Vector3.one;
             }
-            
-            Vector2 shotVector = aimPoint - aimRotationPoint.transform.position;
+
+            var aimRotationPosition = aimRotationPoint.transform.position;
+            Vector2 shotVector = aimPosition - aimRotationPosition;
             var shotAngle = Vector2.SignedAngle(Vector2.right * direction, shotVector)*Mathf.Sign(direction);
             var shotAngle01 = Mathf.Clamp01(Mathf.InverseLerp(maxAim, minAim, shotAngle));
             bodyAnimator.SetFloat("Aim Angle", shotAngle01);
             if (Input.GetMouseButtonDown(0) || (automaticFire && Input.GetMouseButton(0)))
             {
-                FireIfPossible();
+                FireIfPossible(aimPosition, shotAngle);
             }
         }
 
-        private void FireIfPossible()
+        private void FireIfPossible(Vector2 aimPoint, float angle)
         {
             if (activeCooldown > 0) return;
-            Vector2 aimPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (angle < minAim || angle > maxAim) return;
+            
             Vector2 muzzlePos = muzzle.transform.position;
 
             var shotVector = aimPoint - muzzlePos;
-        
-            var angle = Vector2.SignedAngle(Vector2.right * transform.localScale.x, shotVector);
-            if (angle < minAim || angle > maxAim) return;
-
             var shotDirection = shotVector.normalized;
         
             // Adjust shot point to max range
@@ -118,10 +124,10 @@ namespace Player
             return true;
         }
 
-        private void OnDrawGizmos()
+        private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.yellow;
-            var p0 = muzzle.transform.position;
+            var p0 = aimRotationPoint.transform.position;
             var arcLen = maxRange;
             var p1 = p0 + arcLen * new Vector3(Mathf.Cos(minAim * Mathf.Deg2Rad), Mathf.Sin(minAim * Mathf.Deg2Rad), 0);
             var p2 = p0 + arcLen * new Vector3(Mathf.Cos(maxAim * Mathf.Deg2Rad), Mathf.Sin(maxAim * Mathf.Deg2Rad), 0);

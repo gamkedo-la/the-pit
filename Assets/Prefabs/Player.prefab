@@ -228,7 +228,7 @@ MonoBehaviour:
   cooldownBetweenShots: 0.2
   automaticFire: 1
   minAim: -60
-  maxAim: 60
+  maxAim: 80
   flipDeadZone: 0.1
   audioPlayer: {fileID: 5489826309246886693}
   shootSound: {fileID: 8300000, guid: 645872c8ead98c24bbf56c050f4684a4, type: 3}
