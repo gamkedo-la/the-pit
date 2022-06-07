@@ -12,6 +12,7 @@ TAB       > Briefing
             toggle
 F2        > Settings
 M         > Music toggle
+ESC       > Pause
 
       _____________
      /  Press TAB  \
