@@ -1,18 +1,22 @@
 ﻿     -=< Controls >=-
 
-WASD     \
-Arrows    > Move
-Space     > Jump
-Mouse     > Aim
-Mouse Btn > Fire
+A, D       \
+Left, Right > Move
+
+W, S,      \  Control
+Up, Down    > Elevator
+
+Space       > Jump
+Mouse       > Aim
+Mouse Click > Fire
 
       -=< Keys >=-
 
-TAB       > Briefing 
-            toggle
-F2        > Settings
-M         > Music toggle
-ESC       > Pause
+TAB         > Briefing 
+              toggle
+F2          > Settings
+M           > Music toggle
+ESC         > Pause
 
       _____________
      /  Press TAB  \
