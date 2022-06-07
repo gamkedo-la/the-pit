@@ -5,14 +5,19 @@ namespace Variables
 {
     public class GenericVariable<T> : ScriptableObject
     {
-        [Tooltip("Current value / default value when storing in PlayerPrefs")]
+        [Tooltip("Current value")]
         [SerializeField] private T value;
+
+        [Tooltip("Default value")]
+        [SerializeField] private T defaultValue;
+        
         [Header("Options")] 
         [SerializeField] private bool storeInPlayerPrefs;
+        [SerializeField] private bool resetToDefault;
 
         public T Value
         {
-            get => storeInPlayerPrefs && SupportsPlayerPrefs ? GetFromPlayerPrefs(name, value) : value;
+            get => storeInPlayerPrefs && SupportsPlayerPrefs ? GetFromPlayerPrefs(name, defaultValue) : value;
             set
             {
                 if (storeInPlayerPrefs && SupportsPlayerPrefs)
@@ -29,6 +34,15 @@ namespace Variables
         private void OnEnable()
         {
             hideFlags = HideFlags.DontUnloadUnusedAsset;
+            if (resetToDefault)
+            {
+                ResetToDefault();
+            }
+        }
+
+        protected virtual void ResetToDefault()
+        {
+            value = defaultValue;
         }
 
         protected virtual bool SupportsPlayerPrefs => false;

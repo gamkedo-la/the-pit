@@ -11,7 +11,12 @@ Label {
     color: rgb(233, 233, 233);
 }
 
-.unity-progress-bar {
+.unity-progress-bar__background {
+    background-color: brown;
+}
+
+.unity-progress-bar__progress {
+    background-color: chartreuse;
 }
 
 .heart-0 {

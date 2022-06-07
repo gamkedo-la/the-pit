@@ -1,7 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/UI.uss?fileID=7433441132597879392&amp;guid=0f464af6d72540a46a6e28dc0d84bb7d&amp;type=3#UI" />
     <ui:VisualElement name="Root" style="flex-grow: 1; flex-direction: column; align-items: center; justify-content: center;">
-        <ui:VisualElement style="align-items: flex-start; justify-content: flex-end; flex-grow: 1; width: 100%; height: 100%;">
+        <ui:VisualElement style="align-items: flex-start; justify-content: space-between; flex-grow: 1; width: 100%; height: 100%;">
+            <ui:VisualElement name="TopBar" style="flex-direction: column; width: 100%; justify-content: center; align-items: stretch; padding-left: 20%; padding-right: 20%;" />
             <ui:VisualElement name="BottomBar" style="align-items: flex-start; flex-direction: row; width: 100%; justify-content: space-between;">
                 <ui:Label text="FPS" display-tooltip-when-elided="true" name="FPS" class="hud-label" style="width: 25%;" />
                 <ui:VisualElement name="HealthBar" style="height: auto; flex-direction: row; justify-content: center; width: 50%;" />

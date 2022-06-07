@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Tilemaps;
+using Variables;
 
 namespace Level
 {
@@ -13,6 +14,9 @@ namespace Level
         [Tooltip("Room name. Leave blank to use name of GameObject as room name")]
         [SerializeField]
         private string nameOverride;
+
+        [Tooltip("Health bars to show when inside this room")]
+        public HealthVariable[] healthBars;
 
         public string Name => string.IsNullOrEmpty(nameOverride) ? name : nameOverride;
 

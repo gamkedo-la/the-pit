@@ -8,13 +8,14 @@ namespace UI
     {
         public PitLevel level;
         public Transform player;
+        public VisualTreeAsset enemyHealthBarTemplate;
         
         private LocationController locationController;
         
         private void OnEnable()
         {
             var ui = GetComponent<UIDocument>();
-            locationController = new LocationController(ui.rootVisualElement);
+            locationController = new LocationController(ui.rootVisualElement, enemyHealthBarTemplate);
         }
 
         private void LateUpdate()
@@ -23,6 +24,8 @@ namespace UI
             {
                 locationController.ShowLocation(room);
             }
+
+            locationController.Update();
         }
     }
 }

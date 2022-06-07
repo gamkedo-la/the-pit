@@ -633,6 +633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: {fileID: 290415615}
   player: {fileID: 8969106247187604835}
+  enemyHealthBarTemplate: {fileID: 9197481963319205126, guid: ec85536458ecdb24db5d856d8b812ce1, type: 3}
 --- !u!114 &429052431
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -921,6 +921,7 @@ MonoBehaviour:
         m_CallState: 2
   impactPrefab: {fileID: 276390236632735978, guid: a839734f3cd45f04e9c1e8648e15df4e, type: 3}
   impactDuration: 1
+  trackedHealth: {fileID: 11400000, guid: 9617d1dcb6a4b7043a7e1a42babe1341, type: 2}
 --- !u!1 &996959608917354592
 GameObject:
   m_ObjectHideFlags: 0

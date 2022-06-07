@@ -18214,6 +18214,8 @@ MonoBehaviour:
   worldMin: {x: 0, y: 0, z: -1}
   worldMax: {x: 0, y: 0, z: 0}
   nameOverride: 
+  healthBars:
+  - {fileID: 11400000, guid: 9617d1dcb6a4b7043a7e1a42babe1341, type: 2}
 --- !u!1 &4939125516826813233
 GameObject:
   m_ObjectHideFlags: 0
@@ -18261,7 +18263,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -18791,7 +18793,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 2
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -19700,18 +19702,18 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 26
     m_Data: {fileID: 239195907, guid: e0dc421c56987884ca255d3d76051c3a, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1830539502, guid: e0dc421c56987884ca255d3d76051c3a, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 78
     m_Data: {fileID: -1188928223, guid: e0dc421c56987884ca255d3d76051c3a, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -189245291, guid: e0dc421c56987884ca255d3d76051c3a, type: 3}
+    m_Data: {fileID: 1830539502, guid: e0dc421c56987884ca255d3d76051c3a, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 1106045752, guid: e0dc421c56987884ca255d3d76051c3a, type: 3}
   - m_RefCount: 34
     m_Data: {fileID: 722096304, guid: e0dc421c56987884ca255d3d76051c3a, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -189245291, guid: e0dc421c56987884ca255d3d76051c3a, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 142
     m_Data:

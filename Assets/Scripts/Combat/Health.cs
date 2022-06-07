@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using Variables;
 
 namespace Combat
 {
     public class Health : MonoBehaviour
     {
-        public int initialHealth;
+        [Tooltip("Track health in this health variable")]
+        public HealthVariable trackedHealth;
+
+        [SerializeField] private int initialHealth;
 
         public UnityEvent<int, int, int> onHealthDecreased;
         public UnityEvent onHealthDepleted;
@@ -13,11 +17,27 @@ namespace Combat
         public GameObject impactPrefab;
         public float impactDuration;
 
+
         private int actualHealth;
+
+        public int InitialHealth
+        {
+            get => trackedHealth == null ? initialHealth : trackedHealth.MaxHealth;
+        }
+
+        public int ActualHealth
+        {
+            get => trackedHealth == null ? actualHealth : trackedHealth.Health;
+            set
+            {
+                if (trackedHealth == null) actualHealth = value;
+                else trackedHealth.Health = value;
+            }
+        }
 
         private void Start()
         {
-            actualHealth = initialHealth;
+            ActualHealth = InitialHealth;
         }
 
         public void Damage(int damage, Vector2 hitPoint)
@@ -32,11 +52,11 @@ namespace Combat
                 Destroy(impact, impactDuration);
             }
 
-            onHealthDecreased.Invoke(damage, actualHealth, initialHealth);
-            actualHealth -= damage;
-            if (actualHealth <= 0)
+            onHealthDecreased.Invoke(damage, ActualHealth, InitialHealth);
+            ActualHealth -= damage;
+            if (ActualHealth <= 0)
             {
-                actualHealth = 0;
+                ActualHealth = 0;
                 onHealthDepleted.Invoke();
             }
         }
@@ -48,6 +68,5 @@ namespace Combat
         {
             Destroy(gameObject, delay);
         }
-        
     }
 }
