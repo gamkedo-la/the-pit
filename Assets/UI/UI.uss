@@ -50,7 +50,3 @@ Label {
 .heart-1 {
     background-image: url('project://database/Assets/Sprites/Hearts.png?fileID=-919684307&guid=6c41186efeb786a4f92ac76dbacd7f5a&type=3#Hearts_7');
 }
-
-.ArrowPointer {
-    cursor: url('project://database/Assets/Sprites/Cursors/pointer.png?fileID=2800000&guid=ea57edf5274fe6a4eae1ef223c69beeb&type=3#pointer');
-}

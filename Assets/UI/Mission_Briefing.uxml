@@ -2,7 +2,7 @@
          engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
          noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/UI.uss?fileID=7433441132597879392&amp;guid=0f464af6d72540a46a6e28dc0d84bb7d&amp;type=3#UI" />
-    <ui:VisualElement class="ArrowPointer" style="flex-grow: 1; padding-left: 0; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; align-items: flex-end; flex-direction: row;">
+    <ui:VisualElement style="flex-grow: 1; padding-left: 0; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; align-items: flex-end; flex-direction: row;">
         <ui:VisualElement name="LeftFolderPage" style="width: 40%; height: 100%; background-color: rgb(227, 199, 171); padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 20px; justify-content: space-between;">
             <ui:VisualElement style="width: 100%; height: auto; background-color: rgb(237, 237, 237); padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 20px; rotate: 1deg;">
                 <ui:Label text="Label" display-tooltip-when-elided="true" name="Instructions" style="white-space: normal; height: 100%; width: 100%;" />
