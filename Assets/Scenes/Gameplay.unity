@@ -599,13 +599,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8869a6044d1043cca51f23fc7e6141cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultCursor: {fileID: 11400000, guid: 3a5a23aa2e86caf4a8dcb985860759a6, type: 2}
   toggles:
   - key: 283
     target: {fileID: 830631569}
     defaultState: {fileID: 0}
+    cursor: {fileID: 11400000, guid: 0f931476f145d224cbb405da6efd672b, type: 2}
   - key: 9
     target: {fileID: 1870017256}
     defaultState: {fileID: 11400000, guid: 727f8c56c0a3247879903004f72fc6cb, type: 2}
+    cursor: {fileID: 11400000, guid: 0f931476f145d224cbb405da6efd672b, type: 2}
 --- !u!114 &429052429
 MonoBehaviour:
   m_ObjectHideFlags: 0
