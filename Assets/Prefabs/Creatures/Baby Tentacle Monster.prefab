@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34388e7034c4d5c87d9aa046e66908a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trackedHealth: {fileID: 0}
   initialHealth: 10
   onHealthDecreased:
     m_PersistentCalls:
@@ -138,7 +139,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 28
+  m_SortingOrder: 0
   m_Sprite: {fileID: -1236992705, guid: a6f9ac04174a88dd09b903950441089f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -232,7 +233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5976287532294787908, guid: deeff78d108ddf149bd0bb237d20d803, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5976287532294787908, guid: deeff78d108ddf149bd0bb237d20d803, type: 3}
       propertyPath: m_LocalRotation.w
@@ -260,6 +261,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5976287532294787908, guid: deeff78d108ddf149bd0bb237d20d803, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976287532294787909, guid: deeff78d108ddf149bd0bb237d20d803, type: 3}
+      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
