@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 using Variables;
 
@@ -14,9 +15,7 @@ namespace Combat
         public UnityEvent<int, int, int> onHealthDecreased;
         public UnityEvent onHealthDepleted;
 
-        public GameObject impactPrefab;
-        public float impactDuration;
-
+        public Impact[] impacts;
 
         private int actualHealth;
 
@@ -40,16 +39,17 @@ namespace Combat
             ActualHealth = InitialHealth;
         }
 
-        public void Damage(int damage, Vector2 hitPoint)
+        public void Damage(int damage, GameObject hitObject, Vector2 hitPoint)
         {
             if (damage <= 0) return;
-            if (impactPrefab != null)
+            foreach (var impact in impacts)
             {
-                var impact = Instantiate(impactPrefab);
+                var obj = Instantiate(impact.prefab);
+                if (impact.follow) obj.transform.parent = hitObject.transform;
                 Vector3 impactPoint = hitPoint;
                 impactPoint.z = gameObject.transform.position.z;
-                impact.transform.position = impactPoint;
-                Destroy(impact, impactDuration);
+                obj.transform.position = impactPoint;
+                Destroy(obj, impact.duration);
             }
 
             onHealthDecreased.Invoke(damage, ActualHealth, InitialHealth);
@@ -67,6 +67,14 @@ namespace Combat
         public void DestroyDelayed(float delay)
         {
             Destroy(gameObject, delay);
+        }
+
+        [Serializable]
+        public struct Impact
+        {
+            public GameObject prefab;
+            public bool follow;
+            public float duration;
         }
     }
 }

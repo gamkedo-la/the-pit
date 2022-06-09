@@ -48,7 +48,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.42, y: 1.42}
+  m_Size: {x: 2.42, y: 1}
   m_Direction: 1
 --- !u!1 &996959607538226321
 GameObject:
@@ -98,7 +98,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.42, y: 1.42}
+  m_Size: {x: 2.42, y: 1}
   m_Direction: 1
 --- !u!1 &996959607610314894
 GameObject:
@@ -148,7 +148,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.42, y: 1.42}
+  m_Size: {x: 2.42, y: 1}
   m_Direction: 1
 --- !u!1 &996959607620281906
 GameObject:
@@ -259,7 +259,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.42, y: 1.42}
+  m_Size: {x: 2.42, y: 1}
   m_Direction: 1
 --- !u!1 &996959608019969147
 GameObject:
@@ -359,7 +359,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.42, y: 1.42}
+  m_Size: {x: 2.42, y: 1}
   m_Direction: 1
 --- !u!1 &996959608213251702
 GameObject:
@@ -408,7 +408,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.42, y: 1.42}
+  m_Size: {x: 2.42, y: 1}
   m_Direction: 1
 --- !u!1 &996959608214054709
 GameObject:
@@ -585,7 +585,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.42, y: 1.42}
+  m_Size: {x: 2.42, y: 1}
   m_Direction: 1
 --- !u!1 &996959608503282683
 GameObject:
@@ -636,7 +636,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.42, y: 1.23}
+  m_Size: {x: 2.42, y: 0.84}
   m_Direction: 1
 --- !u!1 &996959608522127341
 GameObject:
@@ -856,8 +856,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3249e797d70e4eadb8f298c48fe1c62b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggressionRadius: 13
-  disengageRadius: 20
+  aggressionRadius: 17
+  disengageRadius: 18
   targetUpdateTime: 1
   attackPrepareSpeed: 15
   attackPrepareDistance: 7
@@ -900,6 +900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34388e7034c4d5c87d9aa046e66908a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trackedHealth: {fileID: 11400000, guid: 9617d1dcb6a4b7043a7e1a42babe1341, type: 2}
   initialHealth: 100
   onHealthDecreased:
     m_PersistentCalls:
@@ -919,9 +920,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  impactPrefab: {fileID: 276390236632735978, guid: a839734f3cd45f04e9c1e8648e15df4e, type: 3}
-  impactDuration: 1
-  trackedHealth: {fileID: 11400000, guid: 9617d1dcb6a4b7043a7e1a42babe1341, type: 2}
+  impacts:
+  - prefab: {fileID: 276390236632735978, guid: a839734f3cd45f04e9c1e8648e15df4e, type: 3}
+    follow: 1
+    duration: 1
+  - prefab: {fileID: 6954009536111090527, guid: 691829bdff8064945b6865f6a60acfef, type: 3}
+    follow: 0
+    duration: 1
 --- !u!1 &996959608917354592
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,7 +974,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.66, y: 1.07}
+  m_Size: {x: 1.66, y: 0.65}
   m_Direction: 1
 --- !u!1 &996959608949197504
 GameObject:
@@ -1018,7 +1023,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.42, y: 1.42}
+  m_Size: {x: 2.42, y: 1}
   m_Direction: 1
 --- !u!1 &996959609068371565
 GameObject:
@@ -1068,7 +1073,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.42, y: 1.42}
+  m_Size: {x: 2.42, y: 1}
   m_Direction: 1
 --- !u!1 &996959609071152255
 GameObject:
@@ -1117,7 +1122,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.42, y: 1.42}
+  m_Size: {x: 2.42, y: 1}
   m_Direction: 1
 --- !u!1001 &1466350807522377830
 PrefabInstance:

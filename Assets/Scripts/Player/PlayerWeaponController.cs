@@ -120,7 +120,7 @@ namespace Player
         {
             var health = hitObject.GetComponentInParent<Health>();
             if (health == null) return false;
-            health.Damage(damage, hitPoint);
+            health.Damage(damage, hitObject, hitPoint);
             return true;
         }
 
