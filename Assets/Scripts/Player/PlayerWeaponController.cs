@@ -1,4 +1,5 @@
-﻿using Combat;
+﻿using Audio;
+using Combat;
 using UnityEngine;
 
 namespace Player
@@ -25,7 +26,7 @@ namespace Player
 
         [Header("Sound")] 
         public AudioSource audioPlayer;
-        public AudioClip shootSound;
+        public AudioClipWithVolume shootSound;
 
         [Header("Links")] 
         public Animator bodyAnimator;

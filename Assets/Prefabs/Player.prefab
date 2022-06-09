@@ -209,8 +209,8 @@ MonoBehaviour:
   stepFrequency: 0.6
   jumpForce: 300
   audioSource: {fileID: 5489826309246886693}
-  step: {fileID: 8300000, guid: bd178f67fed56a44fa3eb3f18b71218f, type: 3}
-  jump: {fileID: 8300000, guid: 9bab22a6dfdffd74a8ed05e8d0e9f0e1, type: 3}
+  step: {fileID: 11400000, guid: fb7dc8455af0d4443bdb3240fb109776, type: 2}
+  jump: {fileID: 11400000, guid: 67f37b9d8048bce44a77b4d8cda46408, type: 2}
   animator: {fileID: 6190731026613729491}
 --- !u!114 &869220714165625845
 MonoBehaviour:
@@ -232,7 +232,7 @@ MonoBehaviour:
   maxAim: 80
   flipDeadZone: 0.1
   audioPlayer: {fileID: 5489826309246886693}
-  shootSound: {fileID: 8300000, guid: 645872c8ead98c24bbf56c050f4684a4, type: 3}
+  shootSound: {fileID: 11400000, guid: d250738f6379a03428f9ae4282c1ee58, type: 2}
   bodyAnimator: {fileID: 6190731026613729491}
   aimRotationPoint: {fileID: 3530513100766915636}
   muzzle: {fileID: 6929396752702664134}

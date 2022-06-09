@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Audio;
+using UnityEngine;
 
 namespace Player
 {
@@ -16,8 +17,8 @@ namespace Player
 
         [Header("Sound")] 
         public AudioSource audioSource;
-        public AudioClip step;
-        public AudioClip jump;
+        public AudioClipWithVolume step;
+        public AudioClipWithVolume jump;
         
         public Animator animator;
 
