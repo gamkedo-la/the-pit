@@ -397,6 +397,7 @@ MonoBehaviour:
   - {fileID: 5545207929052581410}
   hurtFlashFrequency: 25
   hurtFlashColor: {r: 1, g: 1, b: 1, a: 0.2}
+  hurtClip: {fileID: 11400000, guid: 74f03e70ef8f9cc41b0d4ac02b35799b, type: 2}
 --- !u!114 &4381999230772071943
 MonoBehaviour:
   m_ObjectHideFlags: 0

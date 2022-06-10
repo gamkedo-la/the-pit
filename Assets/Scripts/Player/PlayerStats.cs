@@ -1,3 +1,4 @@
+using Audio;
 using UnityEngine;
 using Variables;
 
@@ -26,15 +27,20 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField]
     private Color hurtFlashColor = new Color(1f, 1f, 1f, 0.2f);
+
+    [SerializeField] 
+    private AudioClipWithVolume hurtClip;
     
     private float damageTimer = 0;
     private DamageInflicted damage;
     private Rigidbody2D rb2d;
+    private AudioSource audioSource;
 
     void Start()
     {
-        // initialize playerHealth variable
+        audioSource = GetComponent<AudioSource>();
         rb2d = GetComponent<Rigidbody2D>();
+        // initialize playerHealth variable
         playerHealth.MinValue = playerMinHealth;
         playerHealth.MaxValue = playerMaxHealth;
         playerHealth.Value = playerMaxHealth;
@@ -57,6 +63,7 @@ public class PlayerStats : MonoBehaviour
     private void ApplyDamage(int damage)
     {
         playerHealth.Subtract(damage);
+        audioSource.PlayOneShot(hurtClip);
 
         if (playerHealth.Value <= 0)
         {
