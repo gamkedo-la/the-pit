@@ -204,10 +204,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8b437afac44d72a08f9d883e8da648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 5
-  backingUpSpeedFactor: 0.667
+  horizontalSpeed: 8
+  backingUpSpeedFactor: 0.8
   stepFrequency: 0.6
-  jumpForce: 300
+  jumpForce: 200
   audioSource: {fileID: 5489826309246886693}
   step: {fileID: 11400000, guid: fb7dc8455af0d4443bdb3240fb109776, type: 2}
   jump: {fileID: 11400000, guid: 67f37b9d8048bce44a77b4d8cda46408, type: 2}
@@ -350,7 +350,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0.5
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 7
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

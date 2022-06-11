@@ -73,7 +73,7 @@ namespace Player
             if (JumpTakeoff)
             {
                 JumpTakeoff = false;
-                rb2d.AddForce(Vector2.up * jumpForce);
+                rb2d.AddForce(jumpForce * rb2d.gravityScale * Vector2.up);
                 audioSource.PlayOneShot(jump);
             }
             
