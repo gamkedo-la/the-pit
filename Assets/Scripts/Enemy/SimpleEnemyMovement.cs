@@ -18,7 +18,6 @@ namespace Enemy
         {
             if (col.gameObject.CompareTag("Player"))
             {
-                Debug.Log("Intersected with player");
                 return;
             }
             direction = -direction;

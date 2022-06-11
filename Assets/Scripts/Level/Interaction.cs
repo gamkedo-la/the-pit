@@ -1,0 +1,43 @@
+﻿using Player;
+using UnityEngine;
+using UnityEngine.Events;
+
+namespace Level
+{
+    // An interaction that is enabled when the player is close enough
+    public class Interaction : MonoBehaviour
+    {
+        public string actionDescription;
+
+        public UnityEvent onInteraction;
+        public UnityEvent onPlayerApproach;
+        public UnityEvent onPlayerDepart;
+
+        private bool playerNear;
+        
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (!other.gameObject.CompareTag("Player")) return;
+            if (!other.gameObject.TryGetComponent<PlayerActionController>(out var pac)) return;
+
+            pac.Interaction = this;
+            onPlayerApproach.Invoke();
+            playerNear = true;
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (!other.gameObject.CompareTag("Player")) return;
+            if (!other.gameObject.TryGetComponent<PlayerActionController>(out var pac)) return;
+
+            playerNear = false;
+            onPlayerDepart.Invoke();
+            if (pac.Interaction == this) pac.Interaction = null;
+        }
+        
+        public void Perform()
+        {
+            onInteraction.Invoke();
+        }
+    }
+}

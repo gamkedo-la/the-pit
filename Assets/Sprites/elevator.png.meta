@@ -152,9 +152,9 @@ TextureImporter:
       name: elevator_shaft
       rect:
         serializedVersion: 2
-        x: 0
+        x: 32
         y: 0
-        width: 96
+        width: 32
         height: 32
       alignment: 2
       pivot: {x: 0.5, y: 1}
@@ -165,6 +165,48 @@ TextureImporter:
       bones: []
       spriteID: 3bcbdad759e69944da05b478b6b7beae
       internalID: 293012128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elevator_button
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b871c8f557757244c815901bbfbb50a2
+      internalID: -1173087523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elevator_lit_button
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9c8d1eadeaafb340b500a74169740ba
+      internalID: 127189446
       vertices: []
       indices: 
       edges: []
@@ -180,6 +222,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      elevator_lit_button: 127189446
+      elevator_button: -1173087523
       elevator_shaft: 293012128
       elevator_platform: 1729453566
   spritePackingTag: 

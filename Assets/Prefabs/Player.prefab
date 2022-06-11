@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3530513100766915636}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Aim Rotation Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1381911731728628183}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Aim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4321991194952448266}
   - component: {fileID: 8887173106498715433}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Right Shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,8 @@ GameObject:
   - component: {fileID: 2109491964936429874}
   - component: {fileID: 4069847215604440051}
   - component: {fileID: 4381999230772071943}
-  m_Layer: 0
+  - component: {fileID: 5958670332406696691}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -410,6 +411,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6893d02f1a034dc4aa0503a9180446d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5958670332406696691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3767966915016675670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a12ac741514b67947c1e6759beee57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionCooldown: 0.5
 --- !u!1 &3958738012903652388
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,7 +434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8102087949475628399}
   - component: {fileID: 228154184800569688}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -506,7 +520,7 @@ GameObject:
   - component: {fileID: 5975613793793355818}
   - component: {fileID: 8848423605590195613}
   - component: {fileID: 8002156264183602718}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShotFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -610,7 +624,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2453320886136186677}
   - component: {fileID: 1249290719548458228}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -694,7 +708,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1551955219933795026}
   - component: {fileID: 8273129069190439043}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Left Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -780,7 +794,7 @@ GameObject:
   - component: {fileID: 6190731026613729490}
   - component: {fileID: 6190731026613729491}
   - component: {fileID: 3032860567482646670}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -911,7 +925,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7199442362711685015}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttackTarget
   m_TagString: PlayerAttackTarget
   m_Icon: {fileID: 0}
@@ -942,7 +956,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6929396752702664134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -975,7 +989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7004182954453465176}
   - component: {fileID: 5545207929052581410}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Right Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}

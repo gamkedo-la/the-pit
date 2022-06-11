@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Level
@@ -40,6 +41,22 @@ namespace Level
             currentHeight = newHeight;
             UpdatePlatformPosition();
             return actualDelta;
+        }
+
+        public void MoveTo(float height)
+        {
+            StartCoroutine(MoveToAsync(Mathf.Clamp(height, 0, maxHeight)));
+        }
+
+        private IEnumerator MoveToAsync(float destinationHeight)
+        {
+            while (Mathf.Abs(destinationHeight - currentHeight) > 1e-3)
+            {
+                yield return new WaitForFixedUpdate();
+                var maxDistanceToMove = Mathf.Min(speed * Time.fixedDeltaTime, Mathf.Abs(destinationHeight - currentHeight)) * Mathf.Sign(destinationHeight - currentHeight);
+                currentHeight += maxDistanceToMove;
+                UpdatePlatformPosition();
+            }
         }
     }
 }

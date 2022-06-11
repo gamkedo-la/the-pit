@@ -3,10 +3,13 @@
     <ui:VisualElement name="Root" style="flex-grow: 1; flex-direction: column; align-items: center; justify-content: center;">
         <ui:VisualElement style="align-items: flex-start; justify-content: space-between; flex-grow: 1; width: 100%; height: 100%;">
             <ui:VisualElement name="TopBar" style="flex-direction: column; width: 100%; justify-content: center; align-items: stretch; padding-left: 20%; padding-right: 20%;" />
-            <ui:VisualElement name="BottomBar" style="align-items: flex-start; flex-direction: row; width: 100%; justify-content: space-between;">
-                <ui:Label text="FPS" display-tooltip-when-elided="true" name="FPS" class="hud-label" style="width: 25%;" />
-                <ui:VisualElement name="HealthBar" style="height: auto; flex-direction: row; justify-content: center; width: 50%;" />
-                <ui:Label text="Location" display-tooltip-when-elided="true" name="Location" class="hud-label" style="width: 25%; -unity-text-align: upper-right;" />
+            <ui:VisualElement style="width: 100%;">
+                <ui:Label text="Label" display-tooltip-when-elided="true" name="Action" class="hud-label" style="-unity-text-align: upper-center;" />
+                <ui:VisualElement name="BottomBar" style="align-items: flex-start; flex-direction: row; width: 100%; justify-content: space-between;">
+                    <ui:Label text="FPS" display-tooltip-when-elided="true" name="FPS" class="hud-label" style="width: 25%;" />
+                    <ui:VisualElement name="HealthBar" style="height: auto; flex-direction: row; justify-content: center; width: 50%;" />
+                    <ui:Label text="Location" display-tooltip-when-elided="true" name="Location" class="hud-label" style="width: 25%; -unity-text-align: upper-right;" />
+                </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
