@@ -97,20 +97,7 @@ namespace Player
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.yellow;
-            var p0 = aimRotationPoint.transform.position;
-            var arcLen = weapon.maxRange;
-            var p1 = p0 + arcLen * new Vector3(Mathf.Cos(minAim * Mathf.Deg2Rad), Mathf.Sin(minAim * Mathf.Deg2Rad), 0);
-            var p2 = p0 + arcLen * new Vector3(Mathf.Cos(maxAim * Mathf.Deg2Rad), Mathf.Sin(maxAim * Mathf.Deg2Rad), 0);
-            Gizmos.DrawLine(p0, p1);
-            Gizmos.DrawLine(p0, p2);
-
-            for (var i = 1; i <= 30; i++)
-            {
-                var angle = minAim + i * (maxAim - minAim) / 30f;
-                p2 = p0 + arcLen * new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad), 0);
-                Gizmos.DrawLine(p1, p2);
-                p1 = p2;
-            }
+            GizmoHelper.DrawArc(aimRotationPoint.transform.position, weapon.maxRange, minAim, maxAim);
         }
     }
 }

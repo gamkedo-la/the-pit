@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a2eb463e1029064ebf73fe389143810
+guid: 7cff2ba22106c8244a757d55e22cf687
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,12 +44,12 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 0
-  spriteMeshType: 0
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -101,6 +101,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -116,85 +128,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: creature 1_0
+      name: blobby_shooter_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 7
         y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 81
+        height: 81
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3c7c0e154b9d3042a2851de753d9b8d
-      internalID: 175626882
+      spriteID: 7f507cb907a83f348976df46180ebdc0
+      internalID: -1756620806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: creature 1_1
+      name: blobby_shooter_1
       rect:
         serializedVersion: 2
-        x: 24
+        x: 103
         y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 81
+        height: 81
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4251a7d389f4c6c4b8cf5134228181f0
-      internalID: 346479305
+      spriteID: 471c19650beef72478b658b1b2ef8ada
+      internalID: -1930101940
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: creature 1_2
+      name: blobby_shooter_2
       rect:
         serializedVersion: 2
-        x: 48
+        x: 199
         y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 81
+        height: 81
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f00071462946734ca9c488930a0cecc
-      internalID: 1844114305
+      spriteID: 895ae3f531de3e54181c1253859861a0
+      internalID: -1944940146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: creature 1_3
+      name: blobby_shooter_3
       rect:
         serializedVersion: 2
-        x: 72
+        x: 295
         y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 81
+        height: 81
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e100471f523e424e88e982515fc835e
-      internalID: -1701692346
+      spriteID: 67b123318dec0ce40a30a8dc1f7fdd25
+      internalID: 370605319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blobby_shooter_4
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 0
+        width: 81
+        height: 81
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc6b81fce7e92543b276a1dbe11a9a1
+      internalID: 1356006615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blobby_shooter_5
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 0
+        width: 81
+        height: 81
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d03815e1b899dd48a46b5cc9908b5e1
+      internalID: 1317817861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blobby_shooter_6
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 0
+        width: 81
+        height: 81
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98f3a965360d43a44bc709c6ed79ef46
+      internalID: -1952066692
       vertices: []
       indices: 
       edges: []
@@ -210,10 +285,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      creature 1_2: 1844114305
-      creature 1_1: 346479305
-      creature 1_3: -1701692346
-      creature 1_0: 175626882
+      blobby_shooter_5: 1317817861
+      blobby_shooter_6: -1952066692
+      blobby_shooter_4: 1356006615
+      blobby_shooter_0: -1756620806
+      blobby_shooter_1: -1930101940
+      blobby_shooter_3: 370605319
+      blobby_shooter_2: -1944940146
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
