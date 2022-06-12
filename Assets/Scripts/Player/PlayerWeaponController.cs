@@ -36,22 +36,18 @@ namespace Player
         {
             if (weapon == null)
             {
-                Debug.Log("Selected first weapon");
                 SelectWeapon(weapons.First());
                 return;
             }
 
             var idx = weapons.FindIndex(w => w.id == weapon.id);
-            Debug.Log("1. idx=" + idx);
             idx = (idx + 1) % weapons.Count;
-            Debug.Log("2. idx=" + idx);
             
             SelectWeapon(weapons[idx]);
         }
 
         private void SelectWeapon(Weapon selectedWeapon)
         {
-            Debug.Log("Select " + selectedWeapon.name);
             if (weapon != null && selectedWeapon.id == weapon.id) return;
             
             if (weapon != null) Destroy(weapon.gameObject);
