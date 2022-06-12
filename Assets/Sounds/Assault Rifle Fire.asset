@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06b64d360b04466dba4896792665f3c7, type: 3}
-  m_Name: RifleFire
+  m_Name: Assault Rifle Fire
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: a843c463532ae1245b1aaa51d2db110e, type: 3}
-  volumeScale: 0.2
+  clip: {fileID: 8300000, guid: 645872c8ead98c24bbf56c050f4684a4, type: 3}
+  volumeScale: 1
