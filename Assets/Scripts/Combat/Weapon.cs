@@ -27,6 +27,9 @@ namespace Combat
         [Tooltip("How long the projectile impact should last as a game object before being removed")]
         public float projectileImpactDuration;
 
+        [Header("Layers")] 
+        public LayerMask shotBlockingLayers;
+        
         private float activeCooldown;
         private static readonly int Shoot = Animator.StringToHash("Shoot");
 
@@ -66,7 +69,7 @@ namespace Combat
 
             Vector3 impactPos = muzzlePos + shotVector;
             
-            var hit = Physics2D.Raycast(muzzlePos, shotDirection, maxRange);
+            var hit = Physics2D.Raycast(muzzlePos, shotDirection, maxRange, shotBlockingLayers);
             if (hit.collider != null)
             {
                 impactPos = hit.point;

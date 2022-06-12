@@ -111,6 +111,9 @@ MonoBehaviour:
   muzzleFlash: {fileID: 2364329498693797134}
   projectileImpactPrefab: {fileID: 6132861582933238597, guid: 57c5be9914c5f5f41a16b639ff112c95, type: 3}
   projectileImpactDuration: 0.2
+  shotBlockingLayers:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!82 &1217871498331952707
 AudioSource:
   m_ObjectHideFlags: 0

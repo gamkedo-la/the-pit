@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5348461802884988723}
   - component: {fileID: 4297177816844173750}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5622045830847456271}
   - component: {fileID: 285359657049927914}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 5023297903442641293}
   - component: {fileID: 1898445559984732445}
   - component: {fileID: 1928494500556179581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gantries - Use platform colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19953,7 +19953,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4827950751032252090}
   - component: {fileID: 136786784567394064}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20094,7 +20094,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9085838692405538504}
   - component: {fileID: 4149127451721208470}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20207,7 +20207,7 @@ GameObject:
   - component: {fileID: 1038732911928135155}
   - component: {fileID: 572939227673086519}
   - component: {fileID: 8930996758806038755}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lower gantries
   m_TagString: Untagged
   m_Icon: {fileID: 0}
