@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d276b8ba14a94cb59f7e1c7fab505930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   maxRange: 15
   damage: 1
   cooldownBetweenShots: 0.3

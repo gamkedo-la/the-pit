@@ -10,6 +10,11 @@ Space       > Jump
 Mouse       > Aim
 Mouse Click > Fire
 
+Q           > Switch
+              weapon
+              
+E           > Interact
+
       -=< Keys >=-
 
 TAB         > Briefing 

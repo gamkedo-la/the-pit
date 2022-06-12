@@ -1,10 +1,14 @@
-﻿using Combat;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Combat;
 using UnityEngine;
 
 namespace Player
 {
     public class PlayerWeaponController : MonoBehaviour
     {
+        [Header("Available weapons")] 
+        public List<Weapon> weapons;
 
         [Header("Aim arc in degrees")]
         [Range(-90, 90)]
@@ -17,6 +21,7 @@ namespace Player
         [Header("Links")] 
         public Animator bodyAnimator;
         public Transform aimRotationPoint;
+        public Transform weaponGrip;
 
         private Camera mainCamera;
         private Weapon weapon;
@@ -24,11 +29,41 @@ namespace Player
         private void Start()
         {
             mainCamera = Camera.main;
-            weapon = GetComponentInChildren<Weapon>();
+            NextWeapon();
         }
+
+        private void NextWeapon()
+        {
+            if (weapon == null)
+            {
+                Debug.Log("Selected first weapon");
+                SelectWeapon(weapons.First());
+                return;
+            }
+
+            var idx = weapons.FindIndex(w => w.id == weapon.id);
+            Debug.Log("1. idx=" + idx);
+            idx = (idx + 1) % weapons.Count;
+            Debug.Log("2. idx=" + idx);
+            
+            SelectWeapon(weapons[idx]);
+        }
+
+        private void SelectWeapon(Weapon selectedWeapon)
+        {
+            Debug.Log("Select " + selectedWeapon.name);
+            if (weapon != null && selectedWeapon.id == weapon.id) return;
+            
+            if (weapon != null) Destroy(weapon.gameObject);
+            weapon = Instantiate(selectedWeapon, weaponGrip);
+        }
+
 
         private void Update()
         {
+            // TODO: Define button in input manager
+            if (Input.GetKeyDown(KeyCode.Q)) NextWeapon();
+            
             var aimPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             var direction = transform.localScale.x;
             if (direction > 0 && aimPosition.x < transform.position.x - flipDeadZone)

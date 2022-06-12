@@ -5,6 +5,9 @@ namespace Combat
 {
     public class Weapon : MonoBehaviour
     {
+        [Min(0)]
+        public int id;
+        
         [Header("Weapon stats")] 
         [Range(0, 100)]
         public float maxRange = 10;
