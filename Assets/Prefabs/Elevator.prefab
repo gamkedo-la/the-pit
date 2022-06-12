@@ -166,6 +166,7 @@ MonoBehaviour:
   maxHeight: 16
   currentHeight: 0
   speed: 8
+  requiredCondition: {fileID: 11400000, guid: 9b7660e82c43ff54cbb7b5bbbace7eb3, type: 2}
   platform: {fileID: 2009631901920694246}
   shaft: {fileID: 4825422078704054159}
 --- !u!1 &1660370927244628660

@@ -1,4 +1,5 @@
 using System.Collections;
+using Conditions;
 using UnityEngine;
 
 namespace Level
@@ -9,6 +10,8 @@ namespace Level
         public float maxHeight;
         public float currentHeight;
         public float speed;
+
+        public Condition requiredCondition;
 
         [Header("Components")] 
         public Rigidbody2D platform;
@@ -34,8 +37,14 @@ namespace Level
             shaft.localScale = s;
         }
 
+        private bool CanMove()
+        {
+            return requiredCondition == null || requiredCondition.Evaluate();
+        }
+
         public float Move(float delta)
         {
+            if (!CanMove()) return 0;
             var newHeight = Mathf.Clamp(currentHeight + delta * speed, 0, maxHeight);
             var actualDelta = newHeight - currentHeight;
             currentHeight = newHeight;
@@ -45,6 +54,7 @@ namespace Level
 
         public void MoveTo(float height)
         {
+            if (!CanMove()) return;
             StartCoroutine(MoveToAsync(Mathf.Clamp(height, 0, maxHeight)));
         }
 

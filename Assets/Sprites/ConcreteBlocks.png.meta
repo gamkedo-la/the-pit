@@ -1208,7 +1208,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ConcreteBlocks_52
+      name: Switch_52
       rect:
         serializedVersion: 2
         x: 128
@@ -1229,7 +1229,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ConcreteBlocks_53
+      name: Switch_53
       rect:
         serializedVersion: 2
         x: 160
@@ -1250,7 +1250,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ConcreteBlocks_54
+      name: LightFixture_54
       rect:
         serializedVersion: 2
         x: 192
@@ -1482,12 +1482,12 @@ TextureImporter:
       Gantry_Right: -1052177751
       ConcreteBlocks_39: -1269977494
       ConcreteBlocks_4: -189245291
+      Switch_52: -521030018
       ConcreteBlocks_58: -1242251835
       Gantry_Left: 1554010708
       ConcreteBlocks_28: 680457532
       ConcreteBlocks_49: 182098816
       ConcreteBlocks_29: 794326500
-      ConcreteBlocks_52: -521030018
       ConcreteBlocks_46: 1640050934
       ConcreteBlocks_9: 980724717
       ConcreteBlocks_41: -1815723407
@@ -1500,9 +1500,9 @@ TextureImporter:
       ConcreteBlocks_24: 101874451
       ConcreteBlocks_30: -1293729125
       ConcreteBlocks_16: 830358400
-      ConcreteBlocks_53: -162376096
-      ConcreteBlocks_32: 807945146
       Gantry: 713383009
+      ConcreteBlocks_32: 807945146
+      LightFixture_54: 1324950929
       ConcreteBlocks_27: 718475852
       ConcreteBlocks_15: 1926327337
       ConcreteBlocks_18: -591084428
@@ -1515,6 +1515,7 @@ TextureImporter:
       ConcreteBlocks_23: 837350191
       ConcreteBlocks_48: 497048805
       ConcreteBlocks_22: 2097595065
+      Switch_53: -162376096
       ConcreteBlocks_63: -2088925921
       ConcreteBlocks_62: -998921472
       Gantry_Light: 1583668398
@@ -1525,7 +1526,6 @@ TextureImporter:
       ConcreteBlocks_11: 722096304
       ConcreteBlocks_40: 475234239
       ConcreteBlocks_19: 2006156090
-      ConcreteBlocks_54: 1324950929
       ConcreteBlocks_17: -1074036890
       ConcreteBlocks_1: -2033555434
       LightFixture_55: 739159973

@@ -153,7 +153,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -258,21 +258,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a79edbbf8a948f5a6bc8ef9e6a38d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxRange: 12
-  damage: 1
-  cooldownBetweenShots: 0.2
-  automaticFire: 1
   minAim: -60
   maxAim: 80
   flipDeadZone: 0.1
-  audioPlayer: {fileID: 5489826309246886693}
-  shootSound: {fileID: 11400000, guid: d250738f6379a03428f9ae4282c1ee58, type: 2}
   bodyAnimator: {fileID: 6190731026613729491}
   aimRotationPoint: {fileID: 3530513100766915636}
-  muzzle: {fileID: 6929396752702664134}
-  muzzleFlash: {fileID: 8002156264183602718}
-  projectileImpactPrefab: {fileID: 6132861582933238597, guid: 57c5be9914c5f5f41a16b639ff112c95, type: 3}
-  projectileImpactDuration: 0.25
 --- !u!82 &5489826309246886693
 AudioSource:
   m_ObjectHideFlags: 0
@@ -388,7 +378,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &2109491964936429874
 CapsuleCollider2D:
@@ -699,7 +689,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -783,7 +773,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -870,7 +860,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1064,7 +1054,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

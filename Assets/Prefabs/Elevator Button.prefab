@@ -114,8 +114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89307a3608ff4fdbbaade911fbcda8df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionDescription: 
-  actionCooldown: 0.5
+  actionDescription: Call elevator
+  requiredCondition: {fileID: 11400000, guid: 9b7660e82c43ff54cbb7b5bbbace7eb3, type: 2}
   onInteraction:
     m_PersistentCalls:
       m_Calls:

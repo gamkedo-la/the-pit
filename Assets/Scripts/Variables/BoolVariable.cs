@@ -16,5 +16,10 @@ namespace Variables
         {
             PlayerPrefs.SetInt(key, actualValue ? 1 : 0);
         }
+
+        public void Toggle()
+        {
+            Value = !Value;
+        }
     }
 }

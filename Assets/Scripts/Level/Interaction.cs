@@ -1,4 +1,5 @@
-﻿using Player;
+﻿using Conditions;
+using Player;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,6 +9,7 @@ namespace Level
     public class Interaction : MonoBehaviour
     {
         public string actionDescription;
+        public Condition requiredCondition;
 
         public UnityEvent onInteraction;
         public UnityEvent onPlayerApproach;
@@ -17,6 +19,7 @@ namespace Level
         
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if (requiredCondition != null && !requiredCondition.Evaluate()) return;
             if (!other.gameObject.CompareTag("Player")) return;
             if (!other.gameObject.TryGetComponent<PlayerActionController>(out var pac)) return;
 
@@ -37,6 +40,7 @@ namespace Level
         
         public void Perform()
         {
+            if (requiredCondition != null && !requiredCondition.Evaluate()) return;
             onInteraction.Invoke();
         }
     }

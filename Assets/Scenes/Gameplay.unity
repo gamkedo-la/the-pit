@@ -860,6 +860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 619394802}
   - component: {fileID: 619394801}
+  - component: {fileID: 619394803}
   m_Layer: 0
   m_Name: Global Light 2D
   m_TagString: Untagged
@@ -884,7 +885,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.624, g: 1, b: 0.869551, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 0.02
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -960,6 +961,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &619394803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619394800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 708e8a269d1047b1945f951c760eccc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  condition: {fileID: 11400000, guid: 9b7660e82c43ff54cbb7b5bbbace7eb3, type: 2}
+  onConditionTrue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 619394801}
+        m_TargetAssemblyTypeName: UnityEngine.Rendering.Universal.Light2D, Unity.RenderPipelines.Universal.Runtime
+        m_MethodName: set_intensity
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onConditionFalse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 619394801}
+        m_TargetAssemblyTypeName: UnityEngine.Rendering.Universal.Light2D, Unity.RenderPipelines.Universal.Runtime
+        m_MethodName: set_intensity
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.02
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &712733047
 GameObject:
   m_ObjectHideFlags: 0
@@ -7592,7 +7636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8137720660248663591, guid: b957ecacc25ec7d44aad92899a3fd714, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -128.71
+      value: -98.92
       objectReference: {fileID: 0}
     - target: {fileID: 8137720660248663591, guid: b957ecacc25ec7d44aad92899a3fd714, type: 3}
       propertyPath: m_LocalPosition.y

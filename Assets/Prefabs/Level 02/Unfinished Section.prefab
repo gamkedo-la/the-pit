@@ -16816,6 +16816,7 @@ MonoBehaviour:
   worldMin: {x: 0, y: 0, z: -1}
   worldMax: {x: 0, y: 0, z: 0}
   nameOverride: 
+  healthBars: []
 --- !u!1 &4939125516826813233
 GameObject:
   m_ObjectHideFlags: 0
@@ -16863,7 +16864,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -17393,7 +17394,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 2
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -18202,18 +18203,18 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 26
     m_Data: {fileID: 239195907, guid: e0dc421c56987884ca255d3d76051c3a, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1830539502, guid: e0dc421c56987884ca255d3d76051c3a, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 78
     m_Data: {fileID: -1188928223, guid: e0dc421c56987884ca255d3d76051c3a, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -189245291, guid: e0dc421c56987884ca255d3d76051c3a, type: 3}
+    m_Data: {fileID: 1830539502, guid: e0dc421c56987884ca255d3d76051c3a, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 1106045752, guid: e0dc421c56987884ca255d3d76051c3a, type: 3}
   - m_RefCount: 24
     m_Data: {fileID: 722096304, guid: e0dc421c56987884ca255d3d76051c3a, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -189245291, guid: e0dc421c56987884ca255d3d76051c3a, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 132
     m_Data:
@@ -18450,6 +18451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3354239974410253573}
   - component: {fileID: 2807396591416559806}
+  - component: {fileID: 4296152733696287370}
   m_Layer: 7
   m_Name: Logo Light
   m_TagString: Untagged
@@ -18550,6 +18552,49 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &4296152733696287370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8587499479391411717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 708e8a269d1047b1945f951c760eccc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  condition: {fileID: 11400000, guid: 9b7660e82c43ff54cbb7b5bbbace7eb3, type: 2}
+  onConditionTrue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2807396591416559806}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onConditionFalse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2807396591416559806}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1824436543566430492
 PrefabInstance:
   m_ObjectHideFlags: 0
