@@ -101,7 +101,7 @@ namespace Player
 
             Vector3 impactPos = muzzlePos + shotVector;
             
-            var hit = Physics2D.Raycast(muzzlePos, shotDirection);
+            var hit = Physics2D.Raycast(muzzlePos, shotDirection, maxRange);
             if (hit.collider != null)
             {
                 impactPos = hit.point;
@@ -110,6 +110,8 @@ namespace Player
                     return;
                 }
             }
+
+            impactPos.z = transform.position.z;
             
             // Wasteful, use object pool
             var projectileImpact = Instantiate(projectileImpactPrefab);
