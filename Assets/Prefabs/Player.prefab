@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6323247569455036071}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Weapon Grip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3530513100766915636}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Aim Rotation Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1381911731728628183}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Aim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4321991194952448266}
   - component: {fileID: 8887173106498715433}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Right Shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 4069847215604440051}
   - component: {fileID: 4381999230772071943}
   - component: {fileID: 5958670332406696691}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 1.71}
-  m_Size: {x: 0.8, y: 3.42}
+  m_Size: {x: 1.6, y: 3.42}
   m_Direction: 0
 --- !u!114 &4069847215604440051
 MonoBehaviour:
@@ -459,7 +459,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2453320886136186677}
   - component: {fileID: 1249290719548458228}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,7 +543,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1551955219933795026}
   - component: {fileID: 8273129069190439043}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Left Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -629,7 +629,7 @@ GameObject:
   - component: {fileID: 6190731026613729490}
   - component: {fileID: 6190731026613729491}
   - component: {fileID: 3032860567482646670}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -760,7 +760,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7199442362711685015}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: AttackTarget
   m_TagString: PlayerAttackTarget
   m_Icon: {fileID: 0}
@@ -792,7 +792,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7004182954453465176}
   - component: {fileID: 5545207929052581410}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Right Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}

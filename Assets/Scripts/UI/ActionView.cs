@@ -18,7 +18,7 @@ namespace UI
 
         private void LateUpdate()
         {
-            if (playerActionController.Interaction == null) actionController.ClearAction();
+            if (playerActionController.Interaction == null || string.IsNullOrEmpty(playerActionController.Interaction.actionDescription)) actionController.ClearAction();
             else actionController.ShowAction(playerActionController.Interaction.actionDescription);
         }
     }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6301047236482844552}
   - component: {fileID: 4050655847283075761}
   - component: {fileID: 1217871498331952707}
+  - component: {fileID: -4257901234896791750}
   m_Layer: 6
   m_Name: Plasma Shotgun
   m_TagString: Untagged
@@ -209,6 +210,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &-4257901234896791750
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978260710428168715}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.6, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0.5}
+    oldSize: {x: 3, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.82, y: 0.15}
+  m_EdgeRadius: 0
 --- !u!1 &1374604245786322219
 GameObject:
   m_ObjectHideFlags: 0
