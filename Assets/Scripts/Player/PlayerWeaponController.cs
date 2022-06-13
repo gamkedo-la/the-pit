@@ -80,6 +80,7 @@ namespace Player
             bodyAnimator.SetFloat("Aim Angle", shotAngle01);
             var aimFrame = shotAngle switch
             {
+                > 62.5f => 0,
                 > 33.75f => 1,
                 > 11.25f => 2,
                 > -11.25f => 3,

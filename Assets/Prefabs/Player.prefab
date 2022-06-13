@@ -87,7 +87,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2480751464806428027}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.09, z: 0}
+  m_LocalPosition: {x: 0.127, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -260,7 +260,7 @@ MonoBehaviour:
   - {fileID: 4050655847283075761, guid: 8cfe64697af55ae4cb54fd0d71ae5497, type: 3}
   - {fileID: 4050655847283075761, guid: fefd766bd7971a44aae9cea7a8cdc939, type: 3}
   minAim: -60
-  maxAim: 80
+  maxAim: 88
   flipDeadZone: 0.1
   bodyAnimator: {fileID: 6190731026613729491}
   aimRotationPoint: {fileID: 3530513100766915636}

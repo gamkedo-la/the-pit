@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: player_aim_5
+  m_Name: player_aim_0
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -19,7 +19,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0, y: 0, z: -45}
+        value: {x: 0, y: 0, z: 77.5}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -36,7 +36,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.367, y: 2.403, z: 0}
+        value: {x: -0.29, y: 1.912, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -52,30 +52,30 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 865143461, guid: ebbe1b4fd1cde104097df20bcaf89206, type: 3}
+      value: {fileID: -1662550272, guid: ebbe1b4fd1cde104097df20bcaf89206, type: 3}
     attribute: m_Sprite
     path: Aim/Left Arm
     classID: 212
     script: {fileID: 0}
   - curve:
     - time: 0
-      value: {fileID: -2068799167, guid: ebbe1b4fd1cde104097df20bcaf89206, type: 3}
+      value: {fileID: -103751728, guid: ebbe1b4fd1cde104097df20bcaf89206, type: 3}
     attribute: m_Sprite
     path: Aim/Head
     classID: 212
     script: {fileID: 0}
   - curve:
     - time: 0
-      value: {fileID: 412408658, guid: ebbe1b4fd1cde104097df20bcaf89206, type: 3}
+      value: {fileID: 248780952, guid: ebbe1b4fd1cde104097df20bcaf89206, type: 3}
     attribute: m_Sprite
-    path: Aim/Right Arm
+    path: Aim/Right Shoulder
     classID: 212
     script: {fileID: 0}
   - curve:
     - time: 0
-      value: {fileID: 1681737102, guid: ebbe1b4fd1cde104097df20bcaf89206, type: 3}
+      value: {fileID: -257152642, guid: ebbe1b4fd1cde104097df20bcaf89206, type: 3}
     attribute: m_Sprite
-    path: Aim/Right Shoulder
+    path: Aim/Right Arm
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -100,14 +100,14 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
-      path: 889650748
+      path: 2073289437
       attribute: 0
       script: {fileID: 0}
       typeID: 212
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
-      path: 2073289437
+      path: 889650748
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -128,10 +128,10 @@ AnimationClip:
       customType: 4
       isPPtrCurve: 0
     pptrCurveMapping:
-    - {fileID: 865143461, guid: ebbe1b4fd1cde104097df20bcaf89206, type: 3}
-    - {fileID: -2068799167, guid: ebbe1b4fd1cde104097df20bcaf89206, type: 3}
-    - {fileID: 412408658, guid: ebbe1b4fd1cde104097df20bcaf89206, type: 3}
-    - {fileID: 1681737102, guid: ebbe1b4fd1cde104097df20bcaf89206, type: 3}
+    - {fileID: -1662550272, guid: ebbe1b4fd1cde104097df20bcaf89206, type: 3}
+    - {fileID: -103751728, guid: ebbe1b4fd1cde104097df20bcaf89206, type: 3}
+    - {fileID: 248780952, guid: ebbe1b4fd1cde104097df20bcaf89206, type: 3}
+    - {fileID: -257152642, guid: ebbe1b4fd1cde104097df20bcaf89206, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -153,6 +153,63 @@ AnimationClip:
     m_HeightFromFeet: 0
     m_Mirror: 0
   m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.29
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Aim/Aim Rotation Point
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.912
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Aim/Aim Rotation Point
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Aim/Aim Rotation Point
+    classID: 4
+    script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -196,7 +253,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -45
+        value: 77.5
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -207,63 +264,6 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Aim/Aim Rotation Point
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.367
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.x
-    path: Aim/Aim Rotation Point
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 2.403
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.y
-    path: Aim/Aim Rotation Point
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.z
     path: Aim/Aim Rotation Point
     classID: 4
     script: {fileID: 0}
