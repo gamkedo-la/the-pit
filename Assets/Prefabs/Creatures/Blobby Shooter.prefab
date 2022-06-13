@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aggressionRadius: 20
-  angleSpread: 22.5
+  angleSpread: 17
   attackCooldown: 1
   targetUpdateTime: 0.5
   shootingVelocity: 10
@@ -185,17 +185,17 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5791835176810509138}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 2.53125, y: 2.53125}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 2.53125, y: 2.53125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
