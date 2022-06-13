@@ -152,9 +152,9 @@ TextureImporter:
       name: blobby_shooter_1
       rect:
         serializedVersion: 2
-        x: 103
+        x: 104
         y: 0
-        width: 81
+        width: 79
         height: 81
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -173,9 +173,9 @@ TextureImporter:
       name: blobby_shooter_2
       rect:
         serializedVersion: 2
-        x: 199
+        x: 201
         y: 0
-        width: 81
+        width: 78
         height: 81
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -194,9 +194,9 @@ TextureImporter:
       name: blobby_shooter_3
       rect:
         serializedVersion: 2
-        x: 295
+        x: 300
         y: 0
-        width: 81
+        width: 76
         height: 81
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -215,9 +215,9 @@ TextureImporter:
       name: blobby_shooter_4
       rect:
         serializedVersion: 2
-        x: 391
+        x: 394
         y: 0
-        width: 81
+        width: 79
         height: 81
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -236,7 +236,7 @@ TextureImporter:
       name: blobby_shooter_5
       rect:
         serializedVersion: 2
-        x: 487
+        x: 488
         y: 0
         width: 81
         height: 81
@@ -257,8 +257,8 @@ TextureImporter:
       name: blobby_shooter_6
       rect:
         serializedVersion: 2
-        x: 583
-        y: 0
+        x: 7
+        y: 96
         width: 81
         height: 81
       alignment: 7
@@ -268,8 +268,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98f3a965360d43a44bc709c6ed79ef46
+      spriteID: c7db90be3c1e98a4c9595b7f74ffa513
       internalID: -1952066692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blobby_shooter_7
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 96
+        width: 79
+        height: 81
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9d707dc0ff99154f97e8c686eff1010
+      internalID: 128350087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blobby_shooter_8
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 96
+        width: 78
+        height: 81
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17e627d0a955493499916d0534e61089
+      internalID: 365562041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blobby_shooter_9
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 96
+        width: 76
+        height: 81
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5fd166b9b01ad04a9322e55ff376da3
+      internalID: 1613928347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blobby_shooter_10
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 96
+        width: 79
+        height: 81
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d310ae96f3635834f81547a12a21bcf4
+      internalID: 2078398799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blobby_shooter_11
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 96
+        width: 81
+        height: 81
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41fa3f06f1f680e49abba19cc8becb48
+      internalID: 1042104434
       vertices: []
       indices: 
       edges: []
@@ -286,12 +391,17 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       blobby_shooter_5: 1317817861
+      blobby_shooter_11: 1042104434
+      blobby_shooter_10: 2078398799
       blobby_shooter_6: -1952066692
+      blobby_shooter_8: 365562041
       blobby_shooter_4: 1356006615
       blobby_shooter_0: -1756620806
+      blobby_shooter_7: 128350087
       blobby_shooter_1: -1930101940
       blobby_shooter_3: 370605319
       blobby_shooter_2: -1944940146
+      blobby_shooter_9: 1613928347
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
