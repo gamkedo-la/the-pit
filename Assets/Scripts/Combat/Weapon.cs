@@ -69,7 +69,7 @@ namespace Combat
 
             Vector3 impactPos = muzzlePos + shotVector;
             
-            var hit = Physics2D.Raycast(muzzlePos, shotDirection, maxRange, shotBlockingLayers);
+            var hit = Physics2D.Raycast(muzzlePos, shotDirection, Mathf.Min(dist, maxRange), shotBlockingLayers);
             if (hit.collider != null)
             {
                 impactPos = hit.point;
