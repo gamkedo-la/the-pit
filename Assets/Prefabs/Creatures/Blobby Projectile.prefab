@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6827896178828081677}
   - component: {fileID: 6827896178828081673}
   - component: {fileID: -1903748862277459803}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Blobby Projectile
   m_TagString: Enemy
   m_Icon: {fileID: 0}
