@@ -60,7 +60,7 @@ public class PlayerStats : MonoBehaviour
     }
 
 
-    private void ApplyDamage(int damage)
+    public void ApplyDamage(int damage)
     {
         playerHealth.Subtract(damage);
         audioSource.PlayOneShot(hurtClip);
