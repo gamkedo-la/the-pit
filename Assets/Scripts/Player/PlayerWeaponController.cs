@@ -85,7 +85,8 @@ namespace Player
                 > 11.25f => 2,
                 > -11.25f => 3,
                 > -33.75f => 4,
-                _ => 5
+                > -62.5f => 5,
+                _ => 6
             };
             bodyAnimator.SetInteger("Aim Frame", aimFrame);
             if (shotAngle < minAim || shotAngle > maxAim) return;

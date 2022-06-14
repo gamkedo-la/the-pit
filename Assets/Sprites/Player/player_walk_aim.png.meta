@@ -631,6 +631,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: player_walk_aim_24
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3115286c5741ab543ac0584ee21996a0
+      internalID: 1223425739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_walk_aim_25
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc29defa42a8dd346b93afe9543e0704
+      internalID: 1828234518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_walk_aim_26
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 128
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1738ca8ae901a7459f2de78ef9d51d3
+      internalID: 1873038862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_walk_aim_27
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48730b9cdca60ad42bc9f2ded0581bc9
+      internalID: -991031642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -644,11 +728,13 @@ TextureImporter:
     nameFileIdTable:
       player_walk_aim_15: -339356478
       player_walk_aim_17: 412408658
+      player_walk_aim_24: 1223425739
       player_walk_aim_3: 802246523
       player_walk_aim_21: -1382098410
       player_walk_aim_11: 1681737102
       player_walk_aim_0: -103751728
       player_walk_aim_9: 1184458782
+      player_walk_aim_27: -991031642
       player_walk_aim_2: -253617408
       player_walk_aim_7: 1595181541
       player_walk_aim_13: 316212494
@@ -658,12 +744,14 @@ TextureImporter:
       player_walk_aim_10: -1590819415
       player_walk_aim_12: -257152642
       player_walk_aim_14: 457494985
+      player_walk_aim_25: 1828234518
       player_walk_aim_5: -2068799167
       player_walk_aim_1: -380731506
       player_walk_aim_4: -311073712
       player_walk_aim_6: 248780952
       player_walk_aim_23: 865143461
       player_walk_aim_18: -1662550272
+      player_walk_aim_26: 1873038862
       player_walk_aim_20: -1210639244
       player_walk_aim_22: -1649723848
   spritePackingTag: 
