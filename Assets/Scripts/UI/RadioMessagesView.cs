@@ -4,6 +4,7 @@ using Channels;
 using Narrative;
 using UnityEngine;
 using UnityEngine.UIElements;
+using System.Text;
 
 namespace UI
 {
@@ -45,7 +46,9 @@ namespace UI
                 var narration = narrations.Pop();
                 while (narration != null)
                 {
-                    radioMessagesController.Show(narration.text);
+                    // radioMessagesController.Show(narration.text);
+                    StartCoroutine(radioMessagesController.RevealText(narration.text.ToCharArray()));
+
                     if (narration.audioClip != null)
                     {
                         audioSource.PlayOneShot(narration.audioClip);
@@ -80,6 +83,25 @@ namespace UI
         public void Clear()
         {
             label.text = "";
+        }
+
+        public IEnumerator RevealText(char[] textToReveal)
+        {
+            int count = 0;
+            StringBuilder displayText = new StringBuilder(textToReveal.Length);
+
+            while (count < textToReveal.Length)
+            {
+                displayText.Append(textToReveal[count]);
+                label.text = displayText.ToString();
+                count++;
+
+                yield return new WaitForSeconds(0.05f);
+            }
+
+            yield return new WaitForSeconds(1);
+
+            Clear();
         }
     }
 }
