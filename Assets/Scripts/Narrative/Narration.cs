@@ -1,5 +1,4 @@
-﻿using Audio;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Narrative
 {
@@ -8,7 +7,7 @@ namespace Narrative
     {
         [TextArea]
         public string text;
-        public AudioClipWithVolume audioClip;
+        public AudioClip audioClip;
         [Min(0)]
         public float defaultDuration;
 

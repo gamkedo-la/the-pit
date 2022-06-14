@@ -17653,16 +17653,13 @@ MonoBehaviour:
         m_MethodName: Push
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: d172fbbdc94e99d4eb79a1a3b5aff06e, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 07caf782e49702e4884710775dec3fa8, type: 2}
           m_ObjectArgumentAssemblyTypeName: Narrative.Narration, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onPlayerDepart:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 4963135894674352952}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -17670,11 +17667,14 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 15
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onPlayerDepart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &5678623708577495745
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17699,7 +17699,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 15.2, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &6296125491708367049
 GameObject:
@@ -17983,7 +17983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6988997849842801471, guid: 59fd5219dc1a14f44a8a0888dae9802f, type: 3}
       propertyPath: m_InstanceId
-      value: -90468
+      value: -145336
       objectReference: {fileID: 0}
     - target: {fileID: 8730629869215831362, guid: 59fd5219dc1a14f44a8a0888dae9802f, type: 3}
       propertyPath: m_Mesh
@@ -17991,7 +17991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8730629869215831362, guid: 59fd5219dc1a14f44a8a0888dae9802f, type: 3}
       propertyPath: m_InstanceId
-      value: -90474
+      value: -145342
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59fd5219dc1a14f44a8a0888dae9802f, type: 3}
@@ -18149,7 +18149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 20302785510691348, guid: 30cb47fbf8bfef64cab4abf9d3e40360, type: 3}
       propertyPath: m_InstanceId
-      value: -90526
+      value: -145394
       objectReference: {fileID: 0}
     - target: {fileID: 184943801263771877, guid: 30cb47fbf8bfef64cab4abf9d3e40360, type: 3}
       propertyPath: m_Mesh
@@ -18157,7 +18157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 184943801263771877, guid: 30cb47fbf8bfef64cab4abf9d3e40360, type: 3}
       propertyPath: m_InstanceId
-      value: -90538
+      value: -145406
       objectReference: {fileID: 0}
     - target: {fileID: 2676067941816614894, guid: 30cb47fbf8bfef64cab4abf9d3e40360, type: 3}
       propertyPath: m_Name

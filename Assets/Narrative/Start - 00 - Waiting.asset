@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a77ef0d898274f9eb2e6e8636f0877b0, type: 3}
-  m_Name: Start - 01 - Fall
+  m_Name: Start - 00 - Waiting
   m_EditorClassIdentifier: 
-  text: Wow, that was quite a fall! I hope you are okay?
-  audioClip: {fileID: 8300000, guid: c532d1360300e6f418f65ff785efdb93, type: 3}
+  text: 
+  audioClip: {fileID: 0}
   defaultDuration: 1
-  next: {fileID: 11400000, guid: 5f6c3352c4cfc344da11edb65459a6e2, type: 2}
-  delayUntilNext: 2
+  next: {fileID: 11400000, guid: d172fbbdc94e99d4eb79a1a3b5aff06e, type: 2}
+  delayUntilNext: 0

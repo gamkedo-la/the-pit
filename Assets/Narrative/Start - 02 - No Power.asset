@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: First order of business is to restore power to the base. The breaker room
     is right next to the elevator.
-  audioClip: {fileID: 0}
-  defaultDuration: 8
-  followedBy: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 0b0f5d081c9ab7f4cb43409c9f11ca29, type: 3}
+  defaultDuration: 1
+  next: {fileID: 0}
+  delayUntilNext: 0

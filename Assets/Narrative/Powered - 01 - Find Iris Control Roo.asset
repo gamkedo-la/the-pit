@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a77ef0d898274f9eb2e6e8636f0877b0, type: 3}
-  m_Name: Start - 01 - Fall
+  m_Name: Powered - 01 - Find Iris Control Roo
   m_EditorClassIdentifier: 
-  text: Wow, that was quite a fall! I hope you are okay?
-  audioClip: {fileID: 8300000, guid: c532d1360300e6f418f65ff785efdb93, type: 3}
+  text: Good. Now find your way to the Iris Control Room.
+  audioClip: {fileID: 8300000, guid: aed2c628cf8ae6e4c9b770e3351aef6a, type: 3}
   defaultDuration: 1
-  next: {fileID: 11400000, guid: 5f6c3352c4cfc344da11edb65459a6e2, type: 2}
+  next: {fileID: 11400000, guid: b36154a9a9d169045adddc9e8d53cce8, type: 2}
   delayUntilNext: 2

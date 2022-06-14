@@ -46,7 +46,15 @@ namespace UI
                 while (narration != null)
                 {
                     radioMessagesController.Show(narration.text);
+                    if (narration.audioClip != null)
+                    {
+                        audioSource.PlayOneShot(narration.audioClip);
+                    }
                     yield return new WaitForSeconds(narration.defaultDuration);
+                    while (audioSource.isPlaying)
+                    {
+                        yield return new WaitForFixedUpdate();
+                    }
                     radioMessagesController.Clear();
                     if (narration.next == null) break;
                     yield return new WaitForSeconds(narration.delayUntilNext);
