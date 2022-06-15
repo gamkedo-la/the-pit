@@ -15,6 +15,7 @@ namespace UI
 
         private RadioMessagesController radioMessagesController;
         private Stack<Narration> narrations = new();
+        private Coroutine revealCoroutine;
 
         private void OnEnable()
         {
@@ -47,7 +48,11 @@ namespace UI
                 while (narration != null)
                 {
                     // radioMessagesController.Show(narration.text);
-                    StartCoroutine(radioMessagesController.RevealText(narration.text.ToCharArray()));
+                    StartCoroutine(
+                        radioMessagesController.RevealText(
+                            narration.text.ToCharArray(),
+                            narration.audioClip != null ? narration.audioClip.length : narration.defaultDuration
+                        ));
 
                     if (narration.audioClip != null)
                     {
@@ -58,10 +63,16 @@ namespace UI
                     {
                         yield return new WaitForFixedUpdate();
                     }
-                    radioMessagesController.Clear();
-                    if (narration.next == null) break;
-                    yield return new WaitForSeconds(narration.delayUntilNext);
-                    narration = narration.next;
+
+                    if (narration.next != null)
+                    {
+                        yield return new WaitForSeconds(narration.delayUntilNext);
+                        narration = narration.next;
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
             }
         }
@@ -85,9 +96,10 @@ namespace UI
             label.text = "";
         }
 
-        public IEnumerator RevealText(char[] textToReveal)
+        public IEnumerator RevealText(char[] textToReveal, float audioClipLength)
         {
             int count = 0;
+            float wait = audioClipLength / (float)textToReveal.Length * 0.85f;
             StringBuilder displayText = new StringBuilder(textToReveal.Length);
 
             while (count < textToReveal.Length)
@@ -96,7 +108,7 @@ namespace UI
                 label.text = displayText.ToString();
                 count++;
 
-                yield return new WaitForSeconds(0.05f);
+                yield return new WaitForSeconds(wait);
             }
 
             yield return new WaitForSeconds(1);
