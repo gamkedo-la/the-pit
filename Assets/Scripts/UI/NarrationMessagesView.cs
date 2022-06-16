@@ -8,26 +8,26 @@ using UnityEngine.UIElements;
 
 namespace UI
 {
-    public class RadioMessagesView : MonoBehaviour, ISubscriber<Narration>
+    public class NarrationMessagesView : MonoBehaviour, ISubscriber<Narration>
     {
-        public NarrationChannel radioMessages;
+        public NarrationChannel narrationChannel;
         public AudioSource audioSource;
         public bool gradualReveal;
 
-        private RadioMessagesController radioMessagesController;
+        private NarrationMessagesController narrationMessagesController;
         private Stack<Narration> narrations = new();
 
         private void OnEnable()
         {
             var ui = GetComponent<UIDocument>();
-            radioMessagesController = new(ui.rootVisualElement);
-            radioMessagesController.Clear();
-            radioMessages.AddSubscriber(this);
+            narrationMessagesController = new(ui.rootVisualElement);
+            narrationMessagesController.Clear();
+            narrationChannel.AddSubscriber(this);
         }
 
         private void OnDisable()
         {
-            radioMessages.RemoveSubscriber(this);
+            narrationChannel.RemoveSubscriber(this);
         }
 
         public void OnReceive(Narration narration)
@@ -57,18 +57,18 @@ namespace UI
 
                     if (gradualReveal)
                     {
-                        yield return radioMessagesController.RevealText(
+                        yield return narrationMessagesController.RevealText(
                             narration.text.ToCharArray(),
                             delay
                         );
                     }
                     else
                     {
-                        radioMessagesController.Show(narration.text);
+                        narrationMessagesController.Show(narration.text);
                         yield return new WaitForSeconds(delay);
                     }
 
-                    radioMessagesController.Clear();
+                    narrationMessagesController.Clear();
                     if (narration.next == null) break;
                     yield return new WaitForSeconds(narration.delayUntilNext);
                     narration = narration.next;
@@ -77,13 +77,13 @@ namespace UI
         }
     }
 
-    internal class RadioMessagesController
+    internal class NarrationMessagesController
     {
         private readonly Label label;
 
-        public RadioMessagesController(VisualElement root)
+        public NarrationMessagesController(VisualElement root)
         {
-            label = root.Q<Label>("RadioMessages");
+            label = root.Q<Label>();
         }
 
         public void Show(string text)
