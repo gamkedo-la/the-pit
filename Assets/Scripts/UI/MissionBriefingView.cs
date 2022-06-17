@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Channels;
+using UnityEngine;
 using UnityEngine.UIElements;
 using Variables;
 
@@ -9,6 +10,7 @@ namespace UI
         public TextAsset instructions;
         public TextAsset briefing;
         public BoolVariable showOnStartup;
+        public BoolChannel gameRunning;
 
         private void OnEnable()
         {
@@ -17,6 +19,12 @@ namespace UI
             controller.SetInstructionsText(instructions.text);
             controller.SetBriefingText(briefing.text);
             controller.SetShowOnStartup(showOnStartup);
+            gameRunning.Push(false);
+        }
+
+        private void OnDisable()
+        {
+            gameRunning.Push(true);
         }
     }
 }

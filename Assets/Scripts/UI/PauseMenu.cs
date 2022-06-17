@@ -21,7 +21,6 @@ public class PauseMenu : MonoBehaviour
         {
             btn1.SetActive(true);
             btn2.SetActive(true);
-            Time.timeScale = 0;
             gameRunning.Push(false);
         }
     }
@@ -30,7 +29,6 @@ public class PauseMenu : MonoBehaviour
     {
         btn1.SetActive(false);
         btn2.SetActive(false);
-        Time.timeScale = 1;
         gameRunning.Push(true);
     }
 
