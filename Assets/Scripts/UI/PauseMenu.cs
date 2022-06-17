@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Channels;
 using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
@@ -7,13 +6,14 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject btn1;
     [SerializeField] GameObject btn2;
 
+    public BoolChannel gameRunning;
 
     private void Start()
     {
         btn1.SetActive(false);
         btn2.SetActive(false);
 
-
+        gameRunning.Push(true);
     }
     private void Update()
     {
@@ -22,6 +22,7 @@ public class PauseMenu : MonoBehaviour
             btn1.SetActive(true);
             btn2.SetActive(true);
             Time.timeScale = 0;
+            gameRunning.Push(false);
         }
     }
 
@@ -30,6 +31,7 @@ public class PauseMenu : MonoBehaviour
         btn1.SetActive(false);
         btn2.SetActive(false);
         Time.timeScale = 1;
+        gameRunning.Push(true);
     }
 
     public void OnQuite()
