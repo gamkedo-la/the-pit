@@ -12,8 +12,6 @@ public class PauseMenu : MonoBehaviour
     {
         btn1.SetActive(false);
         btn2.SetActive(false);
-
-        gameRunning.Push(true);
     }
     private void Update()
     {
