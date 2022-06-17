@@ -5,24 +5,38 @@ namespace Channels
 {
     public class GenericChannel<T> : ScriptableObject
     {
-       private readonly List<ISubscriber<T>> listeners = new ();
+        [SerializeField] private T defaultValue;
+        
+        private readonly List<ISubscriber<T>> listeners = new();
+        public T Value { get; private set; }
 
-        public void Push(T value = default)
+        private void OnEnable()
         {
+            hideFlags = HideFlags.DontUnloadUnusedAsset;
+            Value = defaultValue;
+        }
+        
+        public void Push(T value)
+        {
+            if (EqualityComparer<T>.Default.Equals(value, Value)) return;
+            
             for (var i = listeners.Count - 1; i >= 0; i--)
             {
                 listeners[i].OnReceive(value);
             }
+
+            Value = value;
         }
 
         public void AddSubscriber(ISubscriber<T> listener)
         {
             listeners.Add(listener);
+            listener.OnReceive(Value);
         }
 
         public void RemoveSubscriber(ISubscriber<T> listener)
         {
             listeners.Remove(listener);
-        } 
+        }
     }
 }
