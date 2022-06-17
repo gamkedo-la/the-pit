@@ -104,7 +104,7 @@ MonoBehaviour:
   id: 0
   maxRange: 15
   damage: 1
-  cooldownBetweenShots: 0.3
+  cooldownBetweenShots: 0.2
   automaticFire: 1
   audioPlayer: {fileID: 1217871498331952707}
   shootSound: {fileID: 11400000, guid: 51905a46523c8aa42b1d194bf4fcb3c6, type: 2}
