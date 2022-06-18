@@ -57,6 +57,11 @@ public class PlayerStats : MonoBehaviour
                 spriteRenderer.color = isOn ? Color.white : hurtFlashColor;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            ApplyDamage(100);
+        }
     }
 
 
@@ -67,9 +72,10 @@ public class PlayerStats : MonoBehaviour
 
         if (playerHealth.Value <= 0)
         {
-            Debug.Log("You have died");
+            BroadcastMessage("OnDeath");
         }
     }
+
 
     private void Heal(int healing)
     {

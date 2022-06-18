@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Combat;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Player
@@ -54,6 +55,13 @@ namespace Player
             weapon = Instantiate(selectedWeapon, weaponGrip);
         }
 
+        [UsedImplicitly]
+        private void OnDeath()
+        {
+            bodyAnimator.SetLayerWeight(bodyAnimator.GetLayerIndex("Aim"), 0f);
+            Destroy(this);
+        }
+
 
         private void Update()
         {
@@ -76,8 +84,6 @@ namespace Player
             var aimRotationPosition = aimRotationPoint.transform.position;
             Vector2 shotVector = aimPosition - aimRotationPosition;
             var shotAngle = Vector2.SignedAngle(Vector2.right * direction, shotVector)*Mathf.Sign(direction);
-            var shotAngle01 = Mathf.Clamp01(Mathf.InverseLerp(maxAim, minAim, shotAngle));
-            bodyAnimator.SetFloat("Aim Angle", shotAngle01);
             var aimFrame = shotAngle switch
             {
                 > 62.5f => 0,

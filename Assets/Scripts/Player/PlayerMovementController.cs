@@ -1,4 +1,5 @@
 ﻿using Audio;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Player
@@ -33,6 +34,13 @@ namespace Player
         private void Start()
         {
             rb2d = GetComponent<Rigidbody2D>();
+        }
+
+        [UsedImplicitly]
+        private void OnDeath()
+        {
+            animator.SetTrigger("Die");
+            Destroy(this);
         }
 
         private void Update()
