@@ -413,7 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 11400000, guid: bac6a7e23ca660e4a8be0033c8031cc5, type: 2}
   playerMinHealth: 0
-  playerMaxHealth: 80
+  playerMaxHealth: 40
   damageCooldown: 0.5
   defaultKnockback: 4
   spriteRenderers:
