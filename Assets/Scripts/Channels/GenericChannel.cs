@@ -18,8 +18,6 @@ namespace Channels
         
         public void Push(T value)
         {
-            if (EqualityComparer<T>.Default.Equals(value, Value)) return;
-            
             for (var i = listeners.Count - 1; i >= 0; i--)
             {
                 listeners[i].OnReceive(value);

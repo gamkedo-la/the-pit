@@ -1,5 +1,5 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using Variables;
 
 namespace Level
 {
@@ -12,7 +12,7 @@ namespace Level
         private PitLevel activeLevel;
 
         [SerializeField]
-        private Transform followTarget;
+        private GameObjectVariable followTarget;
 
         [SerializeField]
         private Camera frontCamera;
@@ -34,7 +34,9 @@ namespace Level
 
         private void FixedUpdate()
         {
-            targetPos = followTarget.transform.position;
+            if (followTarget.Value == null) return;
+            
+            targetPos = followTarget.Value.transform.position;
             var cameraPos = frontCamera.transform.position;
             var halfHeight = frontCamera.orthographicSize;
             var targetBottom = targetPos.y - halfHeight;

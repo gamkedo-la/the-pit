@@ -17605,6 +17605,7 @@ GameObject:
   - component: {fileID: 3763250331613061644}
   - component: {fileID: 2752262657140322857}
   - component: {fileID: 5678623708577495745}
+  - component: {fileID: 7842478859487412627}
   m_Layer: 2
   m_Name: Start Mission Trigger
   m_TagString: Untagged
@@ -17660,6 +17661,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7842478859487412627}
+        m_TargetAssemblyTypeName: Player.PlayerSpawnPoint, Assembly-CSharp
+        m_MethodName: Unlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4963135894674352952}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -17701,6 +17714,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15.2, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7842478859487412627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4963135894674352952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14349a0e53a4757ac6bdf15e251293a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  channel: {fileID: 11400000, guid: c7effa30130d5e34daee427c217399d9, type: 2}
 --- !u!1 &6296125491708367049
 GameObject:
   m_ObjectHideFlags: 0
@@ -17983,7 +18009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6988997849842801471, guid: 59fd5219dc1a14f44a8a0888dae9802f, type: 3}
       propertyPath: m_InstanceId
-      value: -39208
+      value: -877372
       objectReference: {fileID: 0}
     - target: {fileID: 8730629869215831362, guid: 59fd5219dc1a14f44a8a0888dae9802f, type: 3}
       propertyPath: m_Mesh
@@ -17991,7 +18017,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8730629869215831362, guid: 59fd5219dc1a14f44a8a0888dae9802f, type: 3}
       propertyPath: m_InstanceId
-      value: -39214
+      value: -877378
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59fd5219dc1a14f44a8a0888dae9802f, type: 3}
@@ -18149,7 +18175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 20302785510691348, guid: 30cb47fbf8bfef64cab4abf9d3e40360, type: 3}
       propertyPath: m_InstanceId
-      value: -39266
+      value: -877430
       objectReference: {fileID: 0}
     - target: {fileID: 184943801263771877, guid: 30cb47fbf8bfef64cab4abf9d3e40360, type: 3}
       propertyPath: m_Mesh
@@ -18157,7 +18183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 184943801263771877, guid: 30cb47fbf8bfef64cab4abf9d3e40360, type: 3}
       propertyPath: m_InstanceId
-      value: -39278
+      value: -877442
       objectReference: {fileID: 0}
     - target: {fileID: 2676067941816614894, guid: 30cb47fbf8bfef64cab4abf9d3e40360, type: 3}
       propertyPath: m_Name

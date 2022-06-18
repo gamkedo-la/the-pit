@@ -1,13 +1,14 @@
 ﻿using Level;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Variables;
 
 namespace UI
 {
     public class LocationView : MonoBehaviour
     {
         public PitLevel level;
-        public Transform player;
+        public GameObjectVariable player;
         public VisualTreeAsset enemyHealthBarTemplate;
         
         private LocationController locationController;
@@ -20,7 +21,9 @@ namespace UI
 
         private void LateUpdate()
         {
-            if (level.FindRoom(player.position, out var room))
+            if (player.Value == null) return;
+            
+            if (level.FindRoom(player.Value.transform.position, out var room))
             {
                 locationController.ShowLocation(room);
             }
