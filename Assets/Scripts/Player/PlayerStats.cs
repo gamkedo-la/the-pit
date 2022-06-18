@@ -2,114 +2,143 @@ using Audio;
 using UnityEngine;
 using Variables;
 
-public class PlayerStats : MonoBehaviour
+namespace Player
 {
-    [SerializeField]
-    private MinMaxIntVariable playerHealth;
+    public class PlayerStats : MonoBehaviour
+    {
+        [SerializeField]
+        private MinMaxIntVariable playerHealth;
 
-    [SerializeField, Tooltip("Player minimum health.")]
-    private int playerMinHealth = 0;
+        [SerializeField, Tooltip("Player minimum health.")]
+        private int playerMinHealth = 0;
 
-    [SerializeField, Tooltip("Player maximum health.")]
-    private int playerMaxHealth = 100;
+        [SerializeField, Tooltip("Player maximum health.")]
+        private int playerMaxHealth = 100;
 
-    [SerializeField, Tooltip("How long is player invulnerable after taking damage?")]
-    private float damageCooldown = 0.5f;
+        [SerializeField, Tooltip("How long is player invulnerable after taking damage?")]
+        private float damageCooldown = 0.5f;
 
-    [SerializeField]
-    private float defaultKnockback;
+        [SerializeField, Tooltip("Lowest collision impulse that causes damage")]
+        private float minCollisionImpulse;
 
-    [SerializeField] 
-    private SpriteRenderer[] spriteRenderers;
+        [SerializeField, Tooltip("Scale of impulse collision damage to health points, set to 0 to not take collision damage")]
+        private float collisionImpulseScale;
 
-    [SerializeField]
-    private float hurtFlashFrequency = 25f;
+        [SerializeField]
+        private float defaultKnockback;
 
-    [SerializeField]
-    private Color hurtFlashColor = new Color(1f, 1f, 1f, 0.2f);
+        [SerializeField] 
+        private SpriteRenderer[] spriteRenderers;
 
-    [SerializeField] 
-    private AudioClipWithVolume hurtClip;
+        [SerializeField]
+        private float hurtFlashFrequency = 25f;
+
+        [SerializeField]
+        private Color hurtFlashColor = new Color(1f, 1f, 1f, 0.2f);
+
+        [SerializeField] 
+        private AudioClipWithVolume hurtClip;
     
-    private float damageTimer = 0;
-    private DamageInflicted damage;
-    private Rigidbody2D rb2d;
-    private AudioSource audioSource;
+        private float damageTimer = 0;
+        private DamageInflicted damage;
+        private Rigidbody2D rb2d;
+        private AudioSource audioSource;
 
-    void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-        rb2d = GetComponent<Rigidbody2D>();
-        // initialize playerHealth variable
-        playerHealth.MinValue = playerMinHealth;
-        playerHealth.MaxValue = playerMaxHealth;
-        playerHealth.Value = playerMaxHealth;
-    }
-
-    private void Update()
-    {
-        if (damageTimer > 0)
+        void Start()
         {
-            damageTimer = Mathf.Max(damageTimer - Time.deltaTime, 0f);
-            var isOn = Mathf.Repeat(damageTimer * hurtFlashFrequency, 1f) < 0.5f;
-            foreach (var spriteRenderer in spriteRenderers)
+            audioSource = GetComponent<AudioSource>();
+            rb2d = GetComponent<Rigidbody2D>();
+            // initialize playerHealth variable
+            playerHealth.MinValue = playerMinHealth;
+            playerHealth.MaxValue = playerMaxHealth;
+            playerHealth.Value = playerMaxHealth;
+        }
+
+        private void Update()
+        {
+            if (damageTimer > 0)
             {
-                spriteRenderer.color = isOn ? Color.white : hurtFlashColor;
+                damageTimer = Mathf.Max(damageTimer - Time.deltaTime, 0f);
+                var isOn = Mathf.Repeat(damageTimer * hurtFlashFrequency, 1f) < 0.5f;
+                foreach (var spriteRenderer in spriteRenderers)
+                {
+                    spriteRenderer.color = isOn ? Color.white : hurtFlashColor;
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                ApplyDamage(100);
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.K))
+
+        public void ApplyDamage(int damage)
         {
-            ApplyDamage(100);
-        }
-    }
+            playerHealth.Subtract(damage);
+            audioSource.PlayOneShot(hurtClip);
 
-
-    public void ApplyDamage(int damage)
-    {
-        playerHealth.Subtract(damage);
-        audioSource.PlayOneShot(hurtClip);
-
-        if (playerHealth.Value <= 0)
-        {
-            BroadcastMessage("OnDeath");
-        }
-    }
-
-
-    private void Heal(int healing)
-    {
-        playerHealth.Add(healing);
-    }
-
-    private void ApplyKnockback(Vector2 fromPosition, float force)
-    {
-        var direction = new Vector2(fromPosition.x < transform.position.x ? 1 : -1, 1f);
-        rb2d.velocity = Vector2.zero;
-        rb2d.AddForce(direction * force, ForceMode2D.Impulse);
-    }
-
-    // ******************************* Collision Handling ********************************
-    private void OnTriggerEnter2D(Collider2D other) { CheckForDamage(other, other.transform.position); }
-    private void OnTriggerStay2D(Collider2D other) { CheckForDamage(other, other.transform.position); }
-    private void OnCollisionEnter2D(Collision2D other) { CheckForDamage(other.collider, other.GetContact(0).point); }
-    private void OnCollisionStay2D(Collision2D other) { CheckForDamage(other.collider, other.GetContact(0).point); }
-
-    private void CheckForDamage(Collider2D collider, Vector2 hitPos)
-    {
-        if (collider.CompareTag("Enemy") && damageTimer <= 0)
-        {
-            if (collider.TryGetComponent<DamageInflicted>(out damage))
+            if (playerHealth.Value <= 0)
             {
-                ApplyDamage(damage.Damage);
-                damageTimer = damageCooldown;
-                if (damage.HasKnockback)
+                BroadcastMessage("OnDeath");
+                return;
+            }
+        
+            damageTimer = damageCooldown;
+        }
+
+
+        private void Heal(int healing)
+        {
+            playerHealth.Add(healing);
+        }
+
+        private void ApplyKnockback(Vector2 fromPosition, float force)
+        {
+            var direction = new Vector2(fromPosition.x < transform.position.x ? 1 : -1, 1f);
+            rb2d.velocity = Vector2.zero;
+            rb2d.AddForce(direction * force, ForceMode2D.Impulse);
+        }
+
+        // ******************************* Collision Handling ********************************
+        private void OnTriggerEnter2D(Collider2D other) { CheckForAttackDamage(other, other.transform.position); }
+        private void OnTriggerStay2D(Collider2D other) { CheckForAttackDamage(other, other.transform.position); }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            CheckForDamage(other);
+        }
+
+        private void CheckForDamage(Collision2D collision)
+        {
+            if (damageTimer > 0) return;
+            var contact = collision.GetContact(0);
+            CheckForCollisionDamage(contact.normalImpulse);
+            CheckForAttackDamage(collision.collider, contact.point);
+        }
+
+        private void CheckForCollisionDamage(float impulse)
+        {
+            if (impulse < minCollisionImpulse) return;
+            ApplyDamage(Mathf.RoundToInt((impulse - minCollisionImpulse) * collisionImpulseScale));
+        }
+    
+        private void CheckForAttackDamage(Collider2D collider, Vector2 hitPos)
+        {
+            if (damageTimer > 0) return;
+            if (collider.CompareTag("Enemy"))
+            {
+                if (collider.TryGetComponent<DamageInflicted>(out damage))
                 {
-                    ApplyKnockback(hitPos, damage.Knockback);
-                }
-                else
-                {
-                    ApplyKnockback(hitPos, defaultKnockback);
+                    ApplyDamage(damage.Damage);
+                    if (damage.HasKnockback)
+                    {
+                        ApplyKnockback(hitPos, damage.Knockback);
+                    }
+                    else
+                    {
+                        ApplyKnockback(hitPos, defaultKnockback);
+                    }
                 }
             }
         }

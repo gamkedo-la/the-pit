@@ -415,6 +415,8 @@ MonoBehaviour:
   playerMinHealth: 0
   playerMaxHealth: 40
   damageCooldown: 0.8
+  minCollisionImpulse: 30
+  collisionImpulseScale: 0.8
   defaultKnockback: 8
   spriteRenderers:
   - {fileID: 6190731026613729490}
