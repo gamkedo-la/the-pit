@@ -6,7 +6,7 @@ namespace UI
 {
     public class PlayerHealthView : MonoBehaviour
     {
-        public IntVariable currentHealth;
+        public MinMaxIntVariable currentHealth;
         public VisualTreeAsset heartTemplate;
         
         private PlayerHealthController playerHealthController;
@@ -23,7 +23,7 @@ namespace UI
         {
             if (currentHealth.Value == lastDisplayedHealth) return;
             
-            playerHealthController.ShowHealth(currentHealth.Value);
+            playerHealthController.ShowHealth(currentHealth.Value, currentHealth.MaxValue);
             lastDisplayedHealth = currentHealth.Value;
         }
     }

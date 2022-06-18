@@ -19,8 +19,12 @@ Label {
     background-color: chartreuse;
 }
 
-.heart-0 {
+.heart-full {
     background-image: url('project://database/Assets/Sprites/Hearts.png?fileID=-998597739&guid=6c41186efeb786a4f92ac76dbacd7f5a&type=3#Hearts_0');
+}
+
+.heart-empty {
+    background-image: url('project://database/Assets/Sprites/Hearts.png?fileID=211730820&guid=6c41186efeb786a4f92ac76dbacd7f5a&type=3#Hearts_8');
 }
 
 .heart-7 {

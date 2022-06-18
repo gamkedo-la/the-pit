@@ -13,25 +13,22 @@ namespace UI
             heartTemplate = template;
         }
 
-        public void ShowHealth(int value)
+        public void ShowHealth(int value, int maxValue)
         {
             heartContainer.Clear();
-            if (value <= 0) return;
-            
-            var hearts = value / 8;
-            for (var i = 0; i < hearts; i++)
+            var totalHearts = (maxValue+7) / 8;
+            for (var i = 0; i < totalHearts; i++)
             {
-                var fullHeart = heartTemplate.Instantiate();
-                fullHeart.AddToClassList("heart-0");
-                heartContainer.Add(fullHeart);
+                var heart = heartTemplate.Instantiate();
+                heart.AddToClassList(value switch
+                {
+                    <= 0 => "heart-empty",
+                    < 8 => $"heart-{value}",
+                    _ => "heart-full"
+                });
+                heartContainer.Add(heart);
+                value -= 8;
             }
-
-            var remaining = value % 8;
-            if (remaining <= 0) return;
-
-            var partialHeart = heartTemplate.Instantiate();
-            partialHeart.AddToClassList($"heart-{remaining}");
-            heartContainer.Add(partialHeart);
         }
     }
 }
