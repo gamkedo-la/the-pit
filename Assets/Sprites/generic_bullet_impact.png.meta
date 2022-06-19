@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a6f9ac04174a88dd09b903950441089f
+guid: ba5441b57d5270f429ad3f82c6192233
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,9 +47,9 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -128,127 +128,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: baby_tentacle_monster-sheet_0
+      name: generic_bullet_impact_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef3ab12ed593234c4a97f1dd02da7a67
-      internalID: -1236992705
+      spriteID: 767dadbbf1d6fe244b1250313a591b9b
+      internalID: 27952835
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: baby_tentacle_monster-sheet_1
+      name: generic_bullet_impact_1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 32
         y: 0
-        width: 128
-        height: 128
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 954fc9946e4d13c1d9c55ca384830417
-      internalID: 1501404314
+      spriteID: 359d265a344b6f74a8409f7b42753b43
+      internalID: -2022170830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: baby_tentacle_monster-sheet_2
+      name: generic_bullet_impact_2
       rect:
         serializedVersion: 2
-        x: 256
+        x: 64
         y: 0
-        width: 128
-        height: 128
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50430dfddfd54dd4ea1c5ed52e0371d2
-      internalID: 1980399064
+      spriteID: cf098553142d5d841b61e05e73301fbd
+      internalID: -1472569841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: baby_tentacle_monster-sheet_3
+      name: generic_bullet_impact_3
       rect:
         serializedVersion: 2
-        x: 384
+        x: 96
         y: 0
-        width: 128
-        height: 128
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95959337679ddec94b5907fe818347b7
-      internalID: 1328257311
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_tentacle_monster-sheet_4
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb55e32c6e20ae03ab8e85b517fa6318
-      internalID: -91250493
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_tentacle_monster-sheet_5
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c498591baa05801d98d6b8d4eae02f97
-      internalID: -697649371
+      spriteID: 02d64015d7d3e934db3aa627286eb648
+      internalID: 458004150
       vertices: []
       indices: 
       edges: []
@@ -264,12 +222,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      baby_tentacle_monster-sheet_4: -402981926
-      baby_tentacle_monster-sheet_1: 1717571907
-      baby_tentacle_monster-sheet_0: -1199405003
-      baby_tentacle_monster-sheet_5: -1236992705
-      baby_tentacle_monster-sheet_3: -1486472838
-      baby_tentacle_monster-sheet_2: -130847443
+      generic_bullet_impact_2: -1472569841
+      generic_bullet_impact_3: 458004150
+      generic_bullet_impact_0: 27952835
+      generic_bullet_impact_1: -2022170830
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

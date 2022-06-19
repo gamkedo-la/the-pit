@@ -1,5 +1,6 @@
 ﻿using Audio;
 using UnityEngine;
+using Util;
 
 namespace Combat
 {
@@ -23,9 +24,8 @@ namespace Combat
         
         public Transform muzzle;
         public Animator muzzleFlash;
-        public GameObject projectileImpactPrefab;
-        [Tooltip("How long the projectile impact should last as a game object before being removed")]
-        public float projectileImpactDuration;
+        
+        public GameObjectPool projectileImpactPool;
 
         [Header("Layers")] 
         public LayerMask shotBlockingLayers;
@@ -82,9 +82,8 @@ namespace Combat
             impactPos.z = transform.position.z;
             
             // Wasteful, use object pool
-            var projectileImpact = Instantiate(projectileImpactPrefab);
+            var projectileImpact = projectileImpactPool.Get();
             projectileImpact.transform.position = impactPos;
-            Destroy(projectileImpact, projectileImpactDuration);
         }
         
         private bool CheckWhatWasHit(GameObject hitObject, Vector2 hitPoint)

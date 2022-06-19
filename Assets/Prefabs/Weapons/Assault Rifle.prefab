@@ -110,8 +110,7 @@ MonoBehaviour:
   shootSound: {fileID: 11400000, guid: 51905a46523c8aa42b1d194bf4fcb3c6, type: 2}
   muzzle: {fileID: 6900139356183839674}
   muzzleFlash: {fileID: 2364329498693797134}
-  projectileImpactPrefab: {fileID: 6132861582933238597, guid: 57c5be9914c5f5f41a16b639ff112c95, type: 3}
-  projectileImpactDuration: 0.2
+  projectileImpactPool: {fileID: 11400000, guid: 877c4aa20020971408fda02d30a74847, type: 2}
   shotBlockingLayers:
     serializedVersion: 2
     m_Bits: 1
