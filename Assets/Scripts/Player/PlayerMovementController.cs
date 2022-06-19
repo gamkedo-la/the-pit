@@ -126,8 +126,6 @@ namespace Player
 
         private void MoveHorizontal()
         {
-            if (horizontal == 0) return;
-
             var v = rb2d.velocity;
             v.x = horizontal;
             rb2d.velocity = v;
