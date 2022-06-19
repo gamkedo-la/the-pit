@@ -1,4 +1,5 @@
-﻿using Audio;
+﻿using System.Collections;
+using Audio;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -58,6 +59,17 @@ namespace Player
         private void OnDeath()
         {
             animator.SetTrigger("Die");
+            StartCoroutine(StopMovingWhenTouchingGround());
+        }
+
+        private IEnumerator StopMovingWhenTouchingGround()
+        {
+            while (!onGround)
+            {
+                yield return null;
+            }
+
+            rb2d.constraints |= RigidbodyConstraints2D.FreezePositionX;
             Destroy(this);
         }
 
