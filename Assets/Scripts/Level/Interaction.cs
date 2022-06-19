@@ -14,8 +14,6 @@ namespace Level
         public UnityEvent onInteraction;
         public UnityEvent onPlayerApproach;
         public UnityEvent onPlayerDepart;
-
-        private bool playerNear;
         
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -25,7 +23,6 @@ namespace Level
 
             pac.Interaction = this;
             onPlayerApproach.Invoke();
-            playerNear = true;
         }
 
         private void OnTriggerExit2D(Collider2D other)
@@ -33,7 +30,6 @@ namespace Level
             if (!other.gameObject.CompareTag("Player")) return;
             if (!other.gameObject.TryGetComponent<PlayerActionController>(out var pac)) return;
 
-            playerNear = false;
             onPlayerDepart.Invoke();
             if (pac.Interaction == this) pac.Interaction = null;
         }
