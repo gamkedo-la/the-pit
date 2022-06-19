@@ -88,7 +88,7 @@ namespace Player
                 stepTime = 0;
             }
 
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump") && onGround)
             {
                 animator.SetTrigger("Jump");
             }
