@@ -312,7 +312,7 @@ MonoBehaviour:
   groundDetectionDistance: 0.05
   groundLayers:
     serializedVersion: 2
-    m_Bits: 69
+    m_Bits: 65
   animator: {fileID: 6190731026613729491}
   onGround: 0
 --- !u!114 &869220714165625845
