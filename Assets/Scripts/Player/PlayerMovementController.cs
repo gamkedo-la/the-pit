@@ -20,8 +20,19 @@ namespace Player
         public AudioSource audioSource;
         public AudioClipWithVolume step;
         public AudioClipWithVolume jump;
+
+        [Header("Ground sensor")] 
+        [Min(1)]
+        public int minHitsToBeGrounded = 1;
+        public Transform groundSensorContainer;
+        public float groundDetectionDistance = 0.05f;
+        public LayerMask groundLayers;
         
+        [Header("Animation")]
         public Animator animator;
+
+        [Header("Diagnostic")] 
+        public bool onGround;
 
         public bool JumpTakeoff { get; set; }
         
@@ -29,11 +40,18 @@ namespace Player
         private float horizontal;
         private Rigidbody2D rb2d;
 
+        private Transform[] groundSensors;
+
         private static readonly int Horizontal = Animator.StringToHash("Horizontal");
 
         private void Start()
         {
             rb2d = GetComponent<Rigidbody2D>();
+            groundSensors = new Transform[groundSensorContainer.childCount];
+            for (var i = 0; i < groundSensors.Length; i++)
+            {
+                groundSensors[i] = groundSensorContainer.GetChild(i);
+            }
         }
 
         [UsedImplicitly]
@@ -78,6 +96,7 @@ namespace Player
 
         private void FixedUpdate()
         {
+            DetectGround();
             if (JumpTakeoff)
             {
                 JumpTakeoff = false;
@@ -86,6 +105,23 @@ namespace Player
             }
             
             MoveHorizontal();
+        }
+
+        private void DetectGround()
+        {
+            var count = 0;
+            foreach (var sensor in groundSensors)
+            {
+                var hit = Physics2D.Raycast(sensor.position, Vector2.down, groundDetectionDistance, groundLayers);
+                if (hit.collider != null)
+                {
+                    count++;
+                    if (count >= minHitsToBeGrounded) break;
+                }
+            }
+
+            onGround = count >= minHitsToBeGrounded;
+            animator.SetBool("On Ground", onGround);
         }
 
         private void MoveHorizontal()
