@@ -751,7 +751,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 29
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a9339a958c99a4748850ee10c42817dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -791,8 +791,8 @@ MonoBehaviour:
   - {fileID: 996959608503282682}
   - {fileID: 996959608917354607}
   m_Bounds:
-    m_Center: {x: -9.91588, y: -0.06391728, z: 0}
-    m_Extent: {x: 9.963728, y: 1.170533, z: 0}
+    m_Center: {x: -9.91588, y: -0.063916445, z: 0}
+    m_Extent: {x: 9.963728, y: 1.170532, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 1
@@ -1150,7 +1150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5976287532294787908, guid: deeff78d108ddf149bd0bb237d20d803, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5976287532294787908, guid: deeff78d108ddf149bd0bb237d20d803, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1212,7 +1212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5976287532294787908, guid: deeff78d108ddf149bd0bb237d20d803, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5976287532294787908, guid: deeff78d108ddf149bd0bb237d20d803, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1274,7 +1274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5976287532294787908, guid: deeff78d108ddf149bd0bb237d20d803, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5976287532294787908, guid: deeff78d108ddf149bd0bb237d20d803, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1336,7 +1336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5976287532294787908, guid: deeff78d108ddf149bd0bb237d20d803, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5976287532294787908, guid: deeff78d108ddf149bd0bb237d20d803, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1398,7 +1398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5976287532294787908, guid: deeff78d108ddf149bd0bb237d20d803, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5976287532294787908, guid: deeff78d108ddf149bd0bb237d20d803, type: 3}
       propertyPath: m_LocalRotation.w
