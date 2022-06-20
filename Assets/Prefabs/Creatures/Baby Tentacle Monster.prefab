@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3814028918107751299}
   - component: {fileID: 8617275676501747406}
-  - component: {fileID: 5643343555124954156}
-  - component: {fileID: 1927299455400565945}
   - component: {fileID: 2901775392297132801}
   - component: {fileID: 2901775392297132800}
   - component: {fileID: 6654900201541052142}
   - component: {fileID: 2901775391639407444}
+  - component: {fileID: 5476016262938432109}
+  - component: {fileID: 8006221575630588523}
   m_Layer: 0
   m_Name: Baby Tentacle Monster
   m_TagString: Enemy
@@ -36,6 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8253634557696043140}
+  - {fileID: 5333668074470787027}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -75,32 +76,6 @@ MonoBehaviour:
   - prefab: {fileID: 276390236632735978, guid: a839734f3cd45f04e9c1e8648e15df4e, type: 3}
     follow: 1
     duration: 1
---- !u!114 &5643343555124954156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 807485265023746012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c5888a98db4f39a133341b502f7ea1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {x: 0, y: 3}
---- !u!114 &1927299455400565945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 807485265023746012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8f2ef725676d9fc7aa6864c2da0042a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
 --- !u!212 &2901775392297132801
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -210,6 +185,130 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.6
+--- !u!114 &5476016262938432109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807485265023746012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1e66672b3a4309af6c05e16c484463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnterLight:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8006221575630588523}
+        m_TargetAssemblyTypeName: Enemy.BabyTentacleBrain, Assembly-CSharp
+        m_MethodName: set_InShadows
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onExitLight:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8006221575630588523}
+        m_TargetAssemblyTypeName: Enemy.BabyTentacleBrain, Assembly-CSharp
+        m_MethodName: set_InShadows
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &8006221575630588523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807485265023746012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356e568849834dff843bc0bd13957366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggressionRadius: 20
+  disengageRadius: 30
+  targetUpdateTime: 0.5
+  attackCooldownTime: 0.5
+  attackRadius: 1.5
+  attackCollider: {fileID: 9129448075692152897}
+  movementSpeed: 5
+--- !u!1 &3199816322279836495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5333668074470787027}
+  - component: {fileID: 9129448075692152897}
+  - component: {fileID: 6253301814551188262}
+  m_Layer: 0
+  m_Name: AttackCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5333668074470787027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3199816322279836495}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3814028918107751299}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &9129448075692152897
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3199816322279836495}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
+--- !u!114 &6253301814551188262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3199816322279836495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8f2ef725676d9fc7aa6864c2da0042a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  knockbackForce: 0
 --- !u!1001 &2340399827581057984
 PrefabInstance:
   m_ObjectHideFlags: 0

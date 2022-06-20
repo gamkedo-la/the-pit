@@ -6,8 +6,7 @@ namespace Player
 {
     public class PlayerStats : MonoBehaviour
     {
-        [SerializeField]
-        private MinMaxIntVariable playerHealth;
+        [SerializeField] private MinMaxIntVariable playerHealth;
 
         [SerializeField, Tooltip("Player minimum health.")]
         private int playerMinHealth = 0;
@@ -21,24 +20,20 @@ namespace Player
         [SerializeField, Tooltip("Lowest collision impulse that causes damage")]
         private float minCollisionImpulse;
 
-        [SerializeField, Tooltip("Scale of impulse collision damage to health points, set to 0 to not take collision damage")]
+        [SerializeField,
+         Tooltip("Scale of impulse collision damage to health points, set to 0 to not take collision damage")]
         private float collisionImpulseScale;
 
-        [SerializeField]
-        private float defaultKnockback;
+        [SerializeField] private float defaultKnockback;
 
-        [SerializeField] 
-        private SpriteRenderer[] spriteRenderers;
+        [SerializeField] private SpriteRenderer[] spriteRenderers;
 
-        [SerializeField]
-        private float hurtFlashFrequency = 25f;
+        [SerializeField] private float hurtFlashFrequency = 25f;
 
-        [SerializeField]
-        private Color hurtFlashColor = new Color(1f, 1f, 1f, 0.2f);
+        [SerializeField] private Color hurtFlashColor = new Color(1f, 1f, 1f, 0.2f);
 
-        [SerializeField] 
-        private AudioClipWithVolume hurtClip;
-    
+        [SerializeField] private AudioClipWithVolume hurtClip;
+
         private float damageTimer = 0;
         private DamageInflicted damage;
         private Rigidbody2D rb2d;
@@ -83,7 +78,7 @@ namespace Player
                 BroadcastMessage("OnDeath");
                 return;
             }
-        
+
             damageTimer = damageCooldown;
         }
 
@@ -102,7 +97,6 @@ namespace Player
 
         // ******************************* Collision Handling ********************************
         private void OnTriggerEnter2D(Collider2D other) { CheckForAttackDamage(other, other.transform.position); }
-        private void OnTriggerStay2D(Collider2D other) { CheckForAttackDamage(other, other.transform.position); }
 
         private void OnCollisionEnter2D(Collision2D other)
         {
@@ -113,8 +107,9 @@ namespace Player
         {
             if (damageTimer > 0) return;
             var contact = collision.GetContact(0);
+            if (CheckForAttackDamage(collision.collider, contact.point)) return;
+            // Don't apply collision damage if there was an attack damage
             CheckForCollisionDamage(contact.normalImpulse);
-            CheckForAttackDamage(collision.collider, contact.point);
         }
 
         private void CheckForCollisionDamage(float impulse)
@@ -122,25 +117,25 @@ namespace Player
             if (impulse < minCollisionImpulse) return;
             ApplyDamage(Mathf.RoundToInt((impulse - minCollisionImpulse) * collisionImpulseScale));
         }
-    
-        private void CheckForAttackDamage(Collider2D collider, Vector2 hitPos)
+
+        private bool CheckForAttackDamage(Collider2D coll, Vector2 hitPos)
         {
-            if (damageTimer > 0) return;
-            if (collider.CompareTag("Enemy"))
+            if (coll.TryGetComponent<DamageInflicted>(out damage))
             {
-                if (collider.TryGetComponent<DamageInflicted>(out damage))
+                ApplyDamage(damage.Damage);
+                if (damage.HasKnockback)
                 {
-                    ApplyDamage(damage.Damage);
-                    if (damage.HasKnockback)
-                    {
-                        ApplyKnockback(hitPos, damage.Knockback);
-                    }
-                    else
-                    {
-                        ApplyKnockback(hitPos, defaultKnockback);
-                    }
+                    ApplyKnockback(hitPos, damage.Knockback);
                 }
+                else
+                {
+                    ApplyKnockback(hitPos, defaultKnockback);
+                }
+
+                return true;
             }
+
+            return false;
         }
     }
 }
