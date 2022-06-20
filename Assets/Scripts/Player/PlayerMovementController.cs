@@ -8,36 +8,28 @@ namespace Player
     public class PlayerMovementController : MonoBehaviour
     {
         public float horizontalSpeed;
-        [Tooltip("Multiply with horizontal speed when backing up")]
-        [Range(0, 1)]
+
+        [Tooltip("Multiply with horizontal speed when backing up")] [Range(0, 1)]
         public float backingUpSpeedFactor = 0.5f;
-        [Range(0, 2)]
-        public float stepFrequency = 1;
 
-        [Min(0)]
-        public float jumpForce;
+        [Min(0)] public float jumpForce;
 
-        [Header("Sound")] 
-        public AudioSource audioSource;
+        [Header("Sound")] public AudioSource audioSource;
         public AudioClipWithVolume step;
         public AudioClipWithVolume jump;
+        public AudioClipWithVolume landing;
 
-        [Header("Ground sensor")] 
-        [Min(1)]
-        public int minHitsToBeGrounded = 1;
+        [Header("Ground sensor")] [Min(1)] public int minHitsToBeGrounded = 1;
         public Transform groundSensorContainer;
         public float groundDetectionDistance = 0.05f;
         public LayerMask groundLayers;
-        
-        [Header("Animation")]
-        public Animator animator;
 
-        [Header("Diagnostic")] 
-        public bool onGround;
+        [Header("Animation")] public Animator animator;
+
+        [Header("Diagnostic")] public bool onGround;
 
         public bool JumpTakeoff { get; set; }
-        
-        private float stepTime = 0;
+
         private float horizontal;
         private Rigidbody2D rb2d;
 
@@ -62,6 +54,11 @@ namespace Player
             StartCoroutine(StopMovingWhenTouchingGround());
         }
 
+        public void Step()
+        {
+            audioSource.PlayOneShot(step);
+        }
+
         private IEnumerator StopMovingWhenTouchingGround()
         {
             while (!onGround)
@@ -82,23 +79,8 @@ namespace Player
                 movement *= backingUpSpeedFactor;
                 horizontal *= backingUpSpeedFactor;
             }
-            
+
             animator.SetFloat(Horizontal, movement);
-            var absHorizontal = Mathf.Abs(horizontal);
-            
-            if (absHorizontal > 0)
-            {
-                stepTime += absHorizontal * stepFrequency * Time.deltaTime;
-                if (stepTime >= 1f)
-                {
-                    audioSource.PlayOneShot(step);
-                    stepTime -= 1f;
-                }
-            }
-            else
-            {
-                stepTime = 0;
-            }
 
             if (Input.GetButtonDown("Jump") && onGround)
             {
@@ -108,14 +90,20 @@ namespace Player
 
         private void FixedUpdate()
         {
+            var wasOnGround = onGround;
             DetectGround();
+            if (!wasOnGround && onGround)
+            {
+                audioSource.PlayOneShot(landing);
+            }
+
             if (JumpTakeoff)
             {
                 JumpTakeoff = false;
                 rb2d.AddForce(jumpForce * rb2d.gravityScale * Vector2.up);
                 audioSource.PlayOneShot(jump);
             }
-            
+
             MoveHorizontal();
         }
 

@@ -307,6 +307,7 @@ MonoBehaviour:
   audioSource: {fileID: 5489826309246886693}
   step: {fileID: 11400000, guid: fb7dc8455af0d4443bdb3240fb109776, type: 2}
   jump: {fileID: 11400000, guid: 67f37b9d8048bce44a77b4d8cda46408, type: 2}
+  landing: {fileID: 11400000, guid: e65c16939f73d1046a34f45029938a47, type: 2}
   minHitsToBeGrounded: 2
   groundSensorContainer: {fileID: 406899119187931000}
   groundDetectionDistance: 0.05
@@ -919,6 +920,21 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+  onStep:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3810465297964913763}
+        m_TargetAssemblyTypeName: Player.PlayerMovementController, Assembly-CSharp
+        m_MethodName: Step
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &6206745211352462301
 GameObject:

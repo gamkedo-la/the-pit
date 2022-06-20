@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06b64d360b04466dba4896792665f3c7, type: 3}
-  m_Name: Placeholder_Step
+  m_Name: Footsteps
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: bd178f67fed56a44fa3eb3f18b71218f, type: 3}
-  volumeScale: 1
+  clip: {fileID: 8300000, guid: 72d9204d3645c544ead570140040a6ca, type: 3}
+  volumeScale: 0.547
