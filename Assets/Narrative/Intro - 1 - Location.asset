@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77ef0d898274f9eb2e6e8636f0877b0, type: 3}
+  m_Name: Intro - 1 - Location
+  m_EditorClassIdentifier: 
+  text: "Vittsj\xF6, Sweden"
+  audioClip: {fileID: 8300000, guid: 1580a379faee7494b8d3f0acaee3744e, type: 3}
+  defaultDuration: 1
+  next: {fileID: 11400000, guid: cd608103334895a43aeacd37cb5f81bd, type: 2}
+  delayUntilNext: 4

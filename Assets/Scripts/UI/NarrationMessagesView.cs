@@ -68,11 +68,11 @@ namespace UI
                         yield return new WaitForSeconds(delay);
                     }
 
-                    narrationMessagesController.Clear();
-                    if (narration.next == null) break;
                     yield return new WaitForSeconds(narration.delayUntilNext);
+                    if (narration.next == null) break;
                     narration = narration.next;
                 }
+                narrationMessagesController.Clear();
             }
         }
     }
