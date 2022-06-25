@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5be7a7f754af2664b896b0141874fdd5
+guid: de9a003c355d0154eac125d70103f687
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -66,7 +66,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -128,148 +128,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IntroLandscape_clouds
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 3840
-        width: 4096
-        height: 768
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da42ec88fc4204541b6fd8ab3a0bec95
-      internalID: 1089422672
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IntroLandscape_far
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 3072
-        width: 4096
-        height: 768
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d660dae108c0e3740a43d1a21d39a7b3
-      internalID: -81111424
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IntroLandscape_medium
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2304
-        width: 4096
-        height: 768
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c55fcf675487dea47ba683e57c3400ec
-      internalID: -979765315
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IntroLandscape_near
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 768
-        width: 4096
-        height: 768
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5237593cee1533546930bea10c532bf3
-      internalID: 498674961
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IntroLandscape_near_pit
+      name: IntroElevator_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 4096
-        height: 768
-      alignment: 6
+        width: 158
+        height: 233
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 924afaa4848b94d449a5c0e51f503706
-      internalID: 1184931128
+      spriteID: 1021252b76d75024193a3ee7e3b649be
+      internalID: 1244301929
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IntroLandscape_sky
+      name: IntroElevator_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 4608
-        width: 4096
-        height: 768
-      alignment: 6
+        x: 158
+        y: 0
+        width: 158
+        height: 233
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5777ef45cde212f45be78d02441b6d77
-      internalID: -1373830264
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IntroLandscape_medium_pit
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1536
-        width: 4096
-        height: 768
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c084fb12feb9804190278731af8cdf5
-      internalID: 645425266
+      spriteID: 74766820de0ba754ba13744d1e6c2a0d
+      internalID: -1467357264
       vertices: []
       indices: 
       edges: []
@@ -285,13 +180,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      IntroLandscape_medium: -979765315
-      IntroLandscape_clouds: 1089422672
-      IntroLandscape_near: 498674961
-      IntroLandscape_near_pit: 1184931128
-      IntroLandscape_medium_pit: 645425266
-      IntroLandscape_sky: -1373830264
-      IntroLandscape_far: -81111424
+      IntroElevator_1: -1467357264
+      IntroElevator_0: 1244301929
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
