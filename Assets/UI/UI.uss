@@ -54,3 +54,8 @@ Label {
 .heart-1 {
     background-image: url('project://database/Assets/Sprites/Hearts.png?fileID=-919684307&guid=6c41186efeb786a4f92ac76dbacd7f5a&type=3#Hearts_7');
 }
+
+.menu-button {
+    font-size: 12px;
+    -unity-font-definition: url('project://database/Assets/Fonts/PublicPixel%20SDF.asset?fileID=11400000&guid=5e35d48a61ea1574e87068b59e2c0285&type=2#PublicPixel SDF');
+}

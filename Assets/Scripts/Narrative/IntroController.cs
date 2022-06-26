@@ -3,15 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Variables;
 
 namespace Narrative
 {
     public class IntroController : MonoBehaviour
     {
         public TimedAction[] actions;
+        public BoolVariable skipIntro;
+        public UnityEvent onSkipIntro;
 
         private IEnumerator Start()
         {
+            if (skipIntro.Value)
+            {
+                onSkipIntro.Invoke();
+                yield break;
+            }
+            
             var sortedActions = new List<TimedAction>(actions);
             sortedActions.Sort((ta1, ta2) => ta2.time.CompareTo(ta1.time));
 
