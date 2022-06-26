@@ -2,7 +2,7 @@
     color: rgb(217, 217, 217);
 }
 
-Label {
+Label, Button {
     font-size: 12px;
     -unity-font-definition: url('project://database/Assets/Fonts/PublicPixel%20SDF.asset?fileID=11400000&guid=5e35d48a61ea1574e87068b59e2c0285&type=2#PublicPixel SDF');
 }
@@ -56,6 +56,4 @@ Label {
 }
 
 .menu-button {
-    font-size: 12px;
-    -unity-font-definition: url('project://database/Assets/Fonts/PublicPixel%20SDF.asset?fileID=11400000&guid=5e35d48a61ea1574e87068b59e2c0285&type=2#PublicPixel SDF');
 }

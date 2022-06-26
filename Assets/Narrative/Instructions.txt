@@ -2,7 +2,6 @@
 
 A, D       \
 Left, Right > Move
-
 W, S,      \  Control
 Up, Down    > Elevator
 
@@ -10,9 +9,6 @@ Space       > Jump
 Mouse       > Aim
 Mouse Click > Fire
 
-Q           > Switch
-              weapon
-              
 E           > Interact
 
       -=< Keys >=-
@@ -22,7 +18,3 @@ TAB         > Briefing
 F2          > Settings
 M           > Music toggle
 ESC         > Pause
-
-      _____________
-     /  Press TAB  \
-  -=< to close this >=-

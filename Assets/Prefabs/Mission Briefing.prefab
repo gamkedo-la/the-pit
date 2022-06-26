@@ -63,5 +63,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructions: {fileID: 4900000, guid: f1eb09534ab548e597b8efca65d58071, type: 3}
   briefing: {fileID: 4900000, guid: 36789ccded1d4c4eb2a31ec7201b76e7, type: 3}
-  showOnStartup: {fileID: 11400000, guid: 727f8c56c0a3247879903004f72fc6cb, type: 2}
   gameRunning: {fileID: 11400000, guid: a027396641bd24f4ab85d881e25ae245, type: 2}
+  onClose:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7436858167243634714}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: f56179e0e15aabe4aa8c16407f1c6fb1, type: 2}
+        m_TargetAssemblyTypeName: Variables.GenericVariable`1[[System.Boolean, mscorlib
+        m_MethodName: set_Value
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

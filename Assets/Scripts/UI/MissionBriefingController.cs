@@ -1,5 +1,5 @@
-﻿using UnityEngine.UIElements;
-using Variables;
+﻿using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 namespace UI
 {
@@ -7,13 +7,13 @@ namespace UI
     {
         private readonly Label instructionsLabel;
         private readonly Label briefingLabel;
-        private readonly Toggle showOnStartupToggle;
+        private readonly Button closeButton;
 
         public MissionBriefingController(VisualElement root)
         {
             instructionsLabel = root.Q<Label>("Instructions");
             briefingLabel = root.Q<Label>("Briefing");
-            showOnStartupToggle = root.Q<Toggle>("ShowOnStartup");
+            closeButton = root.Q<Button>("CloseButton");
         }
 
         public void SetBriefingText(string text)
@@ -26,10 +26,9 @@ namespace UI
             instructionsLabel.text = text;
         }
 
-        public void SetShowOnStartup(BoolVariable showOnStartup)
+        public void SetCloseAction(UnityEvent closeEvent)
         {
-            showOnStartupToggle.value = showOnStartup.Value;
-            showOnStartupToggle.RegisterValueChangedCallback((evt) => showOnStartup.Value = evt.newValue);
+            closeButton.clicked += closeEvent.Invoke;
         }
     }
 }
