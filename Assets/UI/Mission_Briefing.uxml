@@ -8,6 +8,7 @@
                 <ui:Label text="Label" display-tooltip-when-elided="true" name="Instructions" style="white-space: normal; height: 100%; width: 100%;" />
             </ui:VisualElement>
             <ui:VisualElement>
+                <ui:Toggle label="Background music" name="MusicToggle" style="flex-direction: row-reverse;" />
                 <ui:Button text="Close &amp; Continue" display-tooltip-when-elided="true" name="CloseButton" />
             </ui:VisualElement>
         </ui:VisualElement>

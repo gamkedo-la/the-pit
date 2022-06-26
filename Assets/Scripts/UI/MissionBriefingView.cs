@@ -11,8 +11,7 @@ namespace UI
         public TextAsset instructions;
         public TextAsset briefing;
         public BoolChannel gameRunning;
-        public FloatVariable musicVolume;
-        public FloatVariable brightness;
+        public BoolVariable musicToggle;
 
         public UnityEvent onClose;
 
@@ -23,6 +22,7 @@ namespace UI
             var controller = new MissionBriefingController(ui.rootVisualElement);
             controller.SetInstructionsText(instructions.text);
             controller.SetBriefingText(briefing.text);
+            controller.SetMusicToggle(musicToggle);
             controller.SetCloseAction(onClose);
         }
 

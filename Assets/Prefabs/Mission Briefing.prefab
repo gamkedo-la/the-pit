@@ -64,6 +64,7 @@ MonoBehaviour:
   instructions: {fileID: 4900000, guid: f1eb09534ab548e597b8efca65d58071, type: 3}
   briefing: {fileID: 4900000, guid: 36789ccded1d4c4eb2a31ec7201b76e7, type: 3}
   gameRunning: {fileID: 11400000, guid: a027396641bd24f4ab85d881e25ae245, type: 2}
+  musicToggle: {fileID: 11400000, guid: f82d525733672440b989cd0f69db163b, type: 2}
   onClose:
     m_PersistentCalls:
       m_Calls:

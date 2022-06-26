@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Variables;
 
@@ -20,16 +19,23 @@ namespace Audio
             musicSource.mute = !playBackgroundMusic.Value;
         }
 
-        void Update()
+        private void Update()
         {
-            if (PlayingMusic && Input.GetKeyDown(KeyCode.M))
+            switch (PlayingMusic)
             {
-                MuteMusicAudio();
-            }
+                case true when Input.GetKeyDown(KeyCode.M):
+                    MuteMusicAudio();
+                    break;
+                case false when Input.GetKeyDown(KeyCode.M):
+                    UnMuteMusicAudio();
+                    break;
+                default:
+                    if (musicSource.mute == PlayingMusic)
+                    {
+                        musicSource.mute = !PlayingMusic;
+                    }
 
-            else if (!PlayingMusic && Input.GetKeyDown(KeyCode.M))
-            {
-                UnMuteMusicAudio();
+                    break;
             }
         }
 
