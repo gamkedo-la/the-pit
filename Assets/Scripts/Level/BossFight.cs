@@ -86,6 +86,11 @@ namespace Level
             AdvanceToNextStage(0);
         }
 
+        public void Unmask(SpriteRenderer sr)
+        {
+            sr.maskInteraction = SpriteMaskInteraction.None;
+        }
+
         private IEnumerator DelayedSetStageCoroutine(float delay)
         {
             yield return new WaitForSeconds(delay);
