@@ -52,6 +52,7 @@ namespace Combat
                 Destroy(obj, impact.duration);
             }
 
+            if (ActualHealth <= 0) return;
             onHealthDecreased.Invoke(damage, ActualHealth, InitialHealth);
             ActualHealth -= damage;
             if (ActualHealth <= 0)

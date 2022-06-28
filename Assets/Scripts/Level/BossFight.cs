@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -13,17 +14,27 @@ namespace Level
 
         public Animator[] computerConsoles;
 
-        [FormerlySerializedAs("onStageDormant")] public UnityEvent onStageDormantEntered;
+        [FormerlySerializedAs("onStageDormant")]
+        public UnityEvent onStageDormantEntered;
+
         public UnityEvent onStageDormantStay;
         public UnityEvent onStageDoorsFailingToCloseEntered;
         public UnityEvent onStageDoorsFailingToCloseStay;
-        [FormerlySerializedAs("onStageFirstTentacle")] public UnityEvent onStageFirstTentacleEntered;
-        public UnityEvent onStageFirstTentacleStay;
 
-        private Stage stage = Stage.None;
+        [FormerlySerializedAs("onStageFirstTentacle")]
+        public UnityEvent onStageFirstTentacleEntered;
+
+        public UnityEvent onStageFirstTentacleStay;
+        public UnityEvent onSecondTentacleEnter;
+
+        [FormerlySerializedAs("onBossRevealEnter")]
+        public UnityEvent onGrabWall;
+
+        public UnityEvent onTearDownWall;
+
+        [SerializeField] private Stage stage = Stage.None;
         private readonly Queue<Stage> stageQueue = new Queue<Stage>();
         private readonly bool[] buttonState = new bool[3];
-        private int buttonsPressed;
 
         private void OnEnable()
         {
@@ -46,13 +57,13 @@ namespace Level
             if (stage == Stage.None && stageQueue.Count > 0)
             {
                 stage = stageQueue.Dequeue();
+                Debug.Log("New stage: " + stage);
                 OnStageEntered(stage);
             }
             else
             {
                 OnStageStay(stage);
             }
-
         }
 
         private void SetStage(params Stage[] stages)
@@ -69,9 +80,16 @@ namespace Level
             else stage = Stage.None;
         }
 
+        public void TearDownWall()
+        {
+            SetStage(Stage.TearDownTheWall, Stage.BossReveal, Stage.FightOver);
+            AdvanceToNextStage(0);
+        }
+
         private IEnumerator DelayedSetStageCoroutine(float delay)
         {
             yield return new WaitForSeconds(delay);
+            Debug.Log("Advance to next stage...");
             stage = Stage.None;
         }
 
@@ -87,6 +105,15 @@ namespace Level
                     break;
                 case Stage.FirstTentacle:
                     onStageFirstTentacleEntered.Invoke();
+                    break;
+                case Stage.SecondTentacle:
+                    onSecondTentacleEnter.Invoke();
+                    break;
+                case Stage.GrabWall:
+                    onGrabWall.Invoke();
+                    break;
+                case Stage.TearDownTheWall:
+                    onTearDownWall.Invoke();
                     break;
             }
         }
@@ -111,9 +138,7 @@ namespace Level
         {
             buttonState[buttonIndex] = !buttonState[buttonIndex];
 
-            buttonsPressed += buttonState[buttonIndex] ? 1 : -1;
-
-            if (buttonsPressed == 3)
+            if (buttonState.All(x => x))
             {
                 ActivateIrisDoor();
             }
@@ -132,7 +157,16 @@ namespace Level
             switch (stage)
             {
                 case Stage.Dormant:
-                    SetStage(Stage.DoorsFailingToClose, Stage.FirstTentacle);
+                    SetStage(Stage.DoorsFailingToClose, Stage.FirstTentacle, Stage.WaitingForSecondAttempt);
+                    AdvanceToNextStage(0);
+                    break;
+                case Stage.WaitingForSecondAttempt:
+                    SetStage(Stage.DoorsFailingToClose, Stage.SecondTentacle, Stage.WaitingForAllEnemiesToDie,
+                        Stage.WaitingForThirdAttempt);
+                    AdvanceToNextStage(0);
+                    break;
+                case Stage.WaitingForThirdAttempt:
+                    SetStage(Stage.DoorsFailingToClose, Stage.GrabWall);
                     AdvanceToNextStage(0);
                     break;
             }
@@ -145,6 +179,15 @@ namespace Level
             Dormant,
             DoorsFailingToClose,
             FirstTentacle,
+            WaitingForSecondAttempt,
+            SecondTentacle,
+            WaitingForAllEnemiesToDie,
+            WaitingForThirdAttempt,
+            GrabWall,
+            TearDownTheWall,
+            BossReveal,
+            WaitingForBossToDie,
+            FightOver
         }
     }
 }
