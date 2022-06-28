@@ -7,10 +7,14 @@ namespace Animation
         public Animator animator;
         public string parameter;
         public float value;
+        public bool random;
+        public float randomVariance;
 
+        private float Value => random ? Random.Range(value - randomVariance, value + randomVariance) : value;
+        
         private void Update()
         {
-            animator.SetFloat(parameter, value);
+            animator.SetFloat(parameter, Value);
         }
     }
 }

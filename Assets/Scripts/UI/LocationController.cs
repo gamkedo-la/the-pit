@@ -19,13 +19,13 @@ namespace UI
 
         public void ShowLocation(Room room)
         {
-            if (room == currentRoom) return;
+            if (!room.Dirty && room == currentRoom) return;
 
             currentRoom = room;
             locationLabel.text = room.Name;
             
             topBar.Clear();
-            foreach (var healthVariable in room.healthBars)
+            foreach (var healthVariable in room.HealthBars)
             {
                 if (healthVariable.Health <= 0) continue;
                 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b26f8d0ff00ed119bc08968ea23ab0, type: 3}
   m_Name: GeneratorRepaired
   m_EditorClassIdentifier: 
-  value: 1
-  defaultValue: 0
+  value: 0
+  defaultValue: 1
   storeInPlayerPrefs: 0
   resetToDefault: 1

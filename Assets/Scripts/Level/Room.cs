@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Tilemaps;
 using Variables;
 
@@ -16,9 +17,28 @@ namespace Level
         private string nameOverride;
 
         [Tooltip("Health bars to show when inside this room")]
-        public HealthVariable[] healthBars;
+        [SerializeField]
+        private List<HealthVariable> healthBars;
 
         public string Name => string.IsNullOrEmpty(nameOverride) ? name : nameOverride;
+        public bool Dirty { get; private set; }
+        public IEnumerable<HealthVariable> HealthBars => healthBars;
+
+        public void AddHealthBar(HealthVariable healthVariable)
+        {
+            if (healthBars.Contains(healthVariable)) return;
+            
+            healthBars.Add(healthVariable);
+            Dirty = true;
+        }
+
+        public void RemoveHealthBar(HealthVariable healthVariable)
+        {
+            if (!healthBars.Contains(healthVariable)) return;
+
+            healthBars.Remove(healthVariable);
+            Dirty = true;
+        }
 
         public void TranslateX(int step)
         {
