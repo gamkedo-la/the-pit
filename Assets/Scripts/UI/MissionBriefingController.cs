@@ -29,15 +29,15 @@ namespace UI
             instructionsLabel.text = text;
         }
 
-        public void SetMusicToggle(BoolVariable toggle)
-        {
-            musicToggle.value = toggle.Value;
-            musicToggle.RegisterValueChangedCallback(evt => toggle.Value = evt.newValue);
-        }
-
         public void SetCloseAction(UnityEvent closeEvent)
         {
             closeButton.clicked += closeEvent.Invoke;
+        }
+
+        public void SetMusicVolume(FloatVariable musicVolume)
+        {
+            musicToggle.value = musicVolume.Value > 0;
+            musicToggle.RegisterValueChangedCallback(evt => musicVolume.Value = evt.newValue ? 1 : 0);
         }
     }
 }
