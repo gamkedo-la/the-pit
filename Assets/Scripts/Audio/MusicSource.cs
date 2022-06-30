@@ -21,6 +21,8 @@ namespace Audio
         public AnimationCurve fadeCurve = AnimationCurve.Linear(0, 0, 1, 1);
 
         private AudioSource audioSource;
+        private float clipVolumeMultiplier;
+        
         private int fadeDirection = 0;
         private float fadePoint = 1f;
         private float fadeTotalTime = 1f;
@@ -71,7 +73,9 @@ namespace Audio
         {
             yield return FadeOut(fadeOutDuration);
             audioSource.Stop();
-            audioSource.PlayOneShot(newClip);
+            audioSource.clip = newClip.clip;
+            clipVolumeMultiplier = newClip.volumeScale;
+            audioSource.Play();
             yield return FadeIn(fadeInDuration);
         }
 
@@ -82,7 +86,7 @@ namespace Audio
 
         private void AdjustVolume()
         {
-            audioSource.volume = mainMusicVolume.Value * fadeVolumeMultiplier;
+            audioSource.volume = mainMusicVolume.Value * fadeVolumeMultiplier * clipVolumeMultiplier;
         }
 
         private void CalculateFade()

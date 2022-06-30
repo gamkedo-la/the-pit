@@ -32,6 +32,8 @@ namespace Level
 
         public UnityEvent onTearDownWall;
 
+        public UnityEvent onBossEngaged;
+
         [SerializeField] private Stage stage = Stage.None;
         private readonly Queue<Stage> stageQueue = new Queue<Stage>();
         private readonly bool[] buttonState = new bool[3];
@@ -57,7 +59,6 @@ namespace Level
             if (stage == Stage.None && stageQueue.Count > 0)
             {
                 stage = stageQueue.Dequeue();
-                Debug.Log("New stage: " + stage);
                 OnStageEntered(stage);
             }
             else
@@ -82,7 +83,7 @@ namespace Level
 
         public void TearDownWall()
         {
-            SetStage(Stage.TearDownTheWall, Stage.BossReveal, Stage.FightOver);
+            SetStage(Stage.TearDownTheWall, Stage.BossEngaged, Stage.FightOver);
             AdvanceToNextStage(0);
         }
 
@@ -94,7 +95,6 @@ namespace Level
         private IEnumerator DelayedSetStageCoroutine(float delay)
         {
             yield return new WaitForSeconds(delay);
-            Debug.Log("Advance to next stage...");
             stage = Stage.None;
         }
 
@@ -119,6 +119,9 @@ namespace Level
                     break;
                 case Stage.TearDownTheWall:
                     onTearDownWall.Invoke();
+                    break;
+                case Stage.BossEngaged:
+                    onBossEngaged.Invoke();
                     break;
             }
         }
@@ -190,7 +193,7 @@ namespace Level
             WaitingForThirdAttempt,
             GrabWall,
             TearDownTheWall,
-            BossReveal,
+            BossEngaged,
             WaitingForBossToDie,
             FightOver
         }
