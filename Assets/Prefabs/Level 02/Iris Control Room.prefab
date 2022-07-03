@@ -1836,6 +1836,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  initialAttackDelay: 4
   attackWindup: 1
   attackCooldown: 10
   numberOfBolts: 5
@@ -21539,6 +21540,66 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onOneDisabledConsole:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 533cf0274351f5841bf13528c3286306, type: 2}
+        m_TargetAssemblyTypeName: Channels.GenericChannel`1[[Narrative.Narration,
+          Assembly-CSharp
+        m_MethodName: Push
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: d24cd2f3f0e027744a6d36f368a498d6, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Narrative.Narration, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onTwoDisabledConsoles:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 533cf0274351f5841bf13528c3286306, type: 2}
+        m_TargetAssemblyTypeName: Channels.GenericChannel`1[[Narrative.Narration,
+          Assembly-CSharp
+        m_MethodName: Push
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 5ddbc0421e64c3441acc2c02e92e313e, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Narrative.Narration, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onThreeDisabledConsoles:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 533cf0274351f5841bf13528c3286306, type: 2}
+        m_TargetAssemblyTypeName: Channels.GenericChannel`1[[Narrative.Narration,
+          Assembly-CSharp
+        m_MethodName: Push
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: c16c43585c5c2874bb858cf1237d5145, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Narrative.Narration, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1976033904709983971}
+        m_TargetAssemblyTypeName: Enemy.BossBrain, Assembly-CSharp
+        m_MethodName: Enrage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   stage: 0
 --- !u!1 &4939125516826813233
 GameObject:
@@ -23716,7 +23777,7 @@ MonoBehaviour:
   - {x: 31, y: -4, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 115350
+  m_InstanceId: 163620
 --- !u!1 &5703052247249954457
 GameObject:
   m_ObjectHideFlags: 0
@@ -40239,7 +40300,7 @@ MonoBehaviour:
   - {x: -13.036728, y: 1.0169401, z: 0}
   m_ShapePathHash: -471218431
   m_Mesh: {fileID: 0}
-  m_InstanceId: 115008
+  m_InstanceId: 163278
 --- !u!1 &8644143468876410139
 GameObject:
   m_ObjectHideFlags: 0
@@ -40347,7 +40408,7 @@ MonoBehaviour:
   - {x: -13.036728, y: 1.0169401, z: 0}
   m_ShapePathHash: 1051283029
   m_Mesh: {fileID: 0}
-  m_InstanceId: 115096
+  m_InstanceId: 163366
 --- !u!1 &9177167246471007654
 GameObject:
   m_ObjectHideFlags: 0

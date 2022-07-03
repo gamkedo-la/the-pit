@@ -34,9 +34,14 @@ namespace Level
 
         public UnityEvent onBossEngaged;
 
+        public UnityEvent onOneDisabledConsole;
+        public UnityEvent onTwoDisabledConsoles;
+        public UnityEvent onThreeDisabledConsoles;
+
         [SerializeField] private Stage stage = Stage.None;
         private readonly Queue<Stage> stageQueue = new Queue<Stage>();
         private readonly bool[] buttonState = new bool[3];
+        private readonly bool[] disabledState = new bool[3];
 
         private void OnEnable()
         {
@@ -83,13 +88,34 @@ namespace Level
 
         public void TearDownWall()
         {
-            SetStage(Stage.TearDownTheWall, Stage.BossEngaged, Stage.FightOver);
+            SetStage(Stage.TearDownTheWall, Stage.BossEngaged);
             AdvanceToNextStage(0);
         }
 
         public void DisableComputer(int index)
         {
+            if (disabledState[index]) return;
             
+            disabledState[index] = true;
+            var numDisabled = disabledState.Count(s => s);
+            switch (numDisabled)
+            {
+                case 1: 
+                    onOneDisabledConsole.Invoke();
+                    break;
+                case 2:
+                    onTwoDisabledConsoles.Invoke();
+                    break;
+                case 3:
+                    onThreeDisabledConsoles.Invoke();
+                    break;
+            }
+        }
+
+        public void CloseIrisDoors()
+        {
+            SetStage(Stage.WaitingForBossToDie, Stage.FightOver);
+            AdvanceToNextStage(0);
         }
 
         public void Unmask(SpriteRenderer sr)

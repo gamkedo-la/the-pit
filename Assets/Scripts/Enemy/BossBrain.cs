@@ -66,6 +66,11 @@ namespace Enemy
             StartCoroutine(AttackSequence());
         }
 
+        public void Enrage()
+        {
+            
+        }
+
         private IEnumerator AttackSequence()
         {
             yield return new WaitForSeconds(initialAttackDelay);
