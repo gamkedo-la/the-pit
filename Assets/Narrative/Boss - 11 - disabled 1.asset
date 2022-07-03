@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Boss - 11 - disabled 1
   m_EditorClassIdentifier: 
   text: Primary obstruction detection disabled. Switching to secondary.
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 53cef98d66637a8429e4b54f09e84bf7, type: 3}
   defaultDuration: 4
   next: {fileID: 0}
   delayUntilNext: 1

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a77ef0d898274f9eb2e6e8636f0877b0, type: 3}
   m_Name: Boss - 14 - warning doors closing
   m_EditorClassIdentifier: 
-  text: WARNING! Obstacle Detection disabled. Iris Door closing. Stand clear!
-  audioClip: {fileID: 0}
+  text: WARNING! Obstruction Detection disabled. Iris Door closing. Stand clear!
+  audioClip: {fileID: 8300000, guid: eb0d58e0b7ea7a44dbab1214caf8dba9, type: 3}
   defaultDuration: 8
   next: {fileID: 0}
   delayUntilNext: 1

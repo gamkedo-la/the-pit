@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Boss - 13 - disabled 3
   m_EditorClassIdentifier: 
   text: Tertiary obstruction detection disabled.
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: a1007b76c2394504baa40d0d32b22409, type: 3}
   defaultDuration: 3
   next: {fileID: 11400000, guid: 0eaa08ad86683964d8665e1aec1482eb, type: 2}
   delayUntilNext: 2
