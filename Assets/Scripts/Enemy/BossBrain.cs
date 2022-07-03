@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.U2D.IK;
@@ -14,27 +15,22 @@ namespace Enemy
 
         [Header("Attack")] 
         public float initialAttackDelay = 4;
-        public float attackWindup = 2;
-        public float attackCooldown = 10;
-        public int numberOfBolts = 5;
-        public float boltSpreadDegrees = 15;
-        public float boltSpreadSeconds = 0.2f;
-        public float boltShootingSpeed = 2f;
-        public Transform boltSpawnPoint;
+        public float attackCooldown;
+        public AttackParameters[] attackSequence;
 
-        [Header("Events")] public UnityEvent onAttackWindup;
-        public UnityEvent onAttackBegin;
-        public UnityEvent onBoltSpawned;
+        [Header("Events")] 
+        public UnityEvent onAttackWindup;
         public UnityEvent onAttackEnd;
 
-        [Header("Parts")] public GameObject[] tentacles;
-
-        [Header("Prefabs")] public GameObject boltPrefab;
+        [Header("Parts")] 
+        public GameObject[] tentacles;
 
         private Animator animator;
         private Vector2 movementCenter;
         private float movementTime;
-        private bool executingAttack;
+        private int attackSequenceIndex = 0;
+
+        public bool ExecutingAttack { get; set; }
 
         private void Start()
         {
@@ -44,7 +40,7 @@ namespace Enemy
             enabled = false;
         }
 
-        public void ActivateTentacleIK()
+        private void ActivateTentacleIK()
         {
             foreach (var tentacle in tentacles)
             {
@@ -68,39 +64,25 @@ namespace Enemy
 
         public void Enrage()
         {
-            
         }
 
         private IEnumerator AttackSequence()
         {
             yield return new WaitForSeconds(initialAttackDelay);
+            attackSequenceIndex = 0;
             while (true)
             {
-                executingAttack = true;
+                ExecutingAttack = true;
                 onAttackWindup.Invoke();
-                yield return new WaitForSeconds(attackWindup);
-                var numberOfSpreads = numberOfBolts / 2;
-                var player = GameObject.FindGameObjectWithTag("PlayerAttackTarget");
-                var boltDirection = (player.transform.position - boltSpawnPoint.position).normalized;
-                onAttackBegin.Invoke();
-                for (var i = 0; i < numberOfBolts; i++)
-                {
-                    var spread = ((i + 1) / 2) * (i % 2 == 0 ? -1 : 1) * boltSpreadDegrees / numberOfSpreads;
-                    SpawnBolt(Quaternion.Euler(0, 0, spread) * boltDirection);
-                    yield return new WaitForSeconds(boltSpreadSeconds);
-                }
 
-                executingAttack = false;
+                yield return attackSequence[attackSequenceIndex].Perform();
+
+                attackSequenceIndex = (attackSequenceIndex + 1) % attackSequence.Length;
+                
                 onAttackEnd.Invoke();
+                ExecutingAttack = false;
                 yield return new WaitForSeconds(attackCooldown);
             }
-        }
-
-        private void SpawnBolt(Vector3 boltDirection)
-        {
-            var bolt = Instantiate(boltPrefab, boltSpawnPoint.position, Quaternion.identity);
-            bolt.GetComponent<Rigidbody2D>().velocity = boltShootingSpeed * boltDirection;
-            onBoltSpawned.Invoke();
         }
 
 
@@ -111,7 +93,7 @@ namespace Enemy
 
         private void MoveAbout()
         {
-            if (executingAttack)
+            if (ExecutingAttack)
             {
                 // Pause movement
                 movementTime += Time.deltaTime;
@@ -125,6 +107,56 @@ namespace Enemy
             p.x = movementCenter.x + x;
             p.y = movementCenter.y + y;
             transform.position = p;
+        }
+
+        [Serializable]
+        public class AttackParameters
+        {
+            public float attackWindup;
+            public int numberOfBolts;
+            public float boltSpreadDegrees;
+            public float boltSpreadSeconds;
+            public float boltShootingSpeed;
+            public Transform boltSpawnPoint;
+
+            [Header("Events")] 
+            public UnityEvent onAttackBegin;
+            public UnityEvent onBoltSpawned;
+
+            [Header("Prefabs")] public GameObject boltPrefab;
+
+            public AttackParameters()
+            {
+                boltSpawnPoint = null;
+                boltShootingSpeed = 2f;
+                boltSpreadSeconds = 0.2f;
+                boltSpreadDegrees = 15;
+                numberOfBolts = 5;
+            }
+
+            public IEnumerator Perform()
+            {
+                yield return new WaitForSeconds(attackWindup);
+                
+                var numberOfSpreads = numberOfBolts / 2;
+                var player = GameObject.FindGameObjectWithTag("PlayerAttackTarget");
+                var boltDirection = (player.transform.position - boltSpawnPoint.position).normalized;
+                onAttackBegin.Invoke();
+                for (var i = 0; i < numberOfBolts; i++)
+                {
+                    var spread = ((i + 1) / 2) * (i % 2 == 0 ? -1 : 1) * boltSpreadDegrees / numberOfSpreads;
+                    SpawnBolt(Quaternion.Euler(0, 0, spread) * boltDirection);
+                    yield return new WaitForSeconds(boltSpreadSeconds);
+                }
+
+            }
+
+            private void SpawnBolt(Vector3 boltDirection)
+            {
+                var bolt = Instantiate(boltPrefab, boltSpawnPoint.position, Quaternion.identity);
+                bolt.GetComponent<Rigidbody2D>().velocity = boltShootingSpeed * boltDirection;
+                onBoltSpawned.Invoke();
+            }
         }
     }
 }
