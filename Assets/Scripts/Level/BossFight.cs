@@ -38,6 +38,12 @@ namespace Level
         public UnityEvent onTwoDisabledConsoles;
         public UnityEvent onThreeDisabledConsoles;
 
+        public UnityEvent onClosingDoors;
+        public UnityEvent onKillBoss;
+        public UnityEvent onFightOver;
+
+        public UnityEvent onGameCompleted;
+        
         [SerializeField] private Stage stage = Stage.None;
         private readonly Queue<Stage> stageQueue = new Queue<Stage>();
         private readonly bool[] buttonState = new bool[3];
@@ -112,10 +118,28 @@ namespace Level
             }
         }
 
-        public void CloseIrisDoors()
+        public void CloseIrisDoors(float delay)
         {
-            SetStage(Stage.WaitingForBossToDie, Stage.FightOver);
-            AdvanceToNextStage(0);
+            SetStage(Stage.ClosingDoors);
+            AdvanceToNextStage(delay);
+        }
+
+        public void KillBoss(float delay)
+        {
+            SetStage(Stage.WaitingForBossToDie);
+            AdvanceToNextStage(delay);
+        }
+
+        public void FightOver(float delay)
+        {
+            SetStage(Stage.FightOver);
+            AdvanceToNextStage(delay);
+        }
+
+        public void GameCompleted(float delay)
+        {
+            SetStage(Stage.GameCompleted);
+            AdvanceToNextStage(delay);
         }
 
         public void Unmask(SpriteRenderer sr)
@@ -153,6 +177,18 @@ namespace Level
                     break;
                 case Stage.BossEngaged:
                     onBossEngaged.Invoke();
+                    break;
+                case Stage.ClosingDoors:
+                    onClosingDoors.Invoke();
+                    break;
+                case Stage.WaitingForBossToDie:
+                    onKillBoss.Invoke();
+                    break;
+                case Stage.FightOver:
+                    onFightOver.Invoke();
+                    break;
+                case Stage.GameCompleted:
+                    onGameCompleted.Invoke();
                     break;
             }
         }
@@ -225,8 +261,10 @@ namespace Level
             GrabWall,
             TearDownTheWall,
             BossEngaged,
+            ClosingDoors,
             WaitingForBossToDie,
-            FightOver
+            FightOver,
+            GameCompleted
         }
     }
 }

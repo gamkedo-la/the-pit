@@ -21,6 +21,7 @@ namespace Enemy
         [Header("Events")] 
         public UnityEvent onAttackWindup;
         public UnityEvent onAttackEnd;
+        public UnityEvent onDeath;
 
         [Header("Parts")] 
         public GameObject[] tentacles;
@@ -64,6 +65,13 @@ namespace Enemy
 
         public void Enrage()
         {
+        }
+
+        public void Die()
+        {
+            animator.enabled = true;
+            enabled = false;
+            onDeath.Invoke();
         }
 
         private IEnumerator AttackSequence()

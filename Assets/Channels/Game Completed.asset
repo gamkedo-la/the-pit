@@ -2,15 +2,14 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06b64d360b04466dba4896792665f3c7, type: 3}
-  m_Name: Boss Music
+  m_Script: {fileID: 11500000, guid: fff2ffb2377f44cf802d2b5ccb26268e, type: 3}
+  m_Name: Game Completed
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 1605dfa4ab611fa48809b185618af616, type: 3}
-  volumeScale: 0.45
+  defaultValue: 0
