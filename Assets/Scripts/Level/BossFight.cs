@@ -10,7 +10,7 @@ namespace Level
 {
     public class BossFight : MonoBehaviour
     {
-        [Tooltip("For testing")] public Stage initialStage;
+        [Tooltip("For testing")] public Stage[] initialStage;
 
         public Animator[] computerConsoles;
 
@@ -85,6 +85,11 @@ namespace Level
         {
             SetStage(Stage.TearDownTheWall, Stage.BossEngaged, Stage.FightOver);
             AdvanceToNextStage(0);
+        }
+
+        public void DisableComputer(int index)
+        {
+            
         }
 
         public void Unmask(SpriteRenderer sr)
