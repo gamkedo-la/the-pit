@@ -8,6 +8,8 @@ namespace Level
     {
         [Min(0)]
         public float maxHeight;
+        [Min(0)]
+        public float minHeight;
         public float currentHeight;
         public float speed;
 
@@ -22,7 +24,8 @@ namespace Level
 
         private void Start()
         {
-            zeroPosition = platform.position.y;
+            zeroPosition = platform.position.y - currentHeight;
+            currentHeight = Mathf.Clamp(currentHeight, minHeight, maxHeight);
             UpdatePlatformPosition();
         }
 
@@ -45,7 +48,7 @@ namespace Level
         public float Move(float delta)
         {
             if (!CanMove()) return 0;
-            var newHeight = Mathf.Clamp(currentHeight + delta * speed, 0, maxHeight);
+            var newHeight = Mathf.Clamp(currentHeight + delta * speed, minHeight, maxHeight);
             var actualDelta = newHeight - currentHeight;
             currentHeight = newHeight;
             UpdatePlatformPosition();
@@ -55,7 +58,7 @@ namespace Level
         public void MoveTo(float height)
         {
             if (!CanMove()) return;
-            StartCoroutine(MoveToAsync(Mathf.Clamp(height, 0, maxHeight)));
+            StartCoroutine(MoveToAsync(Mathf.Clamp(height, minHeight, maxHeight)));
         }
 
         private IEnumerator MoveToAsync(float destinationHeight)

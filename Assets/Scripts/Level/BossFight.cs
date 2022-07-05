@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Audio;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -12,21 +13,24 @@ namespace Level
     {
         [Tooltip("For testing")] public Stage[] initialStage;
 
+        public AudioClipWithVolume buttonPressed;
+
         public Animator[] computerConsoles;
 
         [FormerlySerializedAs("onStageDormant")]
         public UnityEvent onStageDormantEntered;
 
-        public UnityEvent onStageDormantStay;
         public UnityEvent onStageDoorsFailingToCloseEntered;
-        public UnityEvent onStageDoorsFailingToCloseStay;
 
         [FormerlySerializedAs("onStageFirstTentacle")]
         public UnityEvent onStageFirstTentacleEntered;
 
-        public UnityEvent onStageFirstTentacleStay;
+        public UnityEvent onWaitingForSecondAttempt;
+
         public UnityEvent onSecondTentacleEnter;
 
+        public UnityEvent onWaitingForThirdAttempt;
+        
         [FormerlySerializedAs("onBossRevealEnter")]
         public UnityEvent onGrabWall;
 
@@ -48,9 +52,11 @@ namespace Level
         private readonly Queue<Stage> stageQueue = new Queue<Stage>();
         private readonly bool[] buttonState = new bool[3];
         private readonly bool[] disabledState = new bool[3];
+        private AudioSource audioSource;
 
         private void OnEnable()
         {
+            audioSource = GetComponent<AudioSource>();
             ResetButtons();
             SetStage(initialStage);
         }
@@ -71,10 +77,6 @@ namespace Level
             {
                 stage = stageQueue.Dequeue();
                 OnStageEntered(stage);
-            }
-            else
-            {
-                OnStageStay(stage);
             }
         }
 
@@ -169,6 +171,12 @@ namespace Level
                 case Stage.SecondTentacle:
                     onSecondTentacleEnter.Invoke();
                     break;
+                case Stage.WaitingForSecondAttempt:
+                    onWaitingForSecondAttempt.Invoke();
+                    break;
+                case Stage.WaitingForThirdAttempt:
+                    onWaitingForThirdAttempt.Invoke();
+                    break;
                 case Stage.GrabWall:
                     onGrabWall.Invoke();
                     break;
@@ -193,25 +201,11 @@ namespace Level
             }
         }
 
-        private void OnStageStay(Stage s)
-        {
-            switch (s)
-            {
-                case Stage.Dormant:
-                    onStageDormantStay.Invoke();
-                    break;
-                case Stage.DoorsFailingToClose:
-                    onStageDoorsFailingToCloseStay.Invoke();
-                    break;
-                case Stage.FirstTentacle:
-                    onStageFirstTentacleStay.Invoke();
-                    break;
-            }
-        }
 
         public void PressButton(int buttonIndex)
         {
             buttonState[buttonIndex] = !buttonState[buttonIndex];
+            audioSource.PlayOneShot(buttonPressed);
 
             if (buttonState.All(x => x))
             {
