@@ -11,6 +11,7 @@ namespace Narrative
     {
         public TimedAction[] actions;
         public BoolVariable skipIntro;
+        public KeyCode skipIntroKey;
         public UnityEvent onSkipIntro;
 
         private IEnumerator Start()
@@ -32,6 +33,16 @@ namespace Narrative
                 var wait = next.time - Time.time;
                 if (wait > 0) yield return new WaitForSeconds(wait);
                 next.action.Invoke();
+            }
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(skipIntroKey))
+            {
+                StopAllCoroutines();
+                onSkipIntro.Invoke();
+                Destroy(this);
             }
         }
 
