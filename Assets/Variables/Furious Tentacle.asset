@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc8f4e27d2b42cdb6d82fe1aa819bbd, type: 3}
   m_Name: Furious Tentacle
   m_EditorClassIdentifier: 
-  value: {x: 0, y: 5}
-  defaultValue: {x: 10, y: 10}
+  value: {x: 0, y: 45}
+  defaultValue: {x: 75, y: 75}
   storeInPlayerPrefs: 0
   resetToDefault: 1
