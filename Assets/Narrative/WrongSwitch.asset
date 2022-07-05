@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61ba68e68a1a4d77bdaae31a5ed6a33d, type: 3}
-  m_Name: Game Build Info
+  m_Script: {fileID: 11500000, guid: a77ef0d898274f9eb2e6e8636f0877b0, type: 3}
+  m_Name: WrongSwitch
   m_EditorClassIdentifier: 
-  lastBuildTime: 2022-07-05 16:40:19 UTC
-  buildNumber: 76
+  text: That switch isn't working properly. There is another breaker further along
+    in the generator room.
+  audioClip: {fileID: 0}
+  defaultDuration: 8
+  next: {fileID: 0}
+  delayUntilNext: 0

@@ -2,17 +2,16 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 32
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09b26f8d0ff00ed119bc08968ea23ab0, type: 3}
-  m_Name: GeneratorRepaired
+  m_Script: {fileID: 11500000, guid: 9fa1540ff7a8425597956a625a9b4cc0, type: 3}
+  m_Name: FakeSwitchFlipped
   m_EditorClassIdentifier: 
-  value: 1
-  defaultValue: 0
-  storeInPlayerPrefs: 0
-  resetToDefault: 1
+  function: 0
+  variables:
+  - {fileID: 11400000, guid: ba46f34e36c2783498b93e1e87a0b317, type: 2}

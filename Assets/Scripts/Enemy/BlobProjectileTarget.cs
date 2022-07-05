@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Enemy
 {
-    public class BossProjectileTarget : MonoBehaviour
+    public class BlobProjectileTarget : MonoBehaviour
     {
         public int hitsToTrigger = 1;
         public UnityEvent onTriggered;

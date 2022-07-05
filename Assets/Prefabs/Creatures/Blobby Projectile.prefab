@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6827896178828081677}
   - component: {fileID: 6827896178828081673}
   - component: {fileID: -1903748862277459803}
+  - component: {fileID: -1308083890467020023}
   m_Layer: 2
   m_Name: Blobby Projectile
   m_TagString: Enemy
@@ -154,3 +155,15 @@ MonoBehaviour:
   explosionTimeToLive: 0.8
   explosions:
   - {fileID: 6954009536111090527, guid: 691829bdff8064945b6865f6a60acfef, type: 3}
+--- !u!114 &-1308083890467020023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6827896178828081666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 018555a93d624ae7956a3c7b0458f3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

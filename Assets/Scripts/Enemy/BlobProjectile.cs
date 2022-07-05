@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Enemy
 {
-    public class BossProjectile : MonoBehaviour
+    public class BlobProjectile : MonoBehaviour
     {
         private void OnTriggerEnter2D(Collider2D col)
         {
-            if (col.gameObject.TryGetComponent<BossProjectileTarget>(out var target))
+            if (col.gameObject.TryGetComponent<BlobProjectileTarget>(out var target))
             {
                 target.HitByProjectile();
                 if (TryGetComponent<ExplodeOnImpact>(out var explode))
