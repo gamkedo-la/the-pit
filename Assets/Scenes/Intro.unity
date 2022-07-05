@@ -964,6 +964,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b003c3c2e1a40aba87fdb5600b29836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasSeenIntro: {fileID: 11400000, guid: 68d272b1ba0ea964c8f21ba10313a3c7, type: 2}
+  skipIntro: {fileID: 11400000, guid: b4a86f5e01ec53e41b0da5f114c4ce0a, type: 2}
   onPlayGame:
     m_PersistentCalls:
       m_Calls:
@@ -1252,6 +1254,8 @@ MonoBehaviour:
   animator: {fileID: 1254171623}
   parameterName: SkipIntro
   variable: {fileID: 11400000, guid: b4a86f5e01ec53e41b0da5f114c4ce0a, type: 2}
+  condition: {fileID: 0}
+  update: 0
 --- !u!1 &1280071808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1755,6 +1759,8 @@ MonoBehaviour:
   animator: {fileID: 1592611959}
   parameter: rotor_speed
   value: 1
+  random: 0
+  randomVariance: 0
 --- !u!114 &1592611961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1770,6 +1776,8 @@ MonoBehaviour:
   animator: {fileID: 1592611959}
   parameterName: SkipIntro
   variable: {fileID: 11400000, guid: b4a86f5e01ec53e41b0da5f114c4ce0a, type: 2}
+  condition: {fileID: 0}
+  update: 0
 --- !u!1 &1660741667
 GameObject:
   m_ObjectHideFlags: 0

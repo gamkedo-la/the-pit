@@ -12,6 +12,7 @@ namespace UI
         public TextAsset briefing;
         public BoolChannel gameRunning;
         public FloatVariable musicVolume;
+        public BoolVariable skipIntro;
 
         public UnityEvent onClose;
 
@@ -23,6 +24,7 @@ namespace UI
             controller.SetInstructionsText(instructions.text);
             controller.SetBriefingText(briefing.text);
             controller.SetMusicVolume(musicVolume);
+            controller.SetSkipIntro(skipIntro);
             controller.SetCloseAction(onClose);
         }
 

@@ -65,6 +65,7 @@ MonoBehaviour:
   briefing: {fileID: 4900000, guid: 36789ccded1d4c4eb2a31ec7201b76e7, type: 3}
   gameRunning: {fileID: 11400000, guid: a027396641bd24f4ab85d881e25ae245, type: 2}
   musicVolume: {fileID: 11400000, guid: 7ae35c019a7fe2f4f93d6d03db72eeb9, type: 2}
+  skipIntro: {fileID: 11400000, guid: b4a86f5e01ec53e41b0da5f114c4ce0a, type: 2}
   onClose:
     m_PersistentCalls:
       m_Calls:

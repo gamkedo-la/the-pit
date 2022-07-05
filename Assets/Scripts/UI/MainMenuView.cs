@@ -3,11 +3,15 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using Variables;
 
 namespace UI
 {
     public class MainMenuView : MonoBehaviour
     {
+        public BoolVariable hasSeenIntro;
+        public BoolVariable skipIntro;
+        
         public UnityEvent onPlayGame;
         public UnityEvent onShowSettings;
         public UnityEvent onExitGame;
@@ -19,6 +23,11 @@ namespace UI
             var ui = GetComponent<UIDocument>();
             controller = new MainMenuController(ui.rootVisualElement,
                 onPlayGame, onShowSettings, onExitGame);
+
+            if (hasSeenIntro.Value) return;
+            // First time we see the intro, now set skip intro to true to disable it by default
+            hasSeenIntro.Value = true;
+            skipIntro.Value = true;
         }
 
         public void ExitGame()

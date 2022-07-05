@@ -9,6 +9,7 @@
             </ui:VisualElement>
             <ui:VisualElement>
                 <ui:Toggle label="Background music" name="MusicToggle" style="flex-direction: row-reverse;" />
+                <ui:Toggle label="Skip intro" name="SkipIntro" style="flex-direction: row-reverse;" />
                 <ui:Button text="Close &amp; Continue" display-tooltip-when-elided="true" name="CloseButton" />
             </ui:VisualElement>
         </ui:VisualElement>
