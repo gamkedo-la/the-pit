@@ -996,6 +996,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  onShowCredits:
+    m_PersistentCalls:
+      m_Calls: []
   onExitGame:
     m_PersistentCalls:
       m_Calls:
@@ -2453,7 +2456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2082257673}
   - component: {fileID: 2082257675}
-  - component: {fileID: 2082257674}
+  - component: {fileID: 2082257676}
   m_Layer: 0
   m_Name: Logo
   m_TagString: Untagged
@@ -2476,26 +2479,6 @@ Transform:
   m_Father: {fileID: 1660741669}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &2082257674
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2082257672}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a84c9f8d693f05748adb83a90b36c902, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &2082257675
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2548,6 +2531,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!111 &2082257676
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082257672}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 6eba4bff540389b4c81d1317fea9b93a, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 6eba4bff540389b4c81d1317fea9b93a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &2109185444
 GameObject:
   m_ObjectHideFlags: 0
