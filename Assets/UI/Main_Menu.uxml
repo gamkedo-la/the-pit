@@ -6,5 +6,6 @@
         <ui:Button text="Exit Game" display-tooltip-when-elided="true" name="Exit" class="menu-button" style="align-items: stretch; position: absolute; top: 409px; left: 18px; width: 150px;" />
         <ui:Button text="Briefing &amp;&#10;Settings" display-tooltip-when-elided="true" name="Settings" class="menu-button" style="align-items: stretch; position: absolute; top: 501px; left: 668px; width: 150px;" />
         <ui:Button text="Enter&#10;the Pit" display-tooltip-when-elided="true" name="Play" class="menu-button" style="align-items: stretch; position: absolute; top: 651px; left: 866px; width: 150px;" />
+        <ui:Button text="Credits" display-tooltip-when-elided="true" name="Credits" class="menu-button" style="align-items: stretch; position: absolute; top: 596px; left: 161px; width: 150px; rotate: -5.5deg;" />
     </ui:VisualElement>
 </ui:UXML>

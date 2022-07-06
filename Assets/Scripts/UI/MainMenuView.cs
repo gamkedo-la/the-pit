@@ -14,6 +14,7 @@ namespace UI
         
         public UnityEvent onPlayGame;
         public UnityEvent onShowSettings;
+        public UnityEvent onShowCredits;
         public UnityEvent onExitGame;
 
         private MainMenuController controller;
@@ -22,7 +23,7 @@ namespace UI
         {
             var ui = GetComponent<UIDocument>();
             controller = new MainMenuController(ui.rootVisualElement,
-                onPlayGame, onShowSettings, onExitGame);
+                onPlayGame, onShowSettings, onShowCredits, onExitGame);
 
             if (hasSeenIntro.Value) return;
             // First time we see the intro, now set skip intro to true to disable it by default
@@ -47,10 +48,11 @@ namespace UI
 
     public class MainMenuController
     {
-        public MainMenuController(VisualElement root, UnityEvent playGameEvent, UnityEvent showSettingsEvent, UnityEvent exitGameEvent)
+        public MainMenuController(VisualElement root, UnityEvent playGameEvent, UnityEvent showSettingsEvent, UnityEvent showCreditsEvent, UnityEvent exitGameEvent)
         {
             root.Q<Button>("Play").clicked += playGameEvent.Invoke;
             root.Q<Button>("Settings").clicked += showSettingsEvent.Invoke;
+            root.Q<Button>("Credits").clicked += showCreditsEvent.Invoke;
             root.Q<Button>("Exit").clicked += exitGameEvent.Invoke;
         }
     }
