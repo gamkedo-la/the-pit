@@ -302,12 +302,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSpeed: 8
   backingUpSpeedFactor: 0.8
-  stepFrequency: 0.6
   jumpForce: 200
   audioSource: {fileID: 5489826309246886693}
   step: {fileID: 11400000, guid: fb7dc8455af0d4443bdb3240fb109776, type: 2}
   jump: {fileID: 11400000, guid: 67f37b9d8048bce44a77b4d8cda46408, type: 2}
   landing: {fileID: 11400000, guid: e65c16939f73d1046a34f45029938a47, type: 2}
+  stepFX: {fileID: 5698055304877629715, guid: 71b8cc0a069189e4e86609196ca19003, type: 3}
+  jumpFX: {fileID: 5698055304877629715, guid: 0657b6cff161902458d35caf0f1bd4c9, type: 3}
+  landFX: {fileID: 5698055304877629715, guid: f2a1f57e36ff18d46b690e34937b286e, type: 3}
+  dieFX: {fileID: 5698055304877629715, guid: 64921ec70f56f934aaea8bf194f0b22b, type: 3}
   minHitsToBeGrounded: 2
   groundSensorContainer: {fileID: 406899119187931000}
   groundDetectionDistance: 0.05

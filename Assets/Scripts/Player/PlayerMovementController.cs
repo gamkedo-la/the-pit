@@ -19,6 +19,11 @@ namespace Player
         public AudioClipWithVolume jump;
         public AudioClipWithVolume landing;
 
+        [Header("Particles")] public GameObject stepFX;
+        public GameObject jumpFX;
+        public GameObject landFX;
+        public GameObject dieFX;
+
         [Header("Ground sensor")] [Min(1)] public int minHitsToBeGrounded = 1;
         public Transform groundSensorContainer;
         public float groundDetectionDistance = 0.05f;
@@ -51,12 +56,14 @@ namespace Player
         private void OnDeath()
         {
             animator.SetTrigger("Die");
+            if (dieFX) Instantiate(dieFX, transform.position, Quaternion.identity);
             StartCoroutine(StopMovingWhenTouchingGround());
         }
 
         public void Step()
         {
             audioSource.PlayOneShot(step);
+            if (stepFX) Instantiate(stepFX, transform.position, Quaternion.identity);
         }
 
         private IEnumerator StopMovingWhenTouchingGround()
@@ -95,13 +102,15 @@ namespace Player
             if (!wasOnGround && onGround)
             {
                 audioSource.PlayOneShot(landing);
-            }
+                if (landFX) Instantiate(landFX, transform.position, Quaternion.identity);
+        }
 
             if (JumpTakeoff)
             {
                 JumpTakeoff = false;
                 rb2d.AddForce(jumpForce * rb2d.gravityScale * Vector2.up);
                 audioSource.PlayOneShot(jump);
+                if (jumpFX) Instantiate(jumpFX, transform.position, Quaternion.identity);
             }
 
             MoveHorizontal();
