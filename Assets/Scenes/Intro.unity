@@ -969,8 +969,8 @@ MonoBehaviour:
   - {fileID: 4900000, guid: a873d419a9d1431ebdc1d678b4190483, type: 3}
   - {fileID: 4900000, guid: 9a78fabad23e4693894893b50ac27108, type: 3}
   - {fileID: 4900000, guid: 2fc30ffa077945e8ae5584cc18121b8e, type: 3}
-  - {fileID: 4900000, guid: a113621aebea42b3804f6f0120ebe9f9, type: 3}
   - {fileID: 4900000, guid: 73096b82aea04f1db2ad1f3e9bd9abc3, type: 3}
+  - {fileID: 4900000, guid: a113621aebea42b3804f6f0120ebe9f9, type: 3}
   - {fileID: 4900000, guid: be8f55e0c8dc401c8f9701d4ca031aec, type: 3}
   gameRunning: {fileID: 11400000, guid: a027396641bd24f4ab85d881e25ae245, type: 2}
   creditButtonTemplate: {fileID: 9197481963319205126, guid: ae7d9dc38c77d4b4994e39fc374189c4, type: 3}
@@ -1983,6 +1983,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 2082257672}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   skipIntro: {fileID: 11400000, guid: b4a86f5e01ec53e41b0da5f114c4ce0a, type: 2}
   skipIntroKey: 27
   onSkipIntro:
@@ -2035,6 +2047,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: SkipIntroNow
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2082257672}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!4 &1660741669
 Transform:
@@ -2561,7 +2585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2082257673
 Transform:
   m_ObjectHideFlags: 0
