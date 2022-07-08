@@ -14,7 +14,7 @@
         <ui:VisualElement name="FolderCrease" style="width: 5px; height: 100%; background-color: rgb(192, 153, 114); padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; border-left-color: rgb(217, 180, 143); border-right-color: rgb(217, 180, 143); border-top-color: rgb(217, 180, 143); border-bottom-color: rgb(217, 180, 143); border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px;" />
         <ui:VisualElement name="RightFolderPage" style="width: 75%; height: 100%; background-color: rgb(227, 199, 171); padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 20px;">
             <ui:VisualElement style="width: 100%; height: 100%; background-color: rgb(237, 237, 237); padding-left: 60px; padding-right: 60px; padding-top: 20px; padding-bottom: 20px; rotate: 1deg;">
-                <ui:Label text="Select name on the left to see credits" display-tooltip-when-elided="true" name="Credits" style="white-space: normal; height: 100%; width: 100%;" />
+                <ui:Label text="This game was created by members of HomeTeamGameDev.com" display-tooltip-when-elided="true" name="Credits" style="white-space: normal; height: 100%; width: 100%;" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement style="position: absolute; left: 382px; top: 9px; height: 66px; width: 43px; background-image: url(&apos;project://database/Assets/Sprites/paperclip.psd?fileID=21300000&amp;guid=500207a935d983544a1705f3f3630456&amp;type=3#paperclip&apos;);" />
