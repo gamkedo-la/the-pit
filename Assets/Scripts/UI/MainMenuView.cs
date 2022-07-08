@@ -53,7 +53,15 @@ namespace UI
             root.Q<Button>("Play").clicked += playGameEvent.Invoke;
             root.Q<Button>("Settings").clicked += showSettingsEvent.Invoke;
             root.Q<Button>("Credits").clicked += showCreditsEvent.Invoke;
-            root.Q<Button>("Exit").clicked += exitGameEvent.Invoke;
+            var exitButton = root.Q<Button>("Exit");
+            if (Application.platform == RuntimePlatform.WebGLPlayer)
+            {
+                exitButton.RemoveFromHierarchy();
+            }
+            else
+            {
+                exitButton.clicked += exitGameEvent.Invoke;
+            }
         }
     }
 }
