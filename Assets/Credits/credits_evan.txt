@@ -1,0 +1,10 @@
+﻿Evan Sklarski 
+
+Advanced tentacle IK
+Tentacle eye animation
+Text message gradual reveal
+Player and enemy health systems
+Baby tentacle monster art
+Player stats
+Additional player collision debugging
+Linux support fix

@@ -1,0 +1,31 @@
+﻿Johan Östling 
+
+Project lead
+Core gameplay and level design
+Boss fight design
+Game narrative and instructions
+Asset integration
+Tuning
+Bug fixes
+
+Player sprite and animation
+Assault rifle art
+Environment and level art
+Boss art and animation
+Intro art and animation
+Shooting enemy art
+Lighting
+Muzzle flash and enemy impact VFX
+
+Mission briefing UI
+Credit display UI
+
+Enemy behaviour
+Boss behaviour
+Character movement and combat
+Object interaction
+Manual and automatic elevators
+Narrative sequencing
+Saving settings
+
+Boss fight music
