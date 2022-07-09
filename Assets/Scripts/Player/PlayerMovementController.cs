@@ -2,6 +2,7 @@
 using Audio;
 using JetBrains.Annotations;
 using UnityEngine;
+using Util;
 
 namespace Player
 {
@@ -19,10 +20,11 @@ namespace Player
         public AudioClipWithVolume jump;
         public AudioClipWithVolume landing;
 
-        [Header("Particles")] public GameObject stepFX;
-        public GameObject jumpFX;
-        public GameObject landFX;
-        public GameObject dieFX;
+        [Header("Particles")] 
+        public GameObjectPool stepFX;
+        public GameObjectPool jumpFX;
+        public GameObjectPool landFX;
+        public GameObjectPool dieFX;
 
         [Header("Ground sensor")] [Min(1)] public int minHitsToBeGrounded = 1;
         public Transform groundSensorContainer;
@@ -56,14 +58,28 @@ namespace Player
         private void OnDeath()
         {
             animator.SetTrigger("Die");
-            if (dieFX) Instantiate(dieFX, transform.position, Quaternion.identity);
+            SpawnFX(dieFX);
             StartCoroutine(StopMovingWhenTouchingGround());
+        }
+
+        private void SpawnFX(GameObjectPool fx)
+        {
+            var obj = fx.Get();
+            obj.transform.position = transform.position;
+            obj.transform.rotation = Quaternion.identity;
+            StartCoroutine(ReleaseDelayed(fx, obj, 2));
+        }
+
+        private IEnumerator ReleaseDelayed(GameObjectPool fxPool, GameObject obj, float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            fxPool.Release(obj);
         }
 
         public void Step()
         {
             audioSource.PlayOneShot(step);
-            if (stepFX) Instantiate(stepFX, transform.position, Quaternion.identity);
+            SpawnFX(stepFX);
         }
 
         private IEnumerator StopMovingWhenTouchingGround()
@@ -102,7 +118,7 @@ namespace Player
             if (!wasOnGround && onGround)
             {
                 audioSource.PlayOneShot(landing);
-                if (landFX) Instantiate(landFX, transform.position, Quaternion.identity);
+                SpawnFX(landFX);
         }
 
             if (JumpTakeoff)
@@ -110,7 +126,7 @@ namespace Player
                 JumpTakeoff = false;
                 rb2d.AddForce(jumpForce * rb2d.gravityScale * Vector2.up);
                 audioSource.PlayOneShot(jump);
-                if (jumpFX) Instantiate(jumpFX, transform.position, Quaternion.identity);
+                SpawnFX(jumpFX);
             }
 
             MoveHorizontal();

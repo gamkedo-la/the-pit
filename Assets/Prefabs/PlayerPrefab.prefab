@@ -307,10 +307,10 @@ MonoBehaviour:
   step: {fileID: 11400000, guid: fb7dc8455af0d4443bdb3240fb109776, type: 2}
   jump: {fileID: 11400000, guid: 67f37b9d8048bce44a77b4d8cda46408, type: 2}
   landing: {fileID: 11400000, guid: e65c16939f73d1046a34f45029938a47, type: 2}
-  stepFX: {fileID: 5698055304877629715, guid: 71b8cc0a069189e4e86609196ca19003, type: 3}
-  jumpFX: {fileID: 5698055304877629715, guid: 0657b6cff161902458d35caf0f1bd4c9, type: 3}
-  landFX: {fileID: 5698055304877629715, guid: f2a1f57e36ff18d46b690e34937b286e, type: 3}
-  dieFX: {fileID: 5698055304877629715, guid: 64921ec70f56f934aaea8bf194f0b22b, type: 3}
+  stepFX: {fileID: 11400000, guid: d7824a8eca346f4499a31f890b82fe04, type: 2}
+  jumpFX: {fileID: 11400000, guid: 38669b95964f2804796bc7476c7e1f8e, type: 2}
+  landFX: {fileID: 11400000, guid: c90a4542270a84a47b36dc88e190a9f9, type: 2}
+  dieFX: {fileID: 11400000, guid: a51736ab4a6cc1d4793014cd41c5f18a, type: 2}
   minHitsToBeGrounded: 2
   groundSensorContainer: {fileID: 406899119187931000}
   groundDetectionDistance: 0.05
