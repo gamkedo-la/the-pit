@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance"
+         engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
+         noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/UI.uss?fileID=7433441132597879392&amp;guid=0f464af6d72540a46a6e28dc0d84bb7d&amp;type=3#UI" />
+    <ui:VisualElement style="background-color: rgb(227, 199, 171); padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 20px; align-items: center; justify-content: center; flex-grow: 1;">
+        <ui:Label text="MISSION COMPLETE!" display-tooltip-when-elided="true" style="font-size: 24px;" />
+    </ui:VisualElement>
+</ui:UXML>

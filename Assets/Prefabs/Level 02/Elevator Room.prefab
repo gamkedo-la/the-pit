@@ -17739,6 +17739,7 @@ GameObject:
   - component: {fileID: 722628768191176100}
   - component: {fileID: 845659020196244115}
   - component: {fileID: 5407039630413771613}
+  - component: {fileID: 8409583120502417719}
   m_Layer: 2
   m_Name: End Mission Trigger
   m_TagString: Untagged
@@ -17781,26 +17782,39 @@ MonoBehaviour:
   onPlayerApproach:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5723965612929262386}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 11400000, guid: 6d96d80a2aa72244faac353200e2143f, type: 2}
+        m_TargetAssemblyTypeName: Channels.GenericChannel`1[[Audio.AudioClipWithVolume,
+          Assembly-CSharp
+        m_MethodName: Push
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 15
+          m_ObjectArgument: {fileID: 11400000, guid: 8a9e444638fbf4944b46dea8a73a0829, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Audio.AudioClipWithVolume, Assembly-CSharp
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: a027396641bd24f4ab85d881e25ae245, type: 2}
-        m_TargetAssemblyTypeName: Channels.GenericChannel`1[[System.Boolean, mscorlib
-        m_MethodName: Push
+      - m_Target: {fileID: 8409583120502417719}
+        m_TargetAssemblyTypeName: Util.TriggerDelayed, Assembly-CSharp
+        m_MethodName: SetActive
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1.5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845659020196244115}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 15
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17834,6 +17848,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 3.86}
   m_EdgeRadius: 0
+--- !u!114 &8409583120502417719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5723965612929262386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba126e28893c44c394fa37d4ffbb0db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5723965612929262386}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6296125491708367049
 GameObject:
   m_ObjectHideFlags: 0
@@ -18116,7 +18157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6988997849842801471, guid: 59fd5219dc1a14f44a8a0888dae9802f, type: 3}
       propertyPath: m_InstanceId
-      value: -74116
+      value: -117552
       objectReference: {fileID: 0}
     - target: {fileID: 8730629869215831362, guid: 59fd5219dc1a14f44a8a0888dae9802f, type: 3}
       propertyPath: m_Mesh
@@ -18124,7 +18165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8730629869215831362, guid: 59fd5219dc1a14f44a8a0888dae9802f, type: 3}
       propertyPath: m_InstanceId
-      value: -74122
+      value: -117558
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59fd5219dc1a14f44a8a0888dae9802f, type: 3}
@@ -18282,7 +18323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 20302785510691348, guid: 30cb47fbf8bfef64cab4abf9d3e40360, type: 3}
       propertyPath: m_InstanceId
-      value: -74174
+      value: -117610
       objectReference: {fileID: 0}
     - target: {fileID: 184943801263771877, guid: 30cb47fbf8bfef64cab4abf9d3e40360, type: 3}
       propertyPath: m_Mesh
@@ -18290,7 +18331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 184943801263771877, guid: 30cb47fbf8bfef64cab4abf9d3e40360, type: 3}
       propertyPath: m_InstanceId
-      value: -74186
+      value: -117622
       objectReference: {fileID: 0}
     - target: {fileID: 2676067941816614894, guid: 30cb47fbf8bfef64cab4abf9d3e40360, type: 3}
       propertyPath: m_Name
