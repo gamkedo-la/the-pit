@@ -25677,6 +25677,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 6d96d80a2aa72244faac353200e2143f, type: 2}
+        m_TargetAssemblyTypeName: Channels.GenericChannel`1[[Audio.AudioClipWithVolume,
+          Assembly-CSharp
+        m_MethodName: Push
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 98af7485d945fb44a89e8096b5b8ca02, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Audio.AudioClipWithVolume, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onFightOver:
     m_PersistentCalls:
       m_Calls:
@@ -25706,6 +25719,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 11400000, guid: caf6a192141153242ab961c18f606586, type: 2}
+        m_TargetAssemblyTypeName: Variables.GenericVariable`1[[System.Boolean, mscorlib
+        m_MethodName: set_Value
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: c09094a51eb25314fafea5b505e72dd0, type: 2}
         m_TargetAssemblyTypeName: Variables.GenericVariable`1[[System.Boolean, mscorlib
         m_MethodName: set_Value
         m_Mode: 6
@@ -28005,7 +28030,7 @@ MonoBehaviour:
   - {x: 31, y: -4, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 55686
+  m_InstanceId: 48964
 --- !u!1 &5010916364053872328
 GameObject:
   m_ObjectHideFlags: 0
@@ -44748,7 +44773,7 @@ MonoBehaviour:
   - {x: -13.036728, y: 1.0169401, z: 0}
   m_ShapePathHash: -471218431
   m_Mesh: {fileID: 0}
-  m_InstanceId: 55332
+  m_InstanceId: 48610
 --- !u!1 &8644143468876410139
 GameObject:
   m_ObjectHideFlags: 0
@@ -44856,7 +44881,7 @@ MonoBehaviour:
   - {x: -13.036728, y: 1.0169401, z: 0}
   m_ShapePathHash: 1051283029
   m_Mesh: {fileID: 0}
-  m_InstanceId: 55426
+  m_InstanceId: 48704
 --- !u!1 &9177167246471007654
 GameObject:
   m_ObjectHideFlags: 0

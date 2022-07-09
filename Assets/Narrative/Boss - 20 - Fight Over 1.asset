@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a77ef0d898274f9eb2e6e8636f0877b0, type: 3}
   m_Name: Boss - 20 - Fight Over 1
   m_EditorClassIdentifier: 
-  text: Ugh. That was a messy end for that... thing. Anyway good riddance and all
-    that.
-  audioClip: {fileID: 0}
-  defaultDuration: 8
+  text: Did you just cut that thing in half with the Iris Door?
+  audioClip: {fileID: 8300000, guid: 8671817de3cba2544bcd4a76a3f1d375, type: 3}
+  defaultDuration: 5
   next: {fileID: 11400000, guid: c6221ec7329fc8449a490603baaadf96, type: 2}
   delayUntilNext: 1

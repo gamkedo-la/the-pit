@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Intro - 1 - Location
   m_EditorClassIdentifier: 
   text: "Vittsj\xF6, Sweden"
-  audioClip: {fileID: 8300000, guid: 1580a379faee7494b8d3f0acaee3744e, type: 3}
+  audioClip: {fileID: 8300000, guid: a0dbb90881290764ebbae1a8e5092a25, type: 3}
   defaultDuration: 1
   next: {fileID: 11400000, guid: cd608103334895a43aeacd37cb5f81bd, type: 2}
-  delayUntilNext: 4
+  delayUntilNext: 1

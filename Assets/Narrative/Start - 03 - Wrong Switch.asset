@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a77ef0d898274f9eb2e6e8636f0877b0, type: 3}
-  m_Name: Boss - 21 - Report back
+  m_Name: Start - 03 - Wrong Switch
   m_EditorClassIdentifier: 
-  text: Well done I suppose. Head back to the main elevator and we will pick you
-    up.
-  audioClip: {fileID: 8300000, guid: a65862f702e31d548979fd790ec1461b, type: 3}
-  defaultDuration: 5
+  text: No luck? The main breaker is in the generator room, continue  there instead.
+  audioClip: {fileID: 8300000, guid: 22801641ce25bb340b42262d851d5b6a, type: 3}
+  defaultDuration: 4
   next: {fileID: 0}
   delayUntilNext: 0

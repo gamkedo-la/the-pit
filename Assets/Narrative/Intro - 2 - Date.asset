@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Intro - 2 - Date
   m_EditorClassIdentifier: 
   text: August 27, 1996
-  audioClip: {fileID: 8300000, guid: 1580a379faee7494b8d3f0acaee3744e, type: 3}
+  audioClip: {fileID: 8300000, guid: 3a2fba82c6bdfb74e99c0072d37d1a24, type: 3}
   defaultDuration: 1
   next: {fileID: 0}
   delayUntilNext: 4

@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a77ef0d898274f9eb2e6e8636f0877b0, type: 3}
-  m_Name: WrongSwitch
+  m_Script: {fileID: 11500000, guid: 9fa1540ff7a8425597956a625a9b4cc0, type: 3}
+  m_Name: BossDead
   m_EditorClassIdentifier: 
-  text: That switch isn't working properly. There is another breaker further along
-    in the generator room.
-  audioClip: {fileID: 0}
-  defaultDuration: 8
-  next: {fileID: 0}
-  delayUntilNext: 0
+  function: 0
+  variables:
+  - {fileID: 11400000, guid: c09094a51eb25314fafea5b505e72dd0, type: 2}
