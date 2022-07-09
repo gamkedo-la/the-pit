@@ -11,14 +11,12 @@ public class PauseMenu : MonoBehaviour
     private void Start()
     {
         btn1.SetActive(false);
-        btn2.SetActive(false);
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             btn1.SetActive(true);
-            btn2.SetActive(true);
             gameRunning.Push(false);
         }
     }
@@ -26,7 +24,6 @@ public class PauseMenu : MonoBehaviour
     public void OnResume()
     {
         btn1.SetActive(false);
-        btn2.SetActive(false);
         gameRunning.Push(true);
     }
 
