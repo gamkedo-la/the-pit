@@ -17846,7 +17846,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 3.86}
+  m_Size: {x: 4.48, y: 3.86}
   m_EdgeRadius: 0
 --- !u!114 &8409583120502417719
 MonoBehaviour:
@@ -18157,7 +18157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6988997849842801471, guid: 59fd5219dc1a14f44a8a0888dae9802f, type: 3}
       propertyPath: m_InstanceId
-      value: -117552
+      value: -190962
       objectReference: {fileID: 0}
     - target: {fileID: 8730629869215831362, guid: 59fd5219dc1a14f44a8a0888dae9802f, type: 3}
       propertyPath: m_Mesh
@@ -18165,7 +18165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8730629869215831362, guid: 59fd5219dc1a14f44a8a0888dae9802f, type: 3}
       propertyPath: m_InstanceId
-      value: -117558
+      value: -190968
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59fd5219dc1a14f44a8a0888dae9802f, type: 3}
@@ -18323,7 +18323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 20302785510691348, guid: 30cb47fbf8bfef64cab4abf9d3e40360, type: 3}
       propertyPath: m_InstanceId
-      value: -117610
+      value: -191020
       objectReference: {fileID: 0}
     - target: {fileID: 184943801263771877, guid: 30cb47fbf8bfef64cab4abf9d3e40360, type: 3}
       propertyPath: m_Mesh
@@ -18331,7 +18331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 184943801263771877, guid: 30cb47fbf8bfef64cab4abf9d3e40360, type: 3}
       propertyPath: m_InstanceId
-      value: -117622
+      value: -191032
       objectReference: {fileID: 0}
     - target: {fileID: 2676067941816614894, guid: 30cb47fbf8bfef64cab4abf9d3e40360, type: 3}
       propertyPath: m_Name
