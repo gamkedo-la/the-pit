@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2901775391639407444}
   - component: {fileID: 5476016262938432109}
   - component: {fileID: 8006221575630588523}
+  - component: {fileID: -1027252066161568938}
   m_Layer: 0
   m_Name: Baby Tentacle Monster
   m_TagString: Enemy
@@ -246,6 +247,19 @@ MonoBehaviour:
   attackRadius: 1.5
   attackCollider: {fileID: 9129448075692152897}
   movementSpeed: 5
+--- !u!114 &-1027252066161568938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807485265023746012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 629f75e56b5a41508e6adcfb2f480a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: {fileID: 0}
 --- !u!1 &3199816322279836495
 GameObject:
   m_ObjectHideFlags: 0
