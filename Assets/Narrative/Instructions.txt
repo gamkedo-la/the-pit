@@ -10,6 +10,7 @@ Mouse       > Aim
 Mouse Click > Fire
 
 E           > Interact
+Q           > Switch weapon
 
       -=< Keys >=-
 

@@ -3,3 +3,5 @@
 Title logo and related animation
 Particles for player running, jumping and death
 Paperclip sprite
+Enemy hit sound effect
+
